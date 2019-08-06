@@ -1,23 +1,42 @@
-// 005-Find Size of int_float.cpp 
+// 006-Swap Numbers.cpp 
 /*
-	The program declares 4 variables of type int, float, double and char. 
-	Then, the size of each variable is evaluated using sizeof operator. 
-	https://www.programiz.com/cpp-programming/examples/sizeof-operator
+	program uses temporary variable to swap numbers
+	https://www.programiz.com/cpp-programming/examples/swapping
 	Standard library:
 	https://www.programiz.com/cpp-programming/library-function
 */
-
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	cout << "Size of char: " << sizeof(char) << " byte" << endl;
-	cout << "Size of int: " << sizeof(int) << " bytes" << endl;
-	cout << "Size of float: " << sizeof(float) << " bytes" << endl;
-	cout << "Size of double: " << sizeof(double) << " bytes" << endl;
+	int a = 5, b = 10, temp;
+	cout << "Before swapping." << endl;
+	cout << "a = " << a << ", b = " << b << endl;
+	temp = a;
+	a = b;
+	b = temp;
+	cout << "\nAfter swapping." << endl;
+	cout << "a = " << a << ", b = " << b << endl;
 	return 0;
 }
+
+/*
+
+int main()
+{
+
+	int a = 5, b = 10;
+	cout << "Before swapping." << endl;
+	cout << "a = " << a << ", b = " << b << endl;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	cout << "\nAfter swapping." << endl;
+	cout << "a = " << a << ", b = " << b << endl;
+	return 0;
+}
+*/
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
