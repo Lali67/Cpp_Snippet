@@ -1,7 +1,7 @@
 // 008-Whether a character is Vowel or Consonant.cpp 
 /*
 	if...else statement is used to check whether an alphabet entered by the user is a vowel or a constant. 
-	https://github.com/Lali67/Cpp_Snippet/tree/master/Basic
+	https://www.programiz.com/cpp-programming/examples/vowel-consonant
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ if, if...else and Nested if...else (https://www.programiz.com/cpp-programming/if-else)
