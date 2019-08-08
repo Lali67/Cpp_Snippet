@@ -1,14 +1,15 @@
-// 018-Generate Multiplication Table.cpp 
+// 022-Reverse an Integer.cpp 
 
 /*
-	Example to generate the multiplication table of a number (entered by the user) using for loop.  
-	https://www.programiz.com/cpp-programming/examples/multiplication-table
+	Example to reverse an integer entered by the user in C++ programming. 
+	This problem is solved by using while loop in this example.
+	https://www.programiz.com/cpp-programming/examples/reverse-number
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
-		C++ for Loop (https://www.programiz.com/cpp-programming/for-loop)
 		C++ while and do...while Loop (https://www.programiz.com/cpp-programming/do-while-loop)
-
-	This program above computes the multiplication table up to 10 only.
+	
+	This program takes an integer input from the user and stores it in variable n.
+	Then the while loop is iterated until n != 0 is false.
 
 	Standard library:
 	https://www.programiz.com/cpp-programming/library-function
@@ -20,15 +21,19 @@ using namespace std;
 
 int main()
 {
-	int n;
-	cout << "Enter a positive integer: ";
+	int n, reversedNumber = 0, remainder;
+	cout << "Enter an integer: ";
 	cin >> n;
-	for (int i = 1; i <= 10; ++i) {
-		cout << n << " * " << i << " = " << n * i << endl;
+	while (n != 0)
+	{
+		remainder = n % 10;
+		reversedNumber = reversedNumber * 10 + remainder;
+		n /= 10;
 	}
-
+	cout << "Reversed Number = " << reversedNumber;
 	return 0;
 }
+
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 

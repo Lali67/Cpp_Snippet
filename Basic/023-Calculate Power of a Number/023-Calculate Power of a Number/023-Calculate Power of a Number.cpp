@@ -1,18 +1,18 @@
-// 018-Generate Multiplication Table.cpp 
-
+// 023-Calculate Power of a Number.cpp 
 /*
-	Example to generate the multiplication table of a number (entered by the user) using for loop.  
-	https://www.programiz.com/cpp-programming/examples/multiplication-table
+	you will learn to compute power to a number manually, and by using pow() function. 
+	https://www.programiz.com/cpp-programming/examples/power-number
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
-		C++ for Loop (https://www.programiz.com/cpp-programming/for-loop)
 		C++ while and do...while Loop (https://www.programiz.com/cpp-programming/do-while-loop)
 
-	This program above computes the multiplication table up to 10 only.
+	This program takes two numbers from the user (a base number and an exponent) and 
+	calculates the power.
+
+		Power of a number = base^exponent
 
 	Standard library:
 	https://www.programiz.com/cpp-programming/library-function
-
 */
 
 #include <iostream>
@@ -20,15 +20,38 @@ using namespace std;
 
 int main()
 {
-	int n;
-	cout << "Enter a positive integer: ";
-	cin >> n;
-	for (int i = 1; i <= 10; ++i) {
-		cout << n << " * " << i << " = " << n * i << endl;
+	int exponent;
+	float base, result = 1;
+	cout << "Enter base and exponent respectively:  ";
+	cin >> base >> exponent;
+	cout << base << "^" << exponent << " = ";
+	while (exponent != 0) {
+		result *= base;
+		--exponent;
 	}
+	cout << result;
 
 	return 0;
 }
+
+/*
+	#include <iostream>
+	#include <cmath>
+	using namespace std;
+	//Compute power using pow() Function
+
+	int main()
+	{
+		float base, exponent, result;
+		cout << "Enter base and exponent respectively:  ";
+		cin >> base >> exponent;
+		result = pow(base, exponent);
+		cout << base << "^" << exponent << " = " << result;
+
+		return 0;
+	}
+*/
+
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
