@@ -1,19 +1,11 @@
-// 024-Armstrong Number Between Two Intervals.cpp 
+// 025-Print Pascal-triangle.cpp 
 
 /*
-	Example to find all Armstrong numbers between two integers 
-	  (entered by the user) using loops and if...else statement. 
-		https://www.programiz.com/cpp-programming/examples/armstrong-number-interval
+	https://www.programiz.com/cpp-programming/examples/pyramid-pattern
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ if, if...else and Nested if...else(https://www.programiz.com/cpp-programming/if-else)
 		C++ for Loop(https://www.programiz.com/cpp-programming/do-while-loop)
-
-	A positive integer is called an Armstrong number if the sum of cubes of 
-	individual digit is equal to that number itself. For example:
-
-		153 = 1 * 1 * 1 + 5 * 5 * 5 + 3 * 3 * 3  // 153 is an Armstrong number.
-		12 is not equal to 1 * 1 * 1 + 2 * 2 * 2  // 12 is not an Armstrong number.
 
 	Standard library:
 	https://www.programiz.com/cpp-programming/library-function
@@ -21,27 +13,25 @@
 
 #include <iostream>
 using namespace std;
+
 int main()
 {
-	int num1, num2, i, num, digit, sum;
-	cout << "Enter first number: ";
-	cin >> num1;
-	cout << "Enter second number: ";
-	cin >> num2;
-	cout << "Armstrong numbers between " << num1 << " and " << num2 << " are: " << endl;
-	for (i = num1; i <= num2; i++)
+	int rows, coef = 1;
+	cout << "Enter number of rows: ";
+	cin >> rows;
+	for (int i = 0; i < rows; i++)
 	{
-		sum = 0;
-		num = i;
-		for (; num > 0; num /= 10)
+		for (int space = 1; space <= rows - i; space++)
+			cout << "  ";
+		for (int j = 0; j <= i; j++)
 		{
-			digit = num % 10;
-			sum = sum + digit * digit * digit;
+			if (j == 0 || i == 0)
+				coef = 1;
+			else
+				coef = coef * (i - j + 1) / j;
+			cout << coef << "   ";
 		}
-		if (sum == i)
-		{
-			cout << i << endl;
-		}
+		cout << endl;
 	}
 	return 0;
 }
