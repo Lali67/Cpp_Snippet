@@ -1,8 +1,8 @@
-// 013-Whether a Number is Prime.cpp 
+// 014-Prime Numbers Between two Intervals.cpp
 
 /*
-		Example to check whether an integer (entered by the user) is a prime number or not 
-		using for loop and if...else statement. 
+		Example to check whether an integer (entered by the user) is a prime number or not
+		using for loop and if...else statement.
 
 		To understand this example, you should have the knowledge of following C++ programming topics:
 
@@ -11,7 +11,7 @@
 			C++ break and continue Statement (https://www.programiz.com/cpp-programming/break-continue)
 
 		A positive integer which is only divisible by 1 and itself is known as prime number.
-		For example: 13 is a prime number because it is only divisible by 1 and 13 but, 
+		For example: 13 is a prime number because it is only divisible by 1 and 13 but,
 		15 is not prime number because it is divisible by 1, 3, 5 and 15.
 */
 
@@ -20,22 +20,25 @@ using namespace std;
 
 int main()
 {
-	int n, i;
-	bool isPrime = true;
-	cout << "Enter a positive integer: ";
-	cin >> n;
-	for (i = 2; i <= n / 2; ++i)
+	int low, high, i, flag;
+	cout << "Enter two numbers(intervals): ";
+	cin >> low >> high;
+	cout << "\nPrime numbers between " << low << " and " << high << " are: \n";
+	while (low < high)
 	{
-		if (n % i == 0)
+		flag = 0;
+		for (i = 2; i <= low / 2; ++i)
 		{
-			isPrime = false;
-			break;
+			if (low % i == 0)
+			{
+				flag = 1;
+				break;
+			}
 		}
+		if (flag == 0)
+			cout << low << " ";
+		++low;
 	}
-	if (isPrime)
-		cout << "\nThis is a prime number \n\n";
-	else
-		cout << "\nThis is not a prime number \n\n";
 	return 0;
 }
 
