@@ -2,7 +2,7 @@
 
 /*
 	This program checks whether an year (integer) entered by the user is a leap year or not. 
-	https://www.programiz.com/cpp-programming/examples/leap-year
+		https://www.programiz.com/cpp-programming/examples/leap-year
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ if, if...else and Nested if...else (https://www.programiz.com/cpp-programming/if-else)
