@@ -3,6 +3,7 @@
 /*
 		Example to check whether an integer (entered by the user) is a prime number or not 
 		using for loop and if...else statement. 
+			https://www.programiz.com/cpp-programming/examples/prime-number
 
 		To understand this example, you should have the knowledge of following C++ programming topics:
 
