@@ -2,7 +2,7 @@
 /*
 	This program accepts coefficients of a quadratic equation from the user and displays the roots 
 	(both real and complex roots depending upon the discriminant)
-	https://www.programiz.com/cpp-programming/examples/quadratic-roots
+		https://www.programiz.com/cpp-programming/examples/quadratic-roots
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ if, if...else and Nested if...else (https://www.programiz.com/cpp-programming/if-else)
