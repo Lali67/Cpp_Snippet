@@ -3,7 +3,7 @@
 /*
 	This program takes a positive integer from user( suppose user entered n ) then, 
 	this program displays the value of 1+2+3+....+n.
-	https://www.programiz.com/cpp-programming/examples/sum-natural-number
+		https://www.programiz.com/cpp-programming/examples/sum-natural-number
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ for Loop (https://www.programiz.com/cpp-programming/for-loop)
