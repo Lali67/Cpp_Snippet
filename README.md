@@ -19,8 +19,8 @@ This folder contains examples on basic concepts of C++ programming like: loops, 
 |[011-Calculate Sum of Natural Numbers](/01-Basic/011-Calculate%20Sum%20of%20Natural%20Numbers/011-Calculate%20Sum%20of%20Natural%20Numbers/011-Calculate%20Sum%20of%20Natural%20Numbers.cpp)|This program takes a positive integer from user( suppose user entered n ) then, this program displays the value of 1+2+3+....+n.|
 |[012-Check Palindrome Number](/01-Basic/012-Check%20Palindrome%20Number/012-Check%20Palindrome%20Number/012-Check%20Palindrome%20Number.cpp)|This program reverses an integer (entered by the user) using while loop. Then, if statement is used to check whether the reversed number is equal to the original number or not. |
 |[013-Whether a Number is Prime](/01-Basic/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime.cpp)|Example to check whether an integer (entered by the user) is a prime number or not using for loop and if...else statement.|
-|[]()||
-|[]()||
+|[014-Prime Numbers Between two Intervals](/01-Basic/014-Prime%20Numbers%20Between%20two%20Intervals/014-Prime%20Numbers%20Between%20two%20Intervals/014-Prime%20Numbers%20Between%20two%20Intervals.cpp)|Example to print all prime numbers between two numbers (entered by the user) in C++ Programming. This problem is solved using nested for loop and if...else statement.|
+|[015-All Factors of a Number](/01-Basic/015-All%20Factors%20of%20a%20Number/015-All%20Factors%20of%20a%20Number/015-All%20Factors%20of%20a%20Number.cpp)|Example to find all factors of an integer (entered by the user) using for loop and if statement.|
 |[]()||
 |[]()||
 |[]()||
