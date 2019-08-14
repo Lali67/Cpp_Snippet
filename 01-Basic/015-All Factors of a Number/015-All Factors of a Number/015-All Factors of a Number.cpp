@@ -1,8 +1,8 @@
 // 015-All Factors of a Number.cpp
 
 /*
-		Example to check whether an integer (entered by the user) is a prime number or not
-		using for loop and if...else statement.
+		Example to find all factors of an integer (entered by the user) using for loop and if statement.
+			https://www.programiz.com/cpp-programming/examples/factors-number
 
 		To understand this example, you should have the knowledge of following C++ programming topics:
 
