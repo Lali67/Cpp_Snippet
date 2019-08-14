@@ -18,8 +18,7 @@ This folder contains examples on basic concepts of C++ programming like: loops, 
 |[010-Find All Roots of a Quadratic Equation](/01-Basic/010-Find%20All%20Roots%20of%20a%20Quadratic%20Equation/010-Find%20All%20Roots%20of%20a%20Quadratic%20Equation/010-Find%20All%20Roots%20of%20a%20Quadratic%20Equation.cpp)|This program accepts coefficients of a quadratic equation from the user and displays the roots (both real and complex roots depending upon the discriminant)|
 |[011-Calculate Sum of Natural Numbers](/01-Basic/011-Calculate%20Sum%20of%20Natural%20Numbers/011-Calculate%20Sum%20of%20Natural%20Numbers/011-Calculate%20Sum%20of%20Natural%20Numbers.cpp)|This program takes a positive integer from user( suppose user entered n ) then, this program displays the value of 1+2+3+....+n.|
 |[012-Check Palindrome Number](/01-Basic/012-Check%20Palindrome%20Number/012-Check%20Palindrome%20Number/012-Check%20Palindrome%20Number.cpp)|This program reverses an integer (entered by the user) using while loop. Then, if statement is used to check whether the reversed number is equal to the original number or not. |
-|[013-Whether a Number is Prime](/01-Basic/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime.cpp)|Example to check whether an integer (entered by the user) is a prime number or not 
-		using for loop and if...else statement.|
+|[013-Whether a Number is Prime](/01-Basic/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime.cpp)|Example to check whether an integer (entered by the user) is a prime number or not using for loop and if...else statement.|
 |[]()||
 |[]()||
 |[]()||
