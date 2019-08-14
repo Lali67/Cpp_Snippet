@@ -3,7 +3,7 @@
 /*
 	The factorial of a positive integer n is equal to 1*2*3*...n. You will learn to calculate the factorial of 
 	a number using for loop in this example.
-	https://www.programiz.com/cpp-programming/examples/factorial
+		https://www.programiz.com/cpp-programming/examples/factorial
 
 	To understand this example, you should have the knowledge of following C++ programming topics:
 		C++ for Loop (https://www.programiz.com/cpp-programming/for-loop)
