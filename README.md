@@ -21,8 +21,8 @@ This folder contains examples on basic concepts of C++ programming like: loops, 
 |[013-Whether a Number is Prime](/01-Basic/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime/013-Whether%20a%20Number%20is%20Prime.cpp)|Example to check whether an integer (entered by the user) is a prime number or not using for loop and if...else statement.|
 |[014-Prime Numbers Between two Intervals](/01-Basic/014-Prime%20Numbers%20Between%20two%20Intervals/014-Prime%20Numbers%20Between%20two%20Intervals/014-Prime%20Numbers%20Between%20two%20Intervals.cpp)|Example to print all prime numbers between two numbers (entered by the user) in C++ Programming. This problem is solved using nested for loop and if...else statement.|
 |[015-All Factors of a Number](/01-Basic/015-All%20Factors%20of%20a%20Number/015-All%20Factors%20of%20a%20Number/015-All%20Factors%20of%20a%20Number.cpp)|Example to find all factors of an integer (entered by the user) using for loop and if statement.|
-|[]()||
-|[]()||
-|[]()||
+|[016-Check Leap Year](/01-Basic/016-Check%20Leap%20Year/016-Check%20Leap%20Year/016-Check%20Leap%20Year.cpp)|This program checks whether an year (integer) entered by the user is a leap year or not.|
+|[017-Find Factorial](/01-Basic/017-Find%20Factorial/017-Find%20Factorial/017-Find%20Factorial.cpp)|The factorial of a positive integer n is equal to 1*2*3*...n. You will learn to calculate the factorial of a number using for loop in this example.|
+|[018-Generate Multiplication Table](/01-Basic/018-Generate%20Multiplication%20Table/018-Generate%20Multiplication%20Table/018-Generate%20Multiplication%20Table.cpp)|Example to generate the multiplication table of a number (entered by the user) using for loop.|
 |[]()||
 |[]()||
