@@ -1,6 +1,10 @@
 // 012-Check Palindrome Number.cpp 
 
 /*
+	This program reverses an integer (entered by the user) using while loop. Then, if statement is used to check 
+	whether the reversed number is equal to the original number or not. 
+		https://www.programiz.com/cpp-programming/examples/palindrome-number
+	
 	To understand this example, you should have the knowledge of following C++ programming topics:
 
 		C++ while and do...while Loop (https://www.programiz.com/cpp-programming/do-while-loop)
