@@ -1,8 +1,9 @@
 // 014-Prime Numbers Between two Intervals.cpp
 
 /*
-		Example to check whether an integer (entered by the user) is a prime number or not
-		using for loop and if...else statement.
+		Example to print all prime numbers between two numbers (entered by the user) in C++ Programming. 
+		This problem is solved using nested for loop and if...else statement. 
+			https://www.programiz.com/cpp-programming/examples/prime-number-intervals
 
 		To understand this example, you should have the knowledge of following C++ programming topics:
 
