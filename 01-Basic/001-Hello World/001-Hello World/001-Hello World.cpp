@@ -11,7 +11,22 @@
 
 int main()
 {
-	std::cout << "Hello World!\n\n" << "\n";
+	std::cout << "Hello World!\n\n" << "\n\a\a";
+	/*
+		Here you have a list of the single character escape codes: 
+		Escape code		Description
+				\n		newline
+				\r		carriage return
+				\t		tab
+				\v		vertical tab
+				\b		backspace
+				\f		form feed (page feed)
+				\a		alert (beep)
+				\'		single quote (')
+				\"		double quote (")
+				\?		question mark (?)
+				\\		backslash (\)
+	*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
