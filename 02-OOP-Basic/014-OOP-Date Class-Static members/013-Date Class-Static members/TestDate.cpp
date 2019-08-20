@@ -2,6 +2,8 @@
 	Test Driver Program (TestDate.cpp) 
 	https://en.cppreference.com/w/cpp/language/static
 	https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp5_OOPExamples.html#zz-5.
+
+	https://www.learncpp.com/cpp-tutorial/811-static-member-variables/
 */
 #include <iostream>
 #include <stdexcept>
