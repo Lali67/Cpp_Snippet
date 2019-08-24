@@ -1,6 +1,8 @@
 // 006-Swap Numbers.cpp 
 /*
-	program uses temporary variable to swap numbers
+	This example contains two different techniques to swap numbers in C programming. 
+	The first program uses temporary variable to swap numbers, 
+	whereas the second program doesn't use temporary variables. 
 	https://www.programiz.com/cpp-programming/examples/swapping
 	Standard library:
 	https://www.programiz.com/cpp-programming/library-function
