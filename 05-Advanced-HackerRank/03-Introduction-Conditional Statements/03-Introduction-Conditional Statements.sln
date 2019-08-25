@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-Introduction-Conditional Statements", "03-Introduction-Conditional Statements\03-Introduction-Conditional Statements.vcxproj", "{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Debug|x64.ActiveCfg = Debug|x64
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Debug|x64.Build.0 = Debug|x64
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Debug|x86.ActiveCfg = Debug|Win32
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Debug|x86.Build.0 = Debug|Win32
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Release|x64.ActiveCfg = Release|x64
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Release|x64.Build.0 = Release|x64
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Release|x86.ActiveCfg = Release|Win32
+		{A30F2FA2-EBD1-49C9-91C2-7B7611EAA214}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC57A4EF-6B9B-4F88-AF00-D60F104469F3}
+	EndGlobalSection
+EndGlobal
