@@ -1,7 +1,7 @@
 /* 2019-W01-Exercise_1_4.cpp: 
 
 Exercise 1.4
-Lesen Sie einen Radius r und einen Winkel a ein und berechnen Sie die Fläche des durch r und a definierten Kreissektors.
+Lesen Sie einen Radius r und einen Winkel a ein und berechnen Sie die Flaeche des durch r und a definierten Kreissektors.
 
 Dániel Szõke (11913915)
 12.10.2019
@@ -18,14 +18,14 @@ const double PI = 3.14159265;
 int main()
 {
 	double r, a;
-	cout << "Dieses Programm berechnet die Fläche eines Kreissektors\n";
+	cout << "Dieses Programm berechnet die Flaeche eines Kreissektors\n";
 	cout << "Radius: ";	cin >> r;
 	cout << "Winkel (degrees): ";	cin >> a;
 	
-	double Fläche = (r * r* PI*a)/360;
+	double Flaeche = (r * r* PI*a)/360;
 	
 
-	cout << "Fläche: " << Fläche <<endl;
+	cout << "Flaeche: " << Flaeche <<endl;
 	return 0;
 }
 

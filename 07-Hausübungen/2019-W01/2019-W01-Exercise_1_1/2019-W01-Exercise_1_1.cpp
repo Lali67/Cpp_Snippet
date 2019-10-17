@@ -16,15 +16,15 @@ using namespace std;
 
 int main()
 {
-	double Länge, Breite;
-	cout << "Dieses Programm berechnet den Umfang und die Fläche eines Rechtecks\n";
-	cout << "Länge: ";	cin >> Länge;
+	double Laenge, Breite;
+	cout << "Dieses Programm berechnet den Umfang und die Flaeche eines Rechtecks\n";
+	cout << "Laenge: ";	cin >> Laenge;
 	cout << "Breite: ";	cin >> Breite;
 
-	double Umfang = 2 * (Länge + Breite);
-	double Fläche = Länge * Breite;
+	double Umfang = 2 * (Laenge + Breite);
+	double Flaeche = Laenge * Breite;
 
-	cout << "Umfang: " << Umfang << "\nFläche: " << Fläche <<endl;
+	cout << "Umfang: " << Umfang << "\nFlaeche: " << Flaeche <<endl;
 	return 0;
 }
 
