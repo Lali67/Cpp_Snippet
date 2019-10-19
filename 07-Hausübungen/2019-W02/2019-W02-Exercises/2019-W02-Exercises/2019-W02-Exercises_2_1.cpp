@@ -9,21 +9,24 @@ Dániel Szöke (11913915)
 
 #include <iostream>
 #include <cmath>
-#include <assert.h> 
+#include <exception> 
 
 using namespace std;
 
 int countDigit(long long m, const int n)
 {
 	//1. Check input parameters
-	assert(n > 0);				// n must be positive
-	assert(m>=pow(10,n-1));		//check whether m>=10^(n-1)
+	if(n < 1) 
+		throw("n must be greater than 0");				 
+	if(m<=pow(10,n-1))
+		throw("check whether number of digits of m <= n");		
 
 	//2. Run subprogram
 	int count = 0, digit = -1;
 	while ((m != 0) && (count!=n) ) {
-		digit = m - (m / 10) * 10;	//Z.B:  7 = 187-(187/10)*10 = 187-(18)*10=187-180 
-		m = m / 10;					//Z.B: 18 = 187/10
+		//digit = m - (m / 10) * 10;	//Z.B:  7 = 187-(187/10)*10 = 187-(18)*10=187-180 
+		digit = m % 10;					//Z.B:  7 = 187 % 10
+		m = m / 10;						//Z.B: 18 = 187/10
 		++count;
 	}
 	return digit;
