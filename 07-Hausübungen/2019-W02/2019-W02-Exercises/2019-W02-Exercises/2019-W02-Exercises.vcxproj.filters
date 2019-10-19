@@ -18,8 +18,5 @@
     <ClCompile Include="2019-W02-Exercises_2_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="2019-W02-Exercises_2_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
