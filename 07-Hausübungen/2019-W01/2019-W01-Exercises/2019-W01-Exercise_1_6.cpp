@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 	double n, Summe;
-	cout << "Dieses Programm berechnet die Summe aller natürlichen Zahlen bis n.\n";
+	cout << "Dieses Programm berechnet die Summe aller natuerlichen Zahlen bis n.\n";
 	cout << "n: ";	cin >> n;
 	Summe = n*(n+1)/2;
 	cout << "Summe: "<<Summe<<endl;

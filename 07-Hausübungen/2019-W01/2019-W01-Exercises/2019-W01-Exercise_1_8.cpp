@@ -20,7 +20,7 @@ const float DISTANZ = 4.36; // Lichtjahr
 int main()
 {
 	float x;
-	cout << "Dieses Programm berechnet die Länge der Reise zum Alpha Centauri mit x Prozent der Lichtgeschwindigkeit.\n";
+	cout << "Dieses Programm berechnet die Laenge der Reise zum Alpha Centauri mit x Prozent der Lichtgeschwindigkeit.\n";
 	cout << "Prozentsatz(0-100): ";	cin >> x;
 	float Result = DISTANZ / (x / 100);
 	cout << Result << " Jahr(en) ist/sind auf der Erde vergangen." << endl;
