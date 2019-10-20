@@ -23,7 +23,7 @@ int main()
 	cout << "Get the number (n) : "; cin >> x;
 	cout << endl;
 	
-	if(x == floor(abs(x))) // no reminder
+	if(abs(x) == floor(abs(x))) // no reminder
 		cout << "Integer value is given: " << x<< endl;
 	else
 		cout << "Integer value is NOT given: " << x << endl;
