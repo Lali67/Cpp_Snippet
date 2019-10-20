@@ -9,14 +9,13 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
 // returns value of poly[0]x(n-1) + poly[1]x(n-2) + .. + poly[n-1]
 double horner(double *poly, double x, int n=2)
 {
-	int result = poly[0];  // Initialize result
+	double result = poly[0];  // Initialize result
 
 	// Evaluate value of polynomial using Horner's method
 	for (int i = 0; i < n; i++) {
