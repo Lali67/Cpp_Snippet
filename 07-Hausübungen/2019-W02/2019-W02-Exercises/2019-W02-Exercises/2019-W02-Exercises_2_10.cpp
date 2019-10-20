@@ -12,7 +12,6 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-#include <cstdlib>
 
 using namespace std;
 

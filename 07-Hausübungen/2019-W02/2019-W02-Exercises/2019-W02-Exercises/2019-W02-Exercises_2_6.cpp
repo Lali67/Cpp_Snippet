@@ -9,7 +9,6 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 

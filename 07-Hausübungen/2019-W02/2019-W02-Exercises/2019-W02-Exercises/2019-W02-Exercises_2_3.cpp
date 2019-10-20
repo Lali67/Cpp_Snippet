@@ -10,7 +10,6 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-#include <assert.h> 
 
 using namespace std;
 
