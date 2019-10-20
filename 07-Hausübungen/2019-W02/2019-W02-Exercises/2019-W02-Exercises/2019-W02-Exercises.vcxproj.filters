@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2019-W02-Exercises_2_11.cpp">
+    <ClCompile Include="2019-W02-Exercises_2_12.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
