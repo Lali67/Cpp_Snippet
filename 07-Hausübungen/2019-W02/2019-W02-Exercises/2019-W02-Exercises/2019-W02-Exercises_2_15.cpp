@@ -20,12 +20,12 @@ int main()
 {
 	int n=1, ordered_beer=0;
 	// Get data
-	cout << "This program...\n";
-	cout << "Give n: "; cin >> n;
-	cout << "Geben Sie eine Bestellmenge: "; cin >> ordered_beer;
+	cout << "Dieses Programm berechnet die Anzahl der benoetigten Faesser.\n";
+	cout << "n: "; cin >> n;
+	cout << "Geben Sie hier die Bestellmenge ein: "; cin >> ordered_beer;
 
-	cout << "You will get " << ordered_beer / n + (int)(double((ordered_beer % n)) / double(n) + 3 * (1.0 / 3.0));
-	cout << " beer barrel.\n\n";
+	cout << "Sie bekommen " << ordered_beer / n + (int)(double((ordered_beer % n)) / double(n) + 3 * (1.0 / 3.0));
+	cout << " Faesser.\n\n";
 
 	return 0;
 }
