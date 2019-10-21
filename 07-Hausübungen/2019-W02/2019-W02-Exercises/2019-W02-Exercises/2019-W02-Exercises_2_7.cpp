@@ -26,18 +26,18 @@ int main()
 	// Dollar cents: 1, 5, 10, 25, 50
 	
 	// Get from the data to decide the type of exchanging money
-	cout << "Get exchange type (0)-EUR_USD (1)-USD_EUR : "; cin >> exchange_type;
+	cout << "Umrechnungstyp (0)-EUR_USD (1)-USD_EUR : "; cin >> exchange_type;
 	if (exchange_type == 0) {
-		cout << "Get Euros : "; cin >> value;
+		cout << "Euro : "; cin >> value;
 		USD = value / EUR_USD_KURS;
 		cent = round((value / EUR_USD_KURS - USD) * 100);
-		cout << "Result : " << USD << " dollar(s) " << cent << " cent(s)" << endl;
+		cout << "Ergebnis : " << USD << " dollar(s) " << cent << " cent(s)" << endl;
 	}
 	else {
-		cout << "Get Dollars : "; cin >> value;
+		cout << "Dollar : "; cin >> value;
 		EUR = value / USD_EUR_KURS;
 		cent = round((value / USD_EUR_KURS - EUR) * 100);
-		cout << "Result : " << EUR << " euro(s) " << cent << " cent(s)" << endl;
+		cout << "Ergebnis : " << EUR << " euro(s) " << cent << " cent(s)" << endl;
 	}
 
 }

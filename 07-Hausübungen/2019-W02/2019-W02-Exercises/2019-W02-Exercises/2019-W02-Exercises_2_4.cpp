@@ -29,7 +29,8 @@ Dániel Szöke (11913915)
 using namespace std;
 
 void solution1() {
-	float Arbeiter, Stueck, ArbeiterFrage;
+	double Arbeiter, Stueck, ArbeiterFrage;
+	cout << "Geben Sie die drei Zahlen hier ein: \n";
 	cin >> Arbeiter >> Stueck >> ArbeiterFrage;
 	// Arbeiter=10(m) Stueck=5(x) ArbeiterFrage=2(n) -> 1
 	cout << Stueck / Arbeiter * ArbeiterFrage;
@@ -37,9 +38,10 @@ void solution1() {
 
 void solution2() {
 	int Arbeiter, Stueck, ArbeiterFrage;
+	cout << "Geben Sie die drei Zahlen hier ein: \n";
 	cin >> Arbeiter >> Stueck >> ArbeiterFrage;
 	// Arbeiter=10(m) Stueck=5(x) ArbeiterFrage=2(n) -> 1
-	cout << float(Stueck) / float(Arbeiter) * float(ArbeiterFrage); // cast the expression to float
+	cout << double(Stueck) / double(Arbeiter) * double(ArbeiterFrage); // cast the expression to double
 }
 
 int main()

@@ -34,8 +34,8 @@ int main()
 
 	// Get from the data from user to function
 	double x1, x2, y1, y2, z1, z2;
-	cout << "Dieses Programm berechnet...\n";
-	cout << "Give X1 coordinates: "; cin >> x1 >> y1 >>z1;
-	cout << "Give X2 coordinates: "; cin >> x2 >> y2 >> z2;
-	cout << "Result      : " << distance2Points(x1, y1, z1, x2, y2, z2 ) << endl;
+	cout << "Dieses Programm berechnet den Abstand der Punkte voneinander.\n";
+	cout << "Geben Sie hier die Koordinaten von X1 ein: "; cin >> x1 >> y1 >>z1;
+	cout << "Geben Sie hier die Koordinaten von X2 ein: "; cin >> x2 >> y2 >> z2;
+	cout << "Ergebnis      : " << distance2Points(x1, y1, z1, x2, y2, z2 ) << endl;
 }

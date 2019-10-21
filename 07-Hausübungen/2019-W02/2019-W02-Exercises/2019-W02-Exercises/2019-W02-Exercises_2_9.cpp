@@ -26,9 +26,9 @@ int main()
 	int trials = 0; long bet = 0, loss = 0, prize=0;
 
 	// Get data
-	cout << "This game..." << endl;
-	cout << "Get the number of trials : "; cin >> trials;
-	cout << "Get the amount of fix bet: "; cin >> bet;
+	cout << "Dieses Programm berechnet den Gewinn und den Verlust." << endl;
+	cout << "Nummer der Versuche : "; cin >> trials;
+	cout << "Geld in Spiel: "; cin >> bet;
 	cout << endl;
 
 	while (trials > 0) {
@@ -42,7 +42,7 @@ int main()
 		--trials;
 	};
 	
-	cout << "Total Prize: " << prize << "  Total Loss: " << loss << endl;
+	cout << "Gewinn: " << prize << " Verlust: " << loss << endl;
 
 	return 0;
 }

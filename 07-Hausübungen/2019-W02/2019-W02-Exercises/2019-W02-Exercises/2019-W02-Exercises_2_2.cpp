@@ -10,14 +10,15 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-#include <assert.h> 
+#include <exception> 
 
 using namespace std;
 
 string IsDivideby3(int m)
 {
 	//1. Check input parameters
-	assert(-1000 < m && m < 1000); // m ist eine dreistellige Zahl
+	if (-999 > m || m > 999)
+		throw("m muss dreistellig sein"); // m ist eine dreistellige Zahl
 
 	//2. Run subprogram
 	int count = 0, digit = 0, sum_digits = 0;
@@ -30,7 +31,7 @@ string IsDivideby3(int m)
 		sum_digits += digit;
 	}
 	string result = "";
-	if (sum_digits % 3 != 0) result = "False"; else result = "True";
+	if (sum_digits % 3 != 0) result = "m is durch 3 nicht teilbar"; else result = "m ist durch 3 teilbar";
 
 	return result;
 }
@@ -45,7 +46,7 @@ int main()
 
 	// Get from the data from user to function
 	int m, n;
-	cout << "Dieses Programm berechnet...\n";
-	cout << "Give m value: "; cin >> m;
-	cout << "Result      : " << IsDivideby3(m) << endl;
+	cout << "Dieses Programm ueberprueft, ob m durch 3 teilbar ist.\n";
+	cout << "Geben Sie hier m ein: "; cin >> m;
+	cout << "Ergebnis: " << IsDivideby3(m) << endl;
 }

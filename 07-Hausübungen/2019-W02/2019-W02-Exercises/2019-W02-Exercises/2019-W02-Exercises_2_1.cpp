@@ -17,9 +17,9 @@ int countDigit(long long m, const int n)
 {
 	//1. Check input parameters
 	if(n < 1) 
-		throw("n must be greater than 0");				 
+		throw("n muss groesser sein als 0");				 
 	if(m<=pow(10,n-1))
-		throw("check whether number of digits of m <= n");		
+		throw("checken ob die Nummer der Ziffern von m <= n");		
 
 	//2. Run subprogram
 	int count = 0, digit = -1;
@@ -42,8 +42,8 @@ int main()
 
 	// Get from the data from user to function
 	long long m; int n;
-	cout << "Dieses Programm berechnet...\n";
-	cout << "Kérem m értékét: "; cin >> m;
-	cout << "Kérem n értékét: "; cin >> n;
-	cout << "Eredmény: " << countDigit(m, n) << endl;
+	cout << "Dieses Programm gibt die n-te Ziffer der Zahl m aus.\n";
+	cout << "Bitte geben Sie hier m ein: "; cin >> m;
+	cout << "Bitte geben Sie hier n ein: "; cin >> n;
+	cout << "Ergebnis: " << countDigit(m, n) << endl;
 }

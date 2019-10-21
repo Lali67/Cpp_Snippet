@@ -10,13 +10,15 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
+#include <exception> 
 
 using namespace std;
 
 int ReverseNumber(int m)
 {
 	//1. Check input parameters
-	assert( -1000 < m && m < 1000); // m ist eine dreistellige Zahl
+	if (-999 > m || m > 999)
+		throw("m muss dreistellig sein"); // m ist eine dreistellige Zahl
 	
 
 	//2. Run subprogram
@@ -41,7 +43,7 @@ int main()
 
 	// Get from the data from user to function
 	int m, n;
-	cout << "Dieses Programm berechnet...\n";
-	cout << "Give m value: "; cin >> m;
-	cout << "Result      : " << ReverseNumber(m) << endl;
+	cout << "Dieses Programm gibt die Umkehrung von m aus.\n";
+	cout << "Geben Sie m ein: "; cin >> m;
+	cout << "Ergebnis      : " << ReverseNumber(m) << endl;
 }
