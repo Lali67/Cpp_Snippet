@@ -19,8 +19,8 @@ int main()
 	int x, y;
 
 	// Get data
-	cout << "This game..." << endl;
-	cout << "Get two integer number : "; cin >> x >> y;
+	cout << "Teiler oder nicht?" << endl;
+	cout << "Geben Sie hier zwei Integers ein: "; cin >> x >> y;
 	cout << endl;
 	
 	if(x % y == 0) // no reminder

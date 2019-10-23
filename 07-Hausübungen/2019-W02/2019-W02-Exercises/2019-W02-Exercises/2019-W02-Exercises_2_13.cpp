@@ -18,10 +18,10 @@ int main()
 	double x;
 
 	// Get data
-	cout << "This game..." << endl;
-	cout << "Get number : "; cin >> x;
+	cout << "Dieses Programm rundet eine positive Zahl x kaufmaennisch korrekt." << endl;
+	cout << "x : "; cin >> x;
 	cout << endl;
-	cout << "Result (rounded): " <<(int)(x+0.5) << endl;
+	cout << "Ergebnis (gerundet): " <<(int)(x+0.5) << endl;
 	
 	return 0;
 }

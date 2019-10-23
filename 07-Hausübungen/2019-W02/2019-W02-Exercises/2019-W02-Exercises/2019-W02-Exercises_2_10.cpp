@@ -20,15 +20,15 @@ int main()
 	int n = 0; long amount_beer = 0;
 
 	// Get data
-	cout << "This game..." << endl;
-	cout << "Get the volume of beer barrel (n) : "; cin >> n;
-	cout << "Get the amount of beer (liter): "; cin >> amount_beer;
+	cout << "Dieses Programm berechnet die Anzahl der benoetigten Faesser" << endl;
+	cout << "Kapazitaet der Faesser (n) : "; cin >> n;
+	cout << "Biermenge (liter): "; cin >> amount_beer;
 	cout << endl;
 	
 	if(amount_beer % n == 0) // no reminder
-		cout << "Total Number of barrel: " << amount_beer / n << endl;
+		cout << "Anzahl Faesser: " << amount_beer / n << endl;
 	else
-		cout << "Total Number of barrel: " << amount_beer / n + 1 << endl;
+		cout << "Anzahl Faesser: " << amount_beer / n + 1 << endl;
 
 	return 0;
 }

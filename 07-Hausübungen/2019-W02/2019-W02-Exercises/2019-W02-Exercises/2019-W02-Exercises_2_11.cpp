@@ -19,14 +19,14 @@ int main()
 	double x = 0;
 
 	// Get data
-	cout << "This game..." << endl;
-	cout << "Get the number (n) : "; cin >> x;
+	cout << "Ganze Zahl oder nicht (Integer oder nicht)?" << endl;
+	cout << "Geben Sie hier die Nummer ein (n) : "; cin >> x;
 	cout << endl;
 	
 	if(abs(x) == floor(abs(x))) // no reminder
-		cout << "Integer value is given: " << x<< endl;
+		cout << "Eine ganze Zahl"<< endl;
 	else
-		cout << "Integer value is NOT given: " << x << endl;
+		cout << "Keine ganze Zahl"<< endl;
 
 	return 0;
 }
