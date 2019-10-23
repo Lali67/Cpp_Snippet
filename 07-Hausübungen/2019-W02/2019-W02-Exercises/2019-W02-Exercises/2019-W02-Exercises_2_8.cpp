@@ -30,24 +30,24 @@ int main()
 	cout << "(1): Year, day, hour, min. sec -> SEC \n "; cin >> calc_type;
 
 	if (calc_type == 0) {
-		cout << "Get Seconds : "; cin >> sec;
-		cout << "Result: " << sec / YEAR_TO_SEC <<" year(s) ";
-		cout << (sec % YEAR_TO_SEC ) / DAY_TO_SEC << " day(s) ";
-		cout << ((sec % YEAR_TO_SEC) % DAY_TO_SEC) / HOUR_TO_SEC << " hour(s) ";
-		cout << (((sec % YEAR_TO_SEC) % DAY_TO_SEC) % HOUR_TO_SEC) / MIN_TO_SEC << " min(s) ";
-		cout << (((sec % YEAR_TO_SEC) % DAY_TO_SEC) % HOUR_TO_SEC) % MIN_TO_SEC << " sec(s) " << endl;
+		cout << "Sekunden : "; cin >> sec;
+		cout << "Ergebnis: " << sec / YEAR_TO_SEC <<" Jahre ";
+		cout << (sec % YEAR_TO_SEC ) / DAY_TO_SEC << " Tage ";
+		cout << ((sec % YEAR_TO_SEC) % DAY_TO_SEC) / HOUR_TO_SEC << " Stunden ";
+		cout << (((sec % YEAR_TO_SEC) % DAY_TO_SEC) % HOUR_TO_SEC) / MIN_TO_SEC << " Minuten ";
+		cout << (((sec % YEAR_TO_SEC) % DAY_TO_SEC) % HOUR_TO_SEC) % MIN_TO_SEC << " Sekunden " << endl;
 	}
 	else {
 		long long values[5] = {0,0,0,0,0};
-		cout << "Get Years   : "; cin >> values[0];
-		cout << "Get Days    : "; cin >> values[1];
-		cout << "Get Hours   : "; cin >> values[2];
-		cout << "Get Minutes : "; cin >> values[3];
-		cout << "Get Seconds : "; cin >> values[4];
-		cout << "Result:       ";
+		cout << "Jahre   : "; cin >> values[0];
+		cout << "Tage    : "; cin >> values[1];
+		cout << "Stunden   : "; cin >> values[2];
+		cout << "Minuten : "; cin >> values[3];
+		cout << "Sekunden : "; cin >> values[4];
+		cout << "Ergebnis:       ";
 		cout << values[0] * YEAR_TO_SEC + values[1] * DAY_TO_SEC + values[2] * HOUR_TO_SEC
 			+ values[3] * MIN_TO_SEC + values[4];
-		cout << " sec(s)" <<endl;
+		cout << " Sekunden:" <<endl;
 	}
 
 	return 0;

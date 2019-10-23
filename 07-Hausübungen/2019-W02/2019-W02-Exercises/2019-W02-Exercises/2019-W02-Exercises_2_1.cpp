@@ -19,7 +19,7 @@ int countDigit(long long m, const int n)
 	if(n < 1) 
 		throw("n muss groesser sein als 0");				 
 	if(m<=pow(10,n-1))
-		throw("checken ob die Nummer von den Ziffern von m <= n");		
+		throw("checken ob die Nummer der Ziffern von m <= n");		
 
 	//2. Run subprogram
 	int count = 0, digit = -1;
