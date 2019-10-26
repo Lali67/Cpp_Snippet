@@ -1,7 +1,8 @@
 /* 2019-W02-Exercise_3_2.cpp :
 
 Exercise 3.2
-Schreiben Sie ein Programm, das eine vierstellige ganze Zahl einliest und ihre sprachliche Repräsentation ausgibt.
+Schreiben Sie ein Programm, das eine vierstellige ganze Zahl einliest und 
+ihre sprachliche Repräsentation ausgibt.
 Z.B.
 Eingabe 1723
 Ausgabe eins-sieben-zwei-drei
