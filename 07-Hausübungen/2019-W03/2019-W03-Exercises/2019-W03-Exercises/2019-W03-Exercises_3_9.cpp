@@ -1,9 +1,8 @@
-/* 2019-W02-Exercise_3_8.cpp :
+/* 2019-W02-Exercise_3_9.cpp :
 
-Bestimmen Sie den Wert
-sum(i=1,n){i^i}
-(also 1^1+2^2+3^3+…+n^n für eine beliebige natürliche Zahl n).
-Die Verwendung von mathematischen Funktionen (wie z.B. pow aus cmath) ist nicht erlaubt.
+Exercise 3.9
+Lesen Sie beliebig viele Zahlen (Abschluss mit EOF) ein, und geben Sie das Maximum, 
+das Minimum und den Mittelwert der eingegebenen Werte aus.
 
 Dániel Szöke (11913915)
 26.10.2019

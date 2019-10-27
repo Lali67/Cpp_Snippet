@@ -50,4 +50,5 @@ int main()
 	int a;
 	cout << "This program...\n";
 	cout << "Bitte geben Sie hier a ein (a>999 und a<10000): "; cin >> a;
+	cout << "Resultat: " << toWords(a);
 }
