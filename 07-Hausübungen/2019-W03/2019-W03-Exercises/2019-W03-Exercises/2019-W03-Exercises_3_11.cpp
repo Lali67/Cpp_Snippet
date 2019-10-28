@@ -45,8 +45,8 @@ int main()
 	
 	// Get from the data from user to function
 	unsigned long n;
-	cout << "This program...\n";
-	cout << "Bitte geben Sie hier ein ...: "; cin >> n;
+	cout << "Dieses Programm gibt den groessten Zweierpotenzteiler der eingegebenen Zahl aus.\n";
+	cout << "Bitte geben Sie hier die Zahl ein: "; cin >> n;
 	cout << "Resultat: " << SimpleCalculator2(n) << endl;
 	
 	return 0;

@@ -30,13 +30,13 @@ string toWords(string realString)
 	int digit{0};
 
 	if (!IsEnabledChar(EnabledFirstCharList, realString[0]))
-		throw("The number must be a regular real number");
+		throw("Die Nummer muss eine regulare reelle Nummer sein");
 	else
 		digitsToWords = digitWord[string(EnabledFirstCharList).find(realString[0])] + "-";
 	
 	for (int i = 1; i < realString.length(); i++) {
 		if (!IsEnabledChar(EnabledOtherCharList, realString[i]))
-			throw("The number must be a regular real number");
+			throw("Die Nummer muss eine regulare reelle Nummer sein");
 		else {		
 			if (i != realString.length() - 1)
 				digitsToWords = digitsToWords + 
@@ -62,7 +62,7 @@ int main()
 
 	// Get from the data from user to function
 	string realString;
-	cout << "This program...\n";
-	cout << "Bitte geben Sie hier reelle Zahlen ein: "; cin >> realString;
+	cout << "Dieses Programm gibt die sprachliche Repraesentation einer reellen Zahl aus.\n";
+	cout << "Bitte geben Sie hier eine reelle Zahl ein: "; cin >> realString;
 	cout << "Resultat: " << toWords(realString) << endl;
 }

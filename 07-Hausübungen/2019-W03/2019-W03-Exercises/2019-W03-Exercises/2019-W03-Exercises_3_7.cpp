@@ -22,11 +22,11 @@ int main()
 {
 	long n{ 0 };
 
-	cout << "This program...\n";
-	cout << "Enter the starter (positive integer) value: ";	cin >> n;
+	cout << "Dieses Programm ueberprueft, ob die vorgegebenen Folgen immer 1 erreichen.\n";
+	cout << "Geben Sie den ersten (positive integer) Wert ein: ";	cin >> n;
 	//Check n
 	if (n < 1)
-		throw("n must be positive");
+		throw("n muss positiv sein");
 
 
 	while (n > 1) {

@@ -31,7 +31,7 @@ void printSorted_3Double(double a, double b, double c)
 	double get_mid = (a + b + c)
 		- (get_max + get_min);
 
-	cout << "Sortiere elemente: " << get_min << " " << get_mid
+	cout << "Sortierte Elemente: " << get_min << " " << get_mid
 		<< " " << get_max << endl;
 }
 
@@ -45,7 +45,7 @@ int main()
 
 	// Get from the data from user to function
 	double a, b, c;
-	cout << "Dieses Programm gibt die Sortieren 3 eingelesene double Zahlen ohne Verwendung von logischen Operatoren.\n";
-	cout << "Bitte geben Sie hier a,b,c ein: "; cin >> a >> b >> c;
+	cout << "Dieses Programm sortiert 3 eingelesene double Zahlen.\n";
+	cout << "Bitte geben Sie hier die Zahlen ein: "; cin >> a >> b >> c;
 	printSorted_3Double(a, b, c);
 }

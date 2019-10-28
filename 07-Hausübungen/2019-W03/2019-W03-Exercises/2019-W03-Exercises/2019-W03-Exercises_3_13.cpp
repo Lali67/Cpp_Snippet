@@ -32,7 +32,7 @@ bool IsFastPerfectNumber(unsigned long n) {
 int main()
 {
 	unsigned long n{1};
-	cout << "This program...\n";
+	cout << "Dieses Programm ermittelt alle fast perfekten Zahlen im Bereich 0 bis 10^7.\n";
 	while (n < 1e+7) {
 		if (IsFastPerfectNumber(n)) cout << n << " ";
 		n++;

@@ -21,17 +21,17 @@ int main()
 {
 	long n{ 0 }, result{ 0 };
 
-	cout << "This program...\n";
-	cout << "Enter the  (positive integer) value: ";	cin >> n;
+	cout << "Dieses Programm berechnet: sum(i=1,n){i^i} fuer eine beliebige n. (n ist eine natuerliche Zahl)\n";
+	cout << "Geben Sie hier den (positive integer) Wert ein: ";	cin >> n;
 	//Check n
 	if (n < 1)
-		throw("n must be positive");
+		throw("n muss positiv sein");
 
 
 	for (long i = 1; i <= n; i++) {
 		result = result + i * i;
 	}
-	cout << "Result : " << result;
+	cout << "Resultat : " << result;
 	cout << endl;
 	
 

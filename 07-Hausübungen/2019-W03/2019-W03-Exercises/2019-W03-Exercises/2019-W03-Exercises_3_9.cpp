@@ -21,8 +21,8 @@ int main()
 	double maximum{ 0.0 }, minimum{ 0.0 }, middle{ 0 }, value{ 0.0 };
 	long counter{ 0 };
 
-	cout << "This program...\n";
-	cout << "Enter the number(s): \n";
+	cout << "Dieses Programm berechnet das Maximum, das Minimum und den Mittelwert.\n";
+	cout << "Geben Sie hier die Nummern ein: \n";
 
 	//On a Unix - based machine, signal EOF by typing Ctrl + D and Enter.
 	//On a Windows machine, signal EOF by typing Ctrl + Z and Enter.
@@ -39,7 +39,7 @@ int main()
 	}
 	
 	if (counter == 0)
-		throw("You should enter a number at least");
+		throw("Du musst mindestens eine Nummer eintippen");
 	else {
 		middle = middle / counter;
 		cout << endl;

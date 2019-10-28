@@ -26,7 +26,7 @@ string toWords(int a)
 	int digit{0};
 
 	if (a < 1000 || a > 9999)
-		throw("The number must be between 1000 und 9999");
+		throw("Die Nummer muss zwischen 1000 und 9999 sein");
 
 	while (a != 0) {
 		digit = a % 10;
@@ -48,7 +48,7 @@ int main()
 
 	// Get from the data from user to function
 	int a;
-	cout << "This program...\n";
-	cout << "Bitte geben Sie hier a ein (a>999 und a<10000): "; cin >> a;
+	cout << "Dieses Programm gibt die sprachliche Repraesentation einer vierstelligen Zahl.\n";
+	cout << "Bitte geben Sie hier a ein (a>999 und a<10000, a ist vierstellig): "; cin >> a;
 	cout << "Resultat: " << toWords(a);
 }

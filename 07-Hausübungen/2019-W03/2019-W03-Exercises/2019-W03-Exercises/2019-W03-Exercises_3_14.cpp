@@ -37,9 +37,9 @@ int main()
 {
 	unsigned long n{1};
 
-	cout << "This program...\n";
-	cout << "Get an integer number (n>0): "; cin >> n;
-	cout << "Result :" << CountInversion(n) << endl;
+	cout << "Dieses Programm gibt die Anzahl der Inversionen in der eingegebenen Zahl aus.\n";
+	cout << "Geben Sie hier einen Integer-Wert ein (n, n>0): "; cin >> n;
+	cout << "Resultat :" << CountInversion(n) << endl;
 
 	return 0;
 }

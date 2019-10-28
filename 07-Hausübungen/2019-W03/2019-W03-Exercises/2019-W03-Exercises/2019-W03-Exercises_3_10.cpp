@@ -37,7 +37,7 @@ double SimpleCalculator(string mathExpression) {
 	char operatorSign{ '_' };
 
 	if (!IsEnabledChar(EnabledFirstCharList, mathExpression[0]))
-		throw("The expression is not valid");
+		throw("Der Ausdruck ist nicht gueltig.");
 
 	//--- Create first number reading digits from mathExpression
 	while (counter < mathExpression.length() &&
@@ -50,7 +50,7 @@ double SimpleCalculator(string mathExpression) {
 	while(counter < mathExpression.length()) {
 		//--- Check char[counter] whether is valid
 		if (!IsEnabledChar(EnabledCharList, mathExpression[counter]))
-			throw("The expression contains irregular character");
+			throw("Der Ausdruck enthaelt einen irregularen Charakter.");
 		
 		//Read operator type (+,-,/,*) or end of operation (!)
 		operatorSign = mathExpression[counter++];
@@ -82,7 +82,7 @@ double SimpleCalculator(string mathExpression) {
 				break;
 			default:
 				//--- If the operator is other than +, -, *, / or !, error message is shown
-				throw("Error! expression is not correct");
+				throw("Fehler! Ausdruck ist nicht korrekt");
 		} //end switch
 
 	}//end while
@@ -103,8 +103,8 @@ int main()
 	
 	// Get from the data from user to function
 	string realString;
-	cout << "This program...\n";
-	cout << "Bitte geben Sie hier ein mathematischer Ausdruck ein: "; cin >> realString;
+	cout << "\n";
+	cout << "Bitte geben Sie hier einen mathematischen Ausdruck ein: "; cin >> realString;
 	cout << "Resultat: " << SimpleCalculator(realString) << endl;
 	
 	return 0;

@@ -55,8 +55,8 @@ int main()
 	
 	// Get from the data from user to function
 	unsigned long n;
-	cout << "This program...\n";
-	cout << "Bitte geben Sie hier ein ...: "; cin >> n;
+	cout << "Ist die Zahl defizient, perfekt oder abundant?\n";
+	cout << "Bitte geben Sie hier die Zahl ein: "; cin >> n;
 	cout << "Resultat: " << IsPerfectNumber(n) << endl;
 	
 	return 0;

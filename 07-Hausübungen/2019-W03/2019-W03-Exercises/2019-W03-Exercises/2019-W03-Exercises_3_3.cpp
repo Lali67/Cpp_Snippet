@@ -35,19 +35,19 @@ void printRoots(double a, double b, double c) {
 	if (Discriminant > 0) {
 		x1 = (-b + sqrt(Discriminant)) / (2 * a);
 		x2 = (-b - sqrt(Discriminant)) / (2 * a);
-		cout << " Roots are real and different." << endl;
+		cout << " Wurzeln sind real und unterschiedlich." << endl;
 		cout << "  x1 = " << x1 << endl;
 		cout << "  x2 = " << x2 << endl;
 	}
 	else if (Discriminant == 0) {
-		cout << " Roots are real and same." << endl;
+		cout << " Wurzeln sind real und gleich." << endl;
 		x1 = (-b + sqrt(Discriminant)) / (2 * a);
 		cout << "  x1 = x2 =" << x1 << endl;
 	}
 	else {
 		realPart = -b / (2 * a);
 		imaginaryPart = sqrt(-Discriminant) / (2 * a);
-		cout << " Roots are complex and different." << endl;
+		cout << " Wurzeln sind komplex und unterschiedlich." << endl;
 		cout << "  x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
 		cout << "  x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
 	}
@@ -70,7 +70,7 @@ int main()
 
 	// Get from the data from user to function
 	double a, b, c;
-	cout << "This program...\n";
+	cout << "Dieses Programm dient zur Loesung der quadratischen Gleichung x^2+px+q=0\n";
 	cout << "Bitte geben Sie hier a, b, c ein "; cin >> a >> b >> c;
 	printRoots(a, b, c);
 }

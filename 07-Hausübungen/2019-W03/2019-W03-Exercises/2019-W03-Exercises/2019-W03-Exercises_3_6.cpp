@@ -22,12 +22,12 @@ int main()
 	double lower_limit{ 0.0 }, upper_limit{ 0.0 }, value{0.0};
 	long below_range{ 0 }, in_range{ 0 }, over_range{ 0 };
 
-	cout << "This program...\n";
-	cout << "Enter the lower and upper limit: ";	cin >> lower_limit >> upper_limit;
+	cout << "Dieses Programm gibt aus, wie viele Zahlen sich im Intervall befinden.\n";
+	cout << "Geben Sie hier die untere Grenze, danach die obere Grenze ein: ";	cin >> lower_limit >> upper_limit;
 	//Check limits
-	cout << "Enter the number(s): \n";
+	cout << "Geben Sie die Nummern ein(s): \n";
 	if (lower_limit > upper_limit)
-		throw("upper_limit must be smaller than lower_limit");
+		throw("Obere Grenze muss hoeher sein als die untere Grenze.");
 
 	//On a Unix - based machine, signal EOF by typing Ctrl + D and Enter.
 	//On a Windows machine, signal EOF by typing Ctrl + Z and Enter.

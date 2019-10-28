@@ -53,11 +53,11 @@ void calculateModulo(long n, int type = 0){
 int main()
 {
 	long n{ 1 };
-	cout << "This program...\n";
-	cout << "Enter a positive integer (n>1): ";	cin >> n;
+	cout << "Dieses Programm erstellt eine Additions- und eine Multiplikationstabelle modulo n.\n";
+	cout << "Geben Sie hier einen positiven Integer-Wert ein (n>1): ";	cin >> n;
 	//Check n value
 	if (n < 1)
-		throw("n must be a positive integer (n>1)");
+		throw("n muss ein positiver Integer sein (n>1)");
 	
 	calculateModulo(n, 0);
 	calculateModulo(n, 1);
