@@ -16,7 +16,7 @@ Dániel Szöke (11913915)
 */
 
 #include <iostream>
-//#include <cmath>
+#include <cmath>
 //#include <exception> 
 
 using namespace std;
