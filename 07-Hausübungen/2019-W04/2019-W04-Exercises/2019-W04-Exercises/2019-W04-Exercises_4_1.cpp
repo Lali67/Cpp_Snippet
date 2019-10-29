@@ -47,6 +47,7 @@ int main()
 {
 	char deletedChar{ '_' }; string aString;
 
+	cout << "This program...\n";
 	cout << "Get a string: ";  cin >> aString;
 
 	//On a Unix - based machine, signal EOF by typing Ctrl + D and Enter.
