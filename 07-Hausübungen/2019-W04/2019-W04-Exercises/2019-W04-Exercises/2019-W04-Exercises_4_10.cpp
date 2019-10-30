@@ -21,7 +21,7 @@ Dániel Szöke (11913915)
 
 using namespace std;
 
-string copyLongtoStringAndReverse(long n) {
+string copyLongtoStringAndReverse(unsigned long n) {
 	string result_left{ "" }, result_right{ "" }; int digit;
 	
 	while (n != 0) {
@@ -36,7 +36,7 @@ string copyLongtoStringAndReverse(long n) {
 
 int main()
 {
-	long n;
+	unsigned long n;
 
 	cout << "This program...\n";
 	cout << "Get parameter: ";  cin >> n;
