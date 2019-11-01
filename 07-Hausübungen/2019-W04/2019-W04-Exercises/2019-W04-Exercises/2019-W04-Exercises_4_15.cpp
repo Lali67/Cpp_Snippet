@@ -41,8 +41,7 @@ string find10BaseSumFrom(string numStr1, string numStr2)
 
 	// Traverse from end of both strings 
 	for (int i = n1 - 1; i >= 0; i--)	{
-		// According to school mathematics, 
-		//  compute sum of current digits and carry 
+		// According to school math, compute sum of current digits and carry 
 		sum2Digits = ((numStr1[i] - '0') +	(numStr2[i + diff] - '0') + carry);
 		result.push_back(sum2Digits % 10 + '0');
 		carry = sum2Digits / 10;
