@@ -24,7 +24,7 @@ Dániel Szöke (11913915)
 
 using namespace std;
 
-// Function for finding sum of larger numbers 
+// Calculate sum of "large" numbers 
 string get10BaseSumFrom(string numStr1, string numStr2)
 {
 	string result{ "" };
@@ -63,7 +63,7 @@ string get10BaseSumFrom(string numStr1, string numStr2)
 	return result;
 }
 
-// Multiplies str1 and str2, and prints result. 
+// Calculate sum of "large" numbers 
 string get10BaseMultiplyFrom(string numStr1, string numStr2)
 {
 	string result{ "0" }, zeros{ "" }, partialResult{""};
