@@ -16,7 +16,7 @@ Dániel Szöke (11913915)
 using namespace std;
 
 /*
- int binomial(int n, int k)
+ long binomial(int n, int k)
   The value of C(n, k) can be recursively calculated using following standard formula:
   C(n, k) = C(n-1, k-1) + C(n-1, k)
   C(n, 0) = C(n, n) = 1
