@@ -1,9 +1,13 @@
-/* 2019-W02-Exercise_4_6.cpp :
+/* 2019-W02-Exercise_4_8.cpp :
 
-Exercise 4.6
-  Schreiben Sie eine Funktion int ggt(int a, int b), die den größten gemeinsamen Teiler der beiden natürlichen Zahlen
-  a und b berechnet. Verwenden Sie die Funktion zum Testen in einem Hauptprogramm, das jeweils den Zähler und 
-  den Nenner eines Bruches einliest und die gekürzte Version des Bruches ausgibt.
+
+Exercise 4.8
+  Schreiben Sie die Funktionen int mult(int m, int n) und int power(int m, unsigned int n), 
+  die das Produkt m*n bzw. die Exponentialfunktion mn der ganzen Zahlen m und n berechnen. 
+  Verwenden Sie dazu nicht den Operator * (Multiplikation). 
+  Auch das Verwenden irgendwelcher externer Routinen (z.B. Mathematikbibliotheken) ist nicht erlaubt! 
+  Beachten Sie, dass int-Werte auch negativ oder gleich 0 sein können.
+  Hinweis: m*n = m+m*(n-1) für n>0
 
 Dániel Szöke (11913915)
 29.10.2019
@@ -17,10 +21,27 @@ Dániel Szöke (11913915)
 
 using namespace std;
 
-int ggt(int a, int b) {
-	if (b == 0)
-		return a;
-	return ggt(b, a % b);
+int multi(int m, int n)
+{
+	//0 multiplied with anything gives 0
+	if (n == 0)
+		return 0;
+
+	//Add m one by one
+	if (n > 0)
+		return (m + multi(m, n - 1));
+
+	/* the case where y is negative */
+	if (n < 0)
+		return -multi(m, -n);
+}
+
+int power(int m, unsigned int n)
+{
+	if (n)
+		return multi(m, power(m, n - 1));
+	else
+		return 1;
 }
 
 
@@ -30,15 +51,11 @@ int main()
 
 	cout << "This program...\n";
 	cout << "-------- Test --------\n";
-	cout << "a=8 b=6        : " << ggt(8,6) << endl;
-	cout << "a=105 b=30     : " << ggt(105, 30) << endl;
-	cout << "a=1024 b=128   : " << ggt(1024, 128) << endl;
+	cout << "multi(m=8, n=6)        : " << multi( 8, 6) << endl;
+	cout << "multi(m=105, n=30)     : " << multi(105, 30) << endl;
+	cout << "power(m=2 b=8)         : " << power(2, 8) << endl;
 	cout << endl;
 	
-	int a, b;
-	cout << "Get a (a>0 integer)  : "; cin >> a;
-	cout << "Get b (b>0 integer)  : "; cin >> b;
-	cout << ggt(a, b);
 	return 0;
 	
 }

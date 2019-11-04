@@ -29,7 +29,11 @@ const int MAX_ASCII_CHAR = 255;
 
 int getCharFreq(string str, char ch)
 {
-	return std::count(str.begin(), str.end(), ch);
+	int freq{ 0 };
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i] == ch) freq++;
+	}
+	return freq;
 }
 
 //  getCharsWithFreq(string str) 
@@ -63,17 +67,17 @@ int main()
 {
 	string aString;
 
-	cout << "This program...\n";
+	
 	cout << "-------- Test --------\n";
 	cout << "Test 1         : " << getCharsWithFreq("Test 1         :") << endl;
 	cout << "Zar 2          : " << getCharsWithFreq("Zar 2          :") << endl;
 	cout << "DanielSzoke 3  : " << getCharsWithFreq("DanielSzoke 3  :") << endl;
 	cout << endl;
-	cout << "Get string      : ";
+	cout << "Geben Sie hier einen String ein: ";
 	
 	while (cin >> aString) {
 		cout << " " << getCharsWithFreq(aString) << endl;
-		cout << "Get string      : ";
+		cout << "Geben Sie hier einen String ein: ";
 	}
 
 	return 0;

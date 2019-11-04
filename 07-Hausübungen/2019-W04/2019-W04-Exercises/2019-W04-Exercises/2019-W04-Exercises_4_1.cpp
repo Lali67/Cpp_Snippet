@@ -47,12 +47,11 @@ int main()
 {
 	char deletedChar{ '_' }; string aString;
 
-	cout << "This program...\n";
-	cout << "Get a string: ";  cin >> aString;
+	cout << "Geben Sie hier einen String ein: ";  cin >> aString;
 
 	//On a Unix - based machine, signal EOF by typing Ctrl + D and Enter.
 	//On a Windows machine, signal EOF by typing Ctrl + Z and Enter.
 	while (cin>>deletedChar) {
-		cout << "Remaining string: " << copyStringExcept(aString, deletedChar) << endl;
+		cout << "Zurueckgebliebener String: " << copyStringExcept(aString, deletedChar) << endl;
 	}
 }
