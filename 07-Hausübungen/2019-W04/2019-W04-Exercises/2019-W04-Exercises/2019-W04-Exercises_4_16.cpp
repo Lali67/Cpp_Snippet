@@ -90,11 +90,16 @@ string get10BaseMultiplyFrom(string numStr1, string numStr2)
 		}
 		// Add remaining carry 
 		if (carry) partialResult.push_back(carry + '0');
+
 		// reverse resultant string 
-		reverse(partialResult.begin(), partialResult.end());
+		int n = result.length();
+		for (int i = 0; i < n / 2; i++)
+			swap(result[i], result[n - i - 1]);
+
 		// Add zeros to the end
 		partialResult += zeros;
 		zeros += "0";
+
 		// Add partialResult to result
 		result = get10BaseSumFrom(result, partialResult);
 		
