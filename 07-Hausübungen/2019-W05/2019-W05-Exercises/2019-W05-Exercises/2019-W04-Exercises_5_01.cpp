@@ -7,7 +7,7 @@ Exercise 5.1
   Es dürfen nur die in der Legende angeführten Methoden der Klasse string verwendet werden.
 
 Dániel Szöke (11913915)
-29.10.2019
+08.11.2019
 
 */
 
