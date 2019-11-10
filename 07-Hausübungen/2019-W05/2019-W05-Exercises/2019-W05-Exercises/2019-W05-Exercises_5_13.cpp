@@ -1,10 +1,9 @@
-/* 2019-W02-Exercise_5_12.cpp :
+/* 2019-W02-Exercise_5_13.cpp :
 
-Exercise 5.12
- Schreiben Sie eine Funktion, die eine natürliche Zahl als Parameter erhält und 
- die Anzahl der möglichen Darstellungen der Zahl als eine Summe aufeinanderfolgender natürlicher Zahlen retourniert. 
- Für 15 würde z.B. 3 retourniert, da 15 dargestellt werden kann als 7+8, 4+5+6, 1+2+3+4+5.
- Verwenden Sie keine Schleife in der Funktion.
+Exercise 5.13
+ Die Folge Fn ist definiert durch die Rekursion Fn=2*Fn-1+Fn-2*Fn-3
+ mit den Startwerten F0=1, F1=1 und F2=1
+ Schreiben Sie eine Funktion, die den Wert Fn an einer beliebigen Position n berechnet.
 
 Dániel Szöke (11913915)
 08.11.2019
