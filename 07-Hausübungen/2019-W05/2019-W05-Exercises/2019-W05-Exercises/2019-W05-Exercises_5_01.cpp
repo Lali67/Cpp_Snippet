@@ -48,9 +48,9 @@ int main()
 	cout << "Geben Sie hier einen String ein: ";  
 	while (cin >> aString) {
 		if(flip)
-			cout << "Zurueckgebliebener String (Loop)       ->" << reverseStringbyLoop(aString) << endl;
+			cout << "String (Loop)       ->" << reverseStringbyLoop(aString) << endl;
 		else 
-			cout << "Zurueckgebliebener String (Recursion)  ->" << reverseStringbyRecursion(aString) << endl;
+			cout << "String (Recursion)  ->" << reverseStringbyRecursion(aString) << endl;
 
 		if (flip) 
 			flip = false;

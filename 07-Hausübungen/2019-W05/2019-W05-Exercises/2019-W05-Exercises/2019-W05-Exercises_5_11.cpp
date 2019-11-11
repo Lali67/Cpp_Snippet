@@ -49,13 +49,12 @@ int main()
 {
 	string aString;
 
-	cout << "This program...\n";
 	cout << "-------- Test --------\n";
     string str1{ "abcdefghi" };
     cout << "abcdefghi :" << remixedString(str1) << endl;
 
-    string str2{ "einen \"vermixten\" String" };
-    cout << "einen \"vermixten\" String :" << remixedString(str2) << endl;
+    string str2{ "ein \"vermixter\" String" };
+    cout << "ein \"vermixter\" String :" << remixedString(str2) << endl;
 
 	return 0;
 	

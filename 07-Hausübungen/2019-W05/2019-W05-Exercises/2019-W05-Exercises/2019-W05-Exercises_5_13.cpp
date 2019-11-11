@@ -33,7 +33,7 @@ long int specialSerious(int n)
 int main(void)
 {
 
-    cout << "This program...\n";
+    
     cout << "-------- Test --------\n";
     cout << "Fn = 2*(Fn-1) + Fn-2 * Fn-3, n=4  : " << specialSerious(4) << endl;
     cout << "Fn = 2*(Fn-1) + Fn-2 * Fn-3, n=5  : " << specialSerious(5) << endl;

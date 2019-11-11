@@ -78,11 +78,10 @@ int main(void)
 {
 	int n1{ 15 };
 	vector<int> out1, out2;
-	
-	cout << "This program...\n";
+
 	cout << "-------- Test --------\n";
 	for (int i{ 0 }; i < n1/2+1; i++) out1.push_back(i+1);
-	cout << "Print all combination of numbers from 1 to 8 having sum 15: \n";
+	cout << "Alle Kombinationen printen von 1 bis 8 mit der Summe 15: \n";
 	allCombinationOfSum(out1, 15);
 
 	return 0;

@@ -43,7 +43,7 @@ void permutationOfString(string str, int i, int n)
 }
 int main()
 {
-    cout << "This program...\n";
+  
     cout << "-------- Test --------\n";
 
     cout << "abc   (startPos=0 endPos=3)  : ";

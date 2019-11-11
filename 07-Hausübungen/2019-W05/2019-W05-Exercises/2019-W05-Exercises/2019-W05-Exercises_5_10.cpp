@@ -42,7 +42,6 @@ double vecMean(vector<double> list)
 int main()
 {
 
-	cout << "This program...\n";
 	cout << "-------- Test --------\n";
 	vector<double> test1{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	cout << "{1,2,3,4,5,6,7,8,9}  : " << vecMean(test1) << endl;

@@ -58,14 +58,14 @@ int main()
 	std::vector<double> vec1{ 1,2,3,4,5,6 }, vec2{7, 8, 9};
 
 	vec1 = insertVectorToVector(vec1, vec2);
-	cout << "vec1{ 1, 2, 3, 4, 5, 6 }, vec2{7, 8, 9} --> Result: ";
+	cout << "vec1{ 1, 2, 3, 4, 5, 6 }, vec2{7, 8, 9} --> Ergebnis: ";
 	for (auto const& i : vec1) std::cout << i << " ";
 	cout << endl;
 
 	std::vector<double> vec3{ 1,2,3 }, vec4{ 4, 5, 6, 7, 8, 9 };
 
 	vec3 = insertVectorToVector(vec3, vec4);
-	cout << "vec1{ 1, 2, 3 }, vec2{4, 5, 6, 7, 8, 9} --> Result: ";
+	cout << "vec1{ 1, 2, 3 }, vec2{4, 5, 6, 7, 8, 9} --> Ergebnis: ";
 	for (auto const& i : vec3) std::cout << i << " ";
 	cout << endl;
 

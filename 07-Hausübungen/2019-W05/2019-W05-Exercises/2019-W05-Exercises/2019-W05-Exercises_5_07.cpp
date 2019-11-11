@@ -46,7 +46,7 @@ void spaceBetweenElements(int num, int mul)
 int main(void)
 {
     int number, i, j;
-    cout << ("\nEnter the no. of rows required: "); cin >> number;
+    cout << ("\nGeben Sie hier die Nummer der Reihen ein: "); cin >> number;
     for (i = 1; i <= number; i++)
     {
         spaceBetweenElements(number - i, 3);

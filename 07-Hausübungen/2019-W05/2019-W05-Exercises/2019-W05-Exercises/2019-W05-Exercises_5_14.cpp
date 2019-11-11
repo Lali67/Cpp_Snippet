@@ -59,7 +59,7 @@ long int h(int n)
 int main(void)
 {
 
-    cout << "This program...\n";
+ 
     cout << "-------- Test --------\n";
     cout << "f(n), n=4  : " << f(4) << endl;
     cout << "f(n), n=5  : " << f(5) << endl;

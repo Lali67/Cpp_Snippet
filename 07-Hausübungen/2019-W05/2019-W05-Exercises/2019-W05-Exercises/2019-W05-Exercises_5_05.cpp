@@ -63,11 +63,11 @@ int main(void)
 	vector<int> out1, out2;
 
 	for (int i{ 0 }; i < n1; i++) out1.push_back(0);
-	cout << "Print all combination of numbers from 1 to 4 having sum 4: \n";
+	cout << "Alle Kombinationen printen von 1 bis 4 mit der Summe 4: \n";
 	allCombinationOfSum(1, n1, out1, 0);
 
 	for (int i{ 0 }; i < n2; i++) out2.push_back(0);
-	cout << "Print all combination of numbers from 1 to 8 having sum 8: \n";
+	cout << "Alle Kombinationen printen von 1 bis 8 mit der Summe 8: \n";
 	allCombinationOfSum(1, n2, out2, 0);
 
 	return 0;

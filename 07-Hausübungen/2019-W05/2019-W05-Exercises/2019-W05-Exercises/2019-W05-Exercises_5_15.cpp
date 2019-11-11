@@ -55,7 +55,7 @@ int main()
     _topOfStack = &topOfStack;
     _maxAllowedStackUsage = pow(2,16);  // or whatever amount you feel comfortable allowing
 
-    cout << "\nStack function was called " << stack() << " times!\n";
+    cout << "\nStack Funktion heisst " << stack() << " times!\n";
 
     return 0;
 }

@@ -42,7 +42,6 @@ int main()
 {
 	string aString;
 
-	cout << "This program...\n";
 	cout << "-------- Test --------\n";
 	cout << "multi(m=8, n=6)        : " << multi(8, 6) << endl;
 	cout << "multi(m=105, n=30)     : " << multi(105, 30) << endl;

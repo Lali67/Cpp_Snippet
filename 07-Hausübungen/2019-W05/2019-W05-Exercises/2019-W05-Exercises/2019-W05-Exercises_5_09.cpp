@@ -32,7 +32,6 @@ int main()
 {
 	string aString;
 
-	cout << "This program...\n";
 	cout << "-------- Test --------\n";
 	cout << "a=8 char=6     : " << intTest(8,'6') << endl;
 	cout << "a=105 char=5   : " << intTest(105, '5') << endl;
@@ -40,8 +39,8 @@ int main()
 	cout << endl;
 	
 	int a; char c;
-	cout << "Get a (a>0 integer)  : "; cin >> a;
-	cout << "Get char             : "; cin >> c;
+	cout << "Geben Sie hier einen (a>0) Integer ein: "; cin >> a;
+	cout << "Geben Sie hier einen Char ein         : "; cin >> c;
 	cout << intTest(a,c);
 	return 0;
 	

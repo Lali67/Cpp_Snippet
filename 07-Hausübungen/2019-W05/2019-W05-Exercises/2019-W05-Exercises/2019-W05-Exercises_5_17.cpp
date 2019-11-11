@@ -67,18 +67,18 @@ int compare(const void* a, const void* b)
 
 int main()
 {
-    cout << "This program...\n";
+
     cout << "-------- Test --------\n";
 
     vector<char> str{ 'A','B','C' };
-    cout << "All permutations with repetition of ";
-    for (auto const& item : str) cout << item; cout << " are: " << endl;
+    cout << "Alle Permutationen mit Repetition von ";
+    for (auto const& item : str) cout << item; cout << " sind: " << endl;
     allpermutationOfString(str);
     cout << endl;
 
     vector<char> str2{ 'H','E','L','P' };
-    cout << "All permutations with repetition of ";
-    for (auto const& item : str2) cout << item; cout << " are: " << endl;
+    cout << "Alle Permutationen mit Repetition von ";
+    for (auto const& item : str2) cout << item; cout << " sind: " << endl;
     allpermutationOfString(str2);
     cout << endl;
 

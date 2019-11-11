@@ -37,13 +37,13 @@ int main()
 	cout << "---------- Test ----------\n";
 	std::vector<int> vec1{ 1, 2, 3, 4, 5, 6, 7 };
 	vec1 = swapPairbyRecursion(vec1);
-	cout << "vector1: {1,2,3,4,5,6,7} --> Result: ";
+	cout << "vector1: {1,2,3,4,5,6,7} --> Ergebnis: ";
 	for (auto const& i : vec1) std::cout << i << " ";
 	cout << endl;
 
 	std::vector<int> vec2{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	vec2 = swapPairbyRecursion(vec2);
-	cout << "vector2: {1,2,3,4,5,6,7,8,9,10} --> Result: ";
+	cout << "vector2: {1,2,3,4,5,6,7,8,9,10} --> Ergebnis: ";
 	for (auto const& i : vec2) std::cout << i << " ";
 	cout << endl;
 
