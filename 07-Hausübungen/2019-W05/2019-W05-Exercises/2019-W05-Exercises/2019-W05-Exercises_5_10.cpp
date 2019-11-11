@@ -41,7 +41,6 @@ double vecMean(vector<double> list)
 
 int main()
 {
-	string aString;
 
 	cout << "This program...\n";
 	cout << "-------- Test --------\n";
