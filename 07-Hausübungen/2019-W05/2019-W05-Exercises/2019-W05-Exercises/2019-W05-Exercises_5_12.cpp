@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_12.cpp :
+/* 2019-W05-Exercise_5_12.cpp :
 
 Exercise 5.12
  Schreiben Sie eine Funktion, die eine natürliche Zahl als Parameter erhält und 

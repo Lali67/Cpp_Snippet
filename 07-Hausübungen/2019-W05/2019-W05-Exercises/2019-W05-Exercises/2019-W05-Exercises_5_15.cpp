@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_15.cpp :
+/* 2019-W05-Exercise_5_15.cpp :
 
 Exercise 5.15
   Schreiben Sie eine Funktion int stack(), durch deren Aufruf der Stack zum Überlaufen gebracht wird. 

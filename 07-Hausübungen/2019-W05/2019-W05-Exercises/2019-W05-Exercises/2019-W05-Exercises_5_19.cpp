@@ -1,16 +1,9 @@
-/* 2019-W05-Exercise_5_17.cpp :
+/* 2019-W05-Exercise_5_19.cpp :
 
-Exercise 5.16
-  Schreiben Sie eine Funktion, die als Parameter einen String (Datentyp string) erhält und 
-  alle möglichen Permutationen der im String enthaltenen Zeichen ausgibt. (Sie können davon ausgehen, 
-  dass jedes Zeichen nur einmal auftritt.)
-  Z.B.:
-    Parameter: abc
-    Ausgabe: abc acb bac bca cab cba
-
-
-Exercise 5.17
-  Wie Aufgabe 16, allerdings dürfen Zeichen auch mehrfach auftreten.
+Exercise 5.19
+  Schreiben Sie eine Funktion, die als Parameter eine natürliche Zahl erhält und alle möglichen Permutationen 
+  der in der Zahl vorkommenden Ziffern ausgibt. (Sie können davon ausgehen, 
+  dass jede Ziffer nur einmal eingegeben wird.)
 
 
 Dániel Szöke (11913915)
@@ -23,6 +16,7 @@ Dániel Szöke (11913915)
 //#include <algorithm>
 #include <cmath>
 //#include <exception>
+#include <string>
 
 using namespace std;
 
@@ -70,13 +64,17 @@ int main()
 
     cout << "-------- Test --------\n";
 
-    vector<char> str{ 'A','B','C' };
+    vector<char> str;
+    int i{ 123 }, j{2468};
+
+    for (auto const& item : std::to_string(i)) str.push_back(item);
     cout << "Alle Permutationen mit Repetition von ";
     for (auto const& item : str) cout << item; cout << " sind: " << endl;
     allpermutationOfString(str);
     cout << endl;
 
-    vector<char> str2{ 'H','E','L','P' };
+    vector<char> str2;
+    for (auto const& item : std::to_string(j)) str2.push_back(item);
     cout << "Alle Permutationen mit Repetition von ";
     for (auto const& item : str2) cout << item; cout << " sind: " << endl;
     allpermutationOfString(str2);

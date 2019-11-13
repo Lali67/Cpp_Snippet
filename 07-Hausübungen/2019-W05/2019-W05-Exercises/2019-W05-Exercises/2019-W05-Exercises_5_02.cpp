@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_01.cpp :
+/* 2019-W05-Exercise_5_02.cpp :
 
 Exercise 5.2
   Schreiben Sie eine Funktion, die einen Vektor von ganzen Zahlen als Parameter erhält und 

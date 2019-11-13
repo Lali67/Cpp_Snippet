@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_06.cpp :
+/* 2019-W05-Exercise_5_06.cpp :
 
 Exercise 5.6
   Schreiben Sie eine Funktion int ggt(int a, int b), die den größten gemeinsamen Teiler der beiden natürlichen Zahlen a und 

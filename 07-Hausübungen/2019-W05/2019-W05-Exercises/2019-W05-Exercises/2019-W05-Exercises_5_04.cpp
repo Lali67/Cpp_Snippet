@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_04.cpp :
+/* 2019-W05-Exercise_5_04.cpp :
 
 Exercise 5.4
   Schreiben Sie eine Funktion, die eine positive Zahl n als Parameter erhält und alle unterschiedlichen Möglichkeiten ausgibt, 

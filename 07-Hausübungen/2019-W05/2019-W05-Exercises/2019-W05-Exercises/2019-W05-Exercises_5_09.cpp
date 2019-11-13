@@ -1,11 +1,11 @@
-/* 2019-W02-Exercise_5_09.cpp :
+/* 2019-W05-Exercise_5_09.cpp :
 
 Exercise 5.9
   Schreiben Sie eine Funktion bool intTest(int n, char c), die prüft, ob die Ziffer c in der Zahl n vorkommt.
    Verwenden Sie keine Schleife in der Funktion.
 
 Dániel Szöke (11913915)
-29.10.2019
+08.11.2019
 
 */
 

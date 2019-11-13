@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_01.cpp :
+/* 2019-W05-Exercise_5_01.cpp :
 
 Exercise 5.1
   Schreiben Sie zwei Funktionen, die jeweils eine Zeichenkette als Parameter erhalten und 

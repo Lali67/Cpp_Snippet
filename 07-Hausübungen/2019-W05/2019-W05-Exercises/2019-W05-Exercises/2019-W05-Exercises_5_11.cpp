@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_11.cpp :
+/* 2019-W05-Exercise_5_11.cpp :
 
 Exercise 5.11
   Schreiben Sie eine Funktion, die einen String als Parameter erhält und einen "vermixten" String retourniert. 

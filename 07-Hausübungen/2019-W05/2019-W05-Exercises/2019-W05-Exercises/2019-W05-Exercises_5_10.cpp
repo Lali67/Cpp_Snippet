@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_10.cpp :
+/* 2019-W05-Exercise_5_10.cpp :
 
 Exercise 5.10
   Schreiben Sie eine Funktion, die einen Vektor von double Werten als Parameter erhält und 

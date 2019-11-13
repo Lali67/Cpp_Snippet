@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_13.cpp :
+/* 2019-W05-Exercise_5_13.cpp :
 
 Exercise 5.13
  Die Folge Fn ist definiert durch die Rekursion Fn=2*Fn-1+Fn-2*Fn-3

@@ -7,7 +7,7 @@
   Hinweis: m*n = m+m*(n-1) für n>0 bzw. m^n=m*m^n-1
 
 Dániel Szöke (11913915)
-29.10.2019
+08.11.2019
 
 */
 

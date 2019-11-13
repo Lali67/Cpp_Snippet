@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_14.cpp :
+/* 2019-W05-Exercise_5_14.cpp :
 
 Exercise 5.14
  Die Funktionen f(n), g(n) und h(n) sind für natürliche Zahlen n wie folgt definiert:

@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_5_03.cpp :
+/* 2019-W05-Exercise_5_03.cpp :
 
 Exercise 5.3
    Schreiben Sie eine Funktion, die zwei Vektoren von double Werten als Parameter erhält und 
@@ -28,9 +28,12 @@ using namespace std;
 
 std::vector<double> insertVectorToVector(std::vector<double> vector1, std::vector<double> vector2) {
 	
-	unsigned int n1{ vector1.size() }, n2{ vector2.size() };
+	unsigned int n1, n2;
 	unsigned int counter1{ 0 }, counter2{ 0 };
 	std::vector<double> result;
+
+	n1 = vector1.size();
+	n2 = vector2.size();
 
 	if (n1 >= n2) {
 		while (counter1 < n1) {

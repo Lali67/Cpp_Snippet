@@ -1,6 +1,6 @@
-/* 2019-W05-Exercise_5_16.cpp :
+/* 2019-W05-Exercise_5_18.cpp :
 
-Exercise 5.16
+Exercise 5.18
   Schreiben Sie eine Funktion, die als Parameter einen String (Datentyp string) erhält und 
   alle möglichen Permutationen der im String enthaltenen Zeichen ausgibt. (Sie können davon ausgehen, 
   dass jedes Zeichen nur einmal auftritt.)
@@ -18,6 +18,7 @@ Dániel Szöke (11913915)
 //#include <algorithm>
 #include <cmath>
 //#include <exception>
+#include <string>
 
 using namespace std;
 
@@ -43,24 +44,18 @@ void permutationOfString(string str, int i, int n)
 }
 int main()
 {
-  
+    int i{ 123 }, j{ 2468 };
+
     cout << "-------- Test --------\n";
 
-    cout << "abc   (startPos=0 endPos=3)  : ";
-    permutationOfString("abc", 0, 3);
+    cout << "123  : ";
+    permutationOfString(to_string(i), 0, 3);
     cout << endl;
 
-    cout << "abcde (startPos=0 endPos=3)  : ";
-    permutationOfString("abcde", 0, 3);
+    cout << "2468 : ";
+    permutationOfString(to_string(j), 0, 4);
     cout << endl;
 
-    cout << "abcde (startPos=2 endPos=5)  : ";
-    permutationOfString("abcde", 2, 5);
-    cout << endl;
-
-    cout << "abcde (startPos=1 endPos=4)  : ";
-    permutationOfString("abcde", 1, 4);
-    cout << endl;
 
     return 0;
 }
