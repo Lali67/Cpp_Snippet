@@ -41,8 +41,7 @@ string find10BaseSumFrom(string numStr1, string numStr2)
 
 	// Traverse from end of both strings 
 	for (int i = n1 - 1; i >= 0; i--)	{
-		// According to school mathematics, 
-		//  compute sum of current digits and carry 
+		// According to school math, compute sum of current digits and carry 
 		sum2Digits = ((numStr1[i] - '0') +	(numStr2[i + diff] - '0') + carry);
 		result.push_back(sum2Digits % 10 + '0');
 		carry = sum2Digits / 10;
@@ -59,7 +58,9 @@ string find10BaseSumFrom(string numStr1, string numStr2)
 	if (carry) result.push_back(carry + '0');
 
 	// reverse resultant string 
-	reverse(result.begin(), result.end());
+	int n = result.length();
+	for (int i = 0; i < n / 2; i++)
+		swap(result[i], result[n - i - 1]);
 
 	return result;
 }
@@ -68,13 +69,12 @@ int main()
 {
 	string num1, num2;
 
-	cout << "This program...\n";
 	cout << "-------- Test --------\n";
 	cout << "a= 12 b= 198111; a+b= " << find10BaseSumFrom("12","198111") <<endl;
 	cout << "a= 9986 b= 46 ;  a+b= " << find10BaseSumFrom("9986", "46") << endl;
 	cout << endl;
 
-	cout << "Get first integer number (n>0) : "; cin >> num1;
-	cout << "Get second integer number (n>0): "; cin >> num2;
-	cout << "Sum of two nummbers: " << find10BaseSumFrom(num1, num2) << endl << endl;
+	cout << "Erster Integer (n>0) : "; cin >> num1;
+	cout << "Zweiter Integer (n>0): "; cin >> num2;
+	cout << "Summe der beiden Zahlen: " << find10BaseSumFrom(num1, num2) << endl << endl;
 }

@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2019-W04-Exercises_4_16.cpp" />
+    <ClCompile Include="2019-W06-Exercise_6_01.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{AE4C2683-28DE-415A-B063-19FCD1F2C4E6}</ProjectGuid>
+    <ProjectGuid>{31CC38EC-B727-470E-9455-2D8605248A45}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2019W04Exercises</RootNamespace>
+    <RootNamespace>My2019W06Exercises</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
