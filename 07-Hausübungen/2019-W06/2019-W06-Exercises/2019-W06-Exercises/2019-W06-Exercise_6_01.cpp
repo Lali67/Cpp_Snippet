@@ -1,4 +1,4 @@
-/* 2019-W02-Exercise_6_01.cpp :
+/* 2019-W06-Exercise_6_01.cpp :
 
 Exercise 6.1
  Im Rahmen eines Versuchs werden Testreihen durchgeführt. Jede Testreihe liefert als Ergebnis einen Vektor 
@@ -24,12 +24,14 @@ Dániel Szöke (11913915)
 
 */
 
-#include <iostream>
-#include <vector>
-//#include <string>
-//#include <algorithm>
-//#include <cmath>
-//#include <exception> 
+#include <iostream>     // cout
+#include <vector>       // vector
+#include <cstdlib>      // qsort
+//#include <string>       // string
+//#include <algorithm>    // sort
+//#include <cmath>        // sqrt
+//#include <exception>    
+#include <stdexcept>    // runtime_error> 
 
 using namespace std;
 
@@ -38,6 +40,8 @@ int compare(const void* a, const void* b);
 
 double calculateMean(vector<int> vec) {
     double sum{ 0 };
+    if (vec.size() == 0)
+        throw runtime_error("calculateMean: Die Vektorgroesse muss groesse sien als Null!");
 
     for (auto const& item : vec) sum += item;
     return sum / vec.size();
