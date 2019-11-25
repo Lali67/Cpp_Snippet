@@ -1,0 +1,8 @@
+﻿Max,Mustermann,Währinger Straße,17,1080
+Maria,Musterfrau,Währinger Straße,24a,1080
+Gerda,Blum,Berggasse,19,1090
+Franz,Müller,Hauptstraße,3,8047
+Pia,Mayr,Festzelt,7c,4099
+Illegale,PLZ,Unbekannt,4711,4711
+Paro,Dontas,Sensengasse,2a,1090
+Werner,Gruber,Währinger Straße,17,1080
