@@ -5,11 +5,13 @@
 #include<string>
 #include<vector>
 
+using namespace std;
+
 enum class woodTypes { Buche, Eiche, Mahagoni };
 const vector<string> woodTypes_names{"Buche", "Eiche", "Mahagoni"};
 
 class Board {
-	int length;				// length in m
+	int length;				// length in mm
 	int crossSection;		// crossSection in cm2
 	woodTypes material;		// material of board
 	double price;			// price (EUR) of meter
@@ -45,6 +47,12 @@ class Board {
 					crossSection == obj.crossSection &&
 					material == obj.material &&
 					price == obj.price;
+		}
+		bool operator > (Board const& obj) {
+			return	length > obj.length;
+		}
+		bool operator < (Board const& obj) {
+			return	length < obj.length;
 		}
 
 		// print data

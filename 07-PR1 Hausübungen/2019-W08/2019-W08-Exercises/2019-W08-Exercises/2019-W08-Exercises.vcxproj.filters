@@ -18,5 +18,8 @@
     <ClCompile Include="2019-W08-Exercise_08_01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Warehouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
