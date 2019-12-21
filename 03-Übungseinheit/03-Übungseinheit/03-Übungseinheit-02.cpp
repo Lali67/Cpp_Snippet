@@ -22,7 +22,7 @@ int main()
 	//Umwandlungsvariablen definieren und berechnen
 	double yard{ 0 }, fuss{ 0 }, rest{ 0 };
 	yard = int(a / Yard_in_Inch);
-	rest = a - (yard * Yard_in_Inch);
+	rest = a - yard * Yard_in_Inch;
 	fuss = int(rest / Fuss_in_Inch);
 	rest = rest - fuss * Fuss_in_Inch;
 
