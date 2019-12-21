@@ -1,20 +1,34 @@
-// 03-Übungseinheit.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Schreiben Sie in Programm, das drei ganze Zahlen (int) einliest und 
+//das harmonische Mittel dieser Zahlen berechnet und ausgibt. 
+//Beachten Sie, dass das Ergebnis in der Regel keine ganze Zahl ist.
+//Geben Sie eine geeignete Fehlermeldung aus, falls die Berechnung (wegen Division durch 0) nicht durchführbar ist.
+//Formel zum harmonischen Mittel: 3/(1/a+1/b+1/c)
 
 #include <iostream>
+#include <cmath>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//Die drei integer-Werte als double (a, b, c) einlesen und definieren
+	int a, b, c;
+
+	cout << "Dieses Programm berechnet das harmonische Mittel dreier ganzen Zahlen." << endl;
+	cout << "Geben Sie hier die erste ganze Zahl ein: "; cin >> a;
+	cout << "Geben Sie hier die zweite ganze Zahl ein: "; cin >> b;
+	cout << "Geben Sie hier die dritte ganze Zahl ein: "; cin >> c;
+
+	//Ergebnis berechnen
+	double e, E;
+
+	e = (1.0 / a + 1.0 / b + 1.0 / c);
+
+	//Fehlerkorrektur durch If-Else Statement (und Ergebnis ausschreiben)
+	if (e == 0)
+		cout << "Die Operation kann nicht durchgefuehrt werden! (Wegen Division durch 0)" << endl;
+	else {
+		E = (3 / e);
+		cout << "Das harmonische Mittel: " << E << endl;
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
