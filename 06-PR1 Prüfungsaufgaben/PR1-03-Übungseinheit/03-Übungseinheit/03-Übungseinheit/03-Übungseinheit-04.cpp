@@ -14,13 +14,14 @@ Eingabe:5921 2314 Ergebnis: 5192
 	Setzen Sie die Summe auf das Zehnfache der bisherigen Summe plus der letzten Ziffer der so ermittelten Zahl.*/
 
 #include <iostream>
-//#include <cmath>
+#include <cmath>
+//#include <exception>
 using namespace std;
 
 int main()
 {
 	//Zwei Int-Werte definieren und einlesen (int=eingegebene Zahl)
-	long n, m;
+	long n{ 1 }, m{ 1 }, summe{ 0 };
 
 	cout << "Dieses Programm berechnet ein Ergebnis aus den Ziffern der ersten Zahl (bei 2 ganze Zahlen). " << endl;
 	cout << "Geben Sie hier die erste Zahl ein: "; cin >> n;
@@ -29,13 +30,26 @@ int main()
 	//Schleife, die die zweite Zahl ziffernweise duchlaeuft
 	while (m % 10 != 0) {
 		//Position der Ziffer (z) bestimmen
-		//Wenn diese Position in n existiert, nehmen wir die Zahl auf dieser Position aus, n(z)
-		//und Summe = Summe * 10 + n(z)
-		//Ansonsten Summe = Summe * 10 + 0
+		int z = m % 10;
+		
+		//Wenn diese Position in n existiert, nehmen wir die Zahl auf dieser Position aus n(z)
+		if (n >= pow(10, z-1)) 	{
+			
+			long temp = n / long(pow(10, z - 1));
+			int n_z = temp % 10;
+			//und Summe = Summe * 10 + n(z)
+			summe = summe * 10 + n_z;
+		}
+		else {
+			
+			//Ansonsten Summe = Summe * 10 + 0
+			summe = summe * 10 + 0;
+		}
+
 		//Schleifenvariable aendern
 		m = m / 10;
 	}
 	//Ergebnis ausschreiben (Summe)
-			
+	cout << summe;
 
 }
