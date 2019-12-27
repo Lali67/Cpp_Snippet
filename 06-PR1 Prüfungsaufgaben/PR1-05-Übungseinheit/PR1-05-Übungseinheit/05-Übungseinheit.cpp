@@ -10,9 +10,15 @@ using namespace std;
 
 
 //Die Funktion definieren
-int anz_gerade(int a) {
+int anz_gerade(int a = 1) {
+	//Wenn a = 0, dann return 0
+	//ansonsten a % 2 = 0, dann return anz_gerade(a / 10)+1
 
-
+	if (a == 0) return 0;
+	else
+		if (a % 2 == 0)
+			return anz_gerade(a / 10) + 1;
+	
 }
 
 
@@ -25,4 +31,6 @@ int main() {
 
 	//Aufruf der Funktion und Ausgabewert ausschreiben
 	cout << "Anzahl der geraden Ziffern in der eingelesenen Zahl: " << anz_gerade(a) << endl;
+
+	return 0;
 }
