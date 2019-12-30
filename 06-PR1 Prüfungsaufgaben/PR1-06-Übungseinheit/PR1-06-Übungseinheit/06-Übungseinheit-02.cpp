@@ -10,29 +10,13 @@ DiesisteinTest	 en					DisistiTst   4  //4 wird im Referenzparameter zurück geli
 
 #include <iostream>
 #include <string>
+//#include <algorithm>
 using namespace std;
 
 //Die Funktion definieren
 string del(string str1, string str2, int& i) {
 
 	
-	//Schleife: chars von str2
-	int counter{ 0 };
-	while (counter < str2.size()) {
-
-		//char suchen in str1
-		size_t found = str1.find(str2.at(counter));
-
-		//wenn found, dann die entsprechende Position in found speichern
-		if (found != str1.npos) {
-			//den entsprechenden char in str1 löschen
-		
-			//in i speichern wir die Anzahl von deletes
-			++i;
-		}
-		counter++;
-	}
-	return str1;
 }
 
 int main()
