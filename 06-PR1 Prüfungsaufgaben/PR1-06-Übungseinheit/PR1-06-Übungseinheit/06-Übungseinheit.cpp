@@ -11,6 +11,15 @@ Parameter3: ebr
 Ergebnis: hbeeoWret 5 // hbeeoWret steht in der Referenz zu str1,5 wird im Referenzparameter zurückgeliefert
 Hinweis: Verwendung von globalen Variablen und goto ist
 		(soweit sie nicht in der Angabe explizit empfohlen wird) untersagt.
+
+Zusatzaufgabe(etwa 15 bis 30 Minuten extra):
+Die Funktion soll so erweitert werden, dass Parameter str3 kürzer als Parameter str2 sein kann.
+Ist str3 kürzer als str2, wird das Zeichen aus str3 genommen,das an der korrekten Position stehen würde,
+wenn str3 sich zyklisch wiederholte. 
+Parameter1:			Parameter2:					Parameter3
+halloWelt			  lae							rb
+					==>entspricht lae		rbrbrbrb...==>e wird zu r
+Ergebnis: hbrroWrrt 5
 */
 
 #include <iostream>
