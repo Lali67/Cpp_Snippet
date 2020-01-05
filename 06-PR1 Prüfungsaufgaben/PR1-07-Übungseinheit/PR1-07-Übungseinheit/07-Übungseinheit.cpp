@@ -8,7 +8,7 @@ Hinweis: Für die Berechnung des Abstandes zweier Punkte wird die euklidische Di
 
 Zusatzaufgabe (etwa 15 bis 30 Minuten extra):Die Funktion soll so abgeändert werden, dass ein double Wert
 als dritter Parameter übergeben wird. Retourniert werden soll ein Vektor mit allen Punkten aus dem Eingangsvektor,
-die vom Eingangspunkt nicht weiter entfernt sind,als der double Wert.Die geänderte Funktion soll keine Exception werfen,
+die vom Eingangspunkt nicht weiter entfernt sind, als der double Wert.Die geänderte Funktion soll keine Exception werfen,
 sondern gegebenenfalls einen leeren Vektor retournieren.
 */
 
@@ -36,7 +36,13 @@ Punkt max_entfernung(vector<Punkt> punkte, Punkt p) {
 		throw("runtime_error: Der Vektor ist leer!");
 
 	for (Punkt p1 : punkte) {
-		distanz = sqrt(pow(p1.x - p.x, 2) + pow(p1.y - p.y, 2) + pow(p1.z - p.z, 2));
+		double distanz2 = sqrt(pow(p1.x - p.x, 2) + pow(p1.y - p.y, 2) + pow(p1.z - p.z, 2));
+		if (distanz2 > distanz) {
+			distanz = distanz2;
+			max_entfernung_punkt.x = p1.x;
+			max_entfernung_punkt.y = p1.y;
+			max_entfernung_punkt.z = p1.z;
+		}
 	}
 
 	return max_entfernung_punkt;
@@ -49,7 +55,8 @@ int main() {
 	cout << "Geben Sie hier die x, y, z Koordinaten von P ein: "; cin >> p.x >> p.y >> p.z;
 
 	//Weitere Punkte einlesen und in einem Vektor zyklisch speichern
-	vector<Punkt> punkte; Punkt p1;
+	vector<Punkt> punkte; 
+	Punkt p1;
 	char weiter{ 'j' };
 
 	while (weiter == 'j') {
