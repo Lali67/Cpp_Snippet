@@ -20,5 +20,11 @@ int main()
 {
 	Uhr x(12,23,34);
 	x.print();
+	x.set_ganze(19, 21, 59);
+	x.print();
+	x.set_format12();
+	x.print();
+	x.sec_plus();
+	x.print();
 }
 
