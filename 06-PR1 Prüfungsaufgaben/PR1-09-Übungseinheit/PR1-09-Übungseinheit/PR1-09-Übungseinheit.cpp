@@ -19,7 +19,28 @@ using namespace std;
 
 int main()
 {
-	Auto x(80, 240, 6, 3, "Lambo");
+	char setting{ 'j' };
+	double speed{ 0 };
+	int gear{ 0 };
+	Auto x(0, 240, 6, 0, "Lambo");
+
+	x.print_data();
+	
+	while (setting == 'j') {
+		cout << "Wollen Sie die Geschwindigkeit/den Gear aendern? (j/n): "; cin >> setting;
+		if (setting == 'j') {
+			cout << "Geben Sie hier die Hoehe der Aenderung der Geschwindigkeit ein "
+				    "(wenn hoeher als 0: gasgeben, wenn kleiner: bremsen): "; cin >> speed;
+			cout << "Geben Sie hier die Hoehe der Aenderung des aktuellen Ganges ein "
+				    "(wenn hoeher als 0: gasgeben, wenn kleiner: bremsen): "; cin >> gear;
+			if (speed > 0)  x.increase_speed(speed);
+			if (speed < 0)  x.decrease_speed(speed);
+			if (gear > 0)   x.hochschalten();
+			if (gear < 0)   x.zuruckschalten();
+
+			x.print_speed_gear();
+		}
+	}
 
 }
 

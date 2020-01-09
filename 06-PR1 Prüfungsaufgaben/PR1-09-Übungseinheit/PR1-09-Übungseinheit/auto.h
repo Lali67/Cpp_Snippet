@@ -24,19 +24,43 @@ class Auto {
 			gear_akt(tgear_akt), name(tname)
 		{};
 		void print_data() {
-			
+			cout << "Aktuelle Geschwindigkeit: " << geschw_akt << endl;
+			cout << "Maximale Geschwindigkeit: " << geschw_max << endl;
+			cout << "Anzahl der Gaenge:        " << nummer_gear << endl;
+			cout << "Aktueller Gang:           " << gear_akt << endl;
+			cout << "Name des Autos:           " << name << endl;
 		}
-		void hochschalten(int num_schal) {
-
+		void print_speed_gear() {
+			cout << "Veraenderte  Geschwindigkeit: " << geschw_akt << endl;
+			cout << "Veraenderter Gang:           " << gear_akt << endl;
 		}
-		void zurückschalten(int num_schal) {
-
+		void hochschalten() {
+			gear_akt += 1;
+			if (gear_akt > nummer_gear) {
+				throw("Fehler! Der eingegebene Gang muss kleiner sein als" 
+					  "der hoechste moegliche Gang, und groesser gleich sein als 0!");
+			}
+		}
+		void zuruckschalten() {
+			gear_akt -= 1;
+			if (gear_akt < 0) {
+				throw("Fehler! Der eingegebene Gang muss kleiner sein als"
+					  "der hoechste moegliche Gang, und groesser gleich sein als 0!");
+			}
 		}
 		void increase_speed(int num) {
-
+			geschw_akt += abs(num);
+			if (geschw_akt > geschw_max) {
+				throw("Fehler! Die Geschwindigkeit muss groesser sein als 0"
+					  "und kleiner sein als die hoechste moegliche Geschwindigkeit!");
+			}
 		}
 		void decrease_speed(int num) {
-
+			geschw_akt -= abs(num);
+			if (geschw_akt < 0) {
+				throw("Fehler! Die Geschwindigkeit muss groesser sein als 0"
+					  "und kleiner sein als die hoechste moegliche Geschwindigkeit!");
+			}
 		}
 };
 
