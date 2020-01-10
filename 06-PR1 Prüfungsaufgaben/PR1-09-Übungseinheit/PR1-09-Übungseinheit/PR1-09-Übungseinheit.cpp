@@ -23,8 +23,16 @@ int main()
 	double speed{ 0 };
 	int gear{ 0 };
 	Auto x(0, 240, 6, 0, "Lambo");
+	Auto y(7, 180, 5, 0, "Ferrari");
+	Auto z(0, 290, 7, 0, "Maserati");
+	bool slower = x < y;
+	bool faster = x > y;
 
+	cout << slower << endl;
+	cout << faster << endl;
 	x.print_data();
+	y.print_data();
+	z.print_data();
 	
 	while (setting == 'j') {
 		cout << "Wollen Sie die Geschwindigkeit/den Gear aendern? (j/n): "; cin >> setting;

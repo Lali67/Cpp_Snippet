@@ -23,6 +23,22 @@ class Auto {
 			geschw_akt(tgeschw_akt), geschw_max(tgeschw_max), nummer_gear(tnummer_gear), 
 			gear_akt(tgear_akt), name(tname)
 		{};
+		bool operator < (Auto y) {
+			if (geschw_max < y.geschw_max)
+				return true;
+			else
+				return false;
+		}
+		bool operator > (Auto y) {
+			if (geschw_max > y.geschw_max)
+				return true;
+			else
+				return false;
+		}
+		Auto operator + (Auto y) {
+			geschw_akt = y.geschw_akt + 5;
+			
+		}
 		void print_data() {
 			cout << "Aktuelle Geschwindigkeit: " << geschw_akt << endl;
 			cout << "Maximale Geschwindigkeit: " << geschw_max << endl;
