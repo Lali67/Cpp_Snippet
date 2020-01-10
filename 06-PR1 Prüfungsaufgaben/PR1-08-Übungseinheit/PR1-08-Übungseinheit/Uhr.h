@@ -18,6 +18,25 @@ class Uhr {
 		Uhr(int st, int min, int sec, bool format=true) :
 			stunde(st), minute(min), sekunde(sec), format_24(format)
 		{};
+		Uhr(const Uhr& u) :
+			stunde(u.stunde), minute(u.minute), sekunde(u.sekunde), format_24(u.format_24)
+		{};
+
+		bool operator > (Uhr p) {
+			
+			return 60*60*stunde+60*minute+sekunde > 60 * 60 * p.stunde + 60 * p.minute + p.sekunde;
+		}
+		bool operator < (Uhr p) {
+
+			return 60 * 60 * stunde + 60 * minute + sekunde < 60 * 60 * p.stunde + 60 * p.minute + p.sekunde;
+		}
+
+		Uhr operator + (int q) {
+			Uhr temp(stunde, minute, sekunde);
+			temp.sec_plus(q);
+
+			return temp;
+		}
 
 		void print() {
 			int t_stunde = stunde % 12;
@@ -56,19 +75,17 @@ class Uhr {
 			format_24 = true;
 		}
 		//Eine Sekunde "addieren"
-		void sec_plus() {
-			sekunde += 1;
-			if (sekunde % 60 == 0) {
-				sekunde = 0;
-				minute += 1;
-			}
-			if (minute % 60 == 0) {
-				minute = 0;
-				stunde += 1;
-			}
-			if (stunde % 25 == 0) {
-				stunde = 0;
-			}
+		void sec_plus(int num = 1) {
+			int temp_sec = 60 * 60 * stunde + 60 * minute + sekunde + num;
+			stunde		= temp_sec / (60 * 60);
+			stunde		= stunde % 24; // if it is more than 24 hours
+			temp_sec	= temp_sec % (60 * 60);
+
+			minute		= temp_sec / 60;
+			minute		= minute % 60; // if it is more than 60 mins
+			temp_sec	= temp_sec %  60;
+
+			sekunde		= temp_sec;
 		}
 
 };

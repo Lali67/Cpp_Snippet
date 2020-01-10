@@ -26,5 +26,11 @@ int main()
 	x.print();
 	x.sec_plus();
 	x.print();
+	Uhr y(23, 43, 54);
+	bool later = x > y;
+	bool early = x < y;
+	y.print();
+	x = y + 160;
+	x.print();
 }
 
