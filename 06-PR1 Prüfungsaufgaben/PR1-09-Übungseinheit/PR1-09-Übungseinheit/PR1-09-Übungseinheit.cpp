@@ -27,6 +27,7 @@ int main()
 	Auto z(0, 290, 7, 0, "Maserati");
 	bool slower = x < y;
 	bool faster = x > y;
+	x = y + 5;
 
 	cout << slower << endl;
 	cout << faster << endl;

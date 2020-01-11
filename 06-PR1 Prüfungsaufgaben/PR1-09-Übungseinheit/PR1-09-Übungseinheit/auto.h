@@ -35,9 +35,11 @@ class Auto {
 			else
 				return false;
 		}
-		Auto operator + (Auto y) {
-			geschw_akt = y.geschw_akt + 5;
+		Auto operator + (int z) {
+			Auto temp(geschw_akt, geschw_max, nummer_gear, gear_akt, name);
+			temp.geschw_akt += z;
 			
+			return temp;
 		}
 		void print_data() {
 			cout << "Aktuelle Geschwindigkeit: " << geschw_akt << endl;
