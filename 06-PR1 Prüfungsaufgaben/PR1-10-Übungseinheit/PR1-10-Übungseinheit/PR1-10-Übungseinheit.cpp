@@ -8,23 +8,28 @@ Ergebnis : 2 (weil 8 + 5 = 13 größer als alle anderen Summen ist)*/
 #include <iostream>
 using namespace std;
 class X {
-protected:
-int x;
+	int a;
 public:
-	X(int i = 6): x {i} {}
-	virtual void print() const { cout << x; }
-	void operator-(const X rop) { this->print(); rop.print();}
+	X(int n = 3) : a(n) { cout << a; cout << " X(int n = 3)" <<endl; }
+	X(const X& x): a {x.a} {
+		cout << 7*a; 
+		cout << " X(const X& x)" << endl;
+	}
+	~X() {cout << a; 
+	cout << " ~X()" << endl;
+	}
+	X& operator=(const X& x) {
+		cout << a << x.a;
+		cout << " X& operator=" << endl;
+		return *this;}
 };
 
-class Y : 
-	public X {void print() const { cout << '=' << x; }};
-
-int main() {
-	X x {9};
-	Y y;
-	x -y;
-	y -x;
-	return 0;
+void f(X a, const X& b) {
+	a = b;
 }
 
-
+int main() {
+	X x, y {5};
+	f(x,y);
+	return 0;
+}
