@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.89
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fußballmannschaft", "Fußballmannschaft\Fußballmannschaft.vcxproj", "{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Debug|x64.ActiveCfg = Debug|x64
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Debug|x64.Build.0 = Debug|x64
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Debug|x86.ActiveCfg = Debug|Win32
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Debug|x86.Build.0 = Debug|Win32
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Release|x64.ActiveCfg = Release|x64
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Release|x64.Build.0 = Release|x64
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Release|x86.ActiveCfg = Release|Win32
+		{824F06F2-CC34-4B4F-85BB-0CCD9BB8B4C8}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A46F9CF-5EC6-4A38-B37E-894A20662123}
+	EndGlobalSection
+EndGlobal
