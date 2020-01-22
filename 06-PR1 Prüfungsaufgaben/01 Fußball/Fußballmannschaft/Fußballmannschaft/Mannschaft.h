@@ -23,8 +23,11 @@ class Mannschaft {
 			if (tspielerliste.empty())
 				throw("runtime_error:Falsche Liste");
 			//Lista átmásolás!
+			for (Spieler v : tspielerliste) {
+				spielerliste.push_back(v);
+			}
 		};
-		vector<Spieler> engagieren(const vector<Spieler>&);
+		vector<Spieler> engagieren(const vector<Spieler>& sp);
 		friend ostream& operator << (ostream& out, const Mannschaft& sp);
 };
 
