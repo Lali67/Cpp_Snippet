@@ -10,21 +10,21 @@ using namespace std;
 enum class Position {Tor, Abwehr, Mitte, Sturm};
 
 class Spieler {
+private:
 	string name;
 	int summe;
 	Position pos;
-
-	public:
-		Spieler(string tname, int tsumme, Position tpos = Position::Tor): name(tname), summe(tsumme)
-		{
-			if (tname.size() == 0)
-				throw("runtime_error: Falsche Name");
-			if (tsumme < 10 || tsumme > 500)
-				throw("runtime_error: Falsche Summe");
-			pos = tpos;
-		};
-		bool operator==(const Spieler& sp) const;
-		friend ostream& operator << (ostream& out, const Spieler& sp);
+public:
+	Spieler (string tname, int tsumme, Position tpos = Position::Tor) : name(tname), summe(tsumme)
+	{
+		if (name.size() == 0)
+			throw runtime_error("runtime error");
+		if (summe < 10 || summe > 500)
+			throw runtime_error("runtime error");
+		pos = tpos;
+	}
+	friend bool operator == (const Spieler& ss, const Spieler& sk);
+	friend ostream& operator << (ostream& out, const Spieler& sp);
 };
 
 

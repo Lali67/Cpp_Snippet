@@ -5,30 +5,30 @@
 #include "Spieler.h"
 using namespace std;
 
-bool Spieler::operator==(const Spieler& sp) const {
-	if (name.compare(sp.name) == 0)
+bool operator==(const Spieler& sp, const Spieler& sk) {
+	
+	if (sp.name == sk.name)
 		return true;
 	else
 		return false;
-};
-
+}
 ostream& operator << (ostream& out, const Spieler& sp) {
-	out << sp.name << ", " << sp.summe << " Mio Euro, ";
-	switch (sp.pos)
+	out << "[" << sp.name << ", " << sp.summe << " Mio Euro, ";
+	
+	switch(sp.pos)
 	{
-		case Position::Tor:
-			out << "Tor" << endl;
-			break;
-		case Position::Abwehr:
-			out << "Abwehr" << endl;
-			break;
-		case Position::Mitte:
-			out << "Mitte" << endl;
-			break;
-		case Position::Sturm:
-			out << "Sturm" << endl;
-			break;
+	case Position::Tor :
+		out << "Tor" << "]";
+		break;
+	case Position::Abwehr:
+		out << "Abwehr" << "]";
+		break;
+	case Position::Mitte:
+		out << "Mitte" << "]";
+		break;
+	case Position::Sturm:
+		out << "Sturm" << "]";
+		break;
 	}
-
 	return out;
-};
+}

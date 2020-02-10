@@ -21,7 +21,7 @@ int main() {
 	const Spieler messi{ "Messi",180,Position::Sturm };
 	const Spieler suarez{ "Suarez",70,Position::Sturm };
 	const Spieler elhaddadi{ "El Haddadi",12,Position::Sturm };
-
+	
 	cout << "SPIELER\n";
 	cout << messi << '\n';
 	cerr << messi << '\n';
@@ -55,10 +55,11 @@ int main() {
 	catch (runtime_error&) {
 		cout << "Error 4\n";
 	}
+	
 	cout << (messi == messi) << (messi == alba) << (messi == Spieler{ "Test",180,Position::Sturm });
 	cout << (messi == Spieler{ "Messi",18 }) << (messi == Spieler{ "Messis",180,Position::Sturm });
 	cout << '\n';
-
+	
 	cout << "\nMANNSCHAFT\n";
 	try {
 		cout << Mannschaft{ "Kapfenberg" } << '\n';
@@ -80,13 +81,15 @@ int main() {
 	catch (runtime_error&) {
 		cout << "Error 6\n";
 	}
+	
 	Mannschaft barcelona{ "Barcelona",{coutinho,cillessen,suarez} };
+	
 	const Mannschaft h{ "Hoppala",barcelona.engagieren({messi,cillessen,elhaddadi,coutinho,messi}) };
 	cout << h << '\n';
 	cerr << h << '\n';
 	barcelona.engagieren({});
 	cout << barcelona << '\n';
-
+	
 	//Dekommentieren fuer Zusatz aufstellung
 	/*
 	cout << "\nZusatz 10 Punkte\n";

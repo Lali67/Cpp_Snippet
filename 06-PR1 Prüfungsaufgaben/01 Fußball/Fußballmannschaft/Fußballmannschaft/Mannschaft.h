@@ -9,26 +9,37 @@
 using namespace std;
 
 class Mannschaft {
-	string name;
-	vector<Spieler> spielerliste;
+private:
+	string mname;
+	vector <Spieler> spielerliste;
+public:
+	Mannschaft(string tmname) : mname(tmname)
+	{
+		if (mname.size() == 0)
+			throw runtime_error("runtime error");
 
-	public:
-		Mannschaft(string tname) :name(tname) {
-			if (tname.size() == 0)
-				throw("runtime_error: Falsche Name");
-		};
-		Mannschaft(string tname, vector<Spieler> tspielerliste) :name(tname) {
-			if (tname.size() == 0)
-				throw("runtime_error: Falsche Name");
-			if (tspielerliste.empty())
-				throw("runtime_error:Falsche Liste");
-			//Lista átmásolás!
-			for (Spieler v : tspielerliste) {
-				spielerliste.push_back(v);
+	}
+	Mannschaft(string tmname, vector <Spieler> tspielerliste) : mname(tmname)
+	{
+		if (mname.size() == 0)
+			throw runtime_error("runtime error");
+		
+		for (int i = 0; i < tspielerliste.size(); i++)
+			spielerliste.push_back(tspielerliste.at(i));
+
+		for (int i = 0; i < tspielerliste.size(); i++) {
+			for (int j = i + 1; j < tspielerliste.size(); j++) {
+		
+				if (tspielerliste.at(i) == tspielerliste.at(j))
+					throw runtime_error("runtime error");
+				
 			}
-		};
-		vector<Spieler> engagieren(const vector<Spieler>& sp);
-		friend ostream& operator << (ostream& out, const Mannschaft& sp);
+			
+		}
+		
+	}
+	vector<Spieler> engagieren(const vector<Spieler>& vecs);
+	friend ostream& operator << (ostream& out, const Mannschaft& ms);
 };
 
 
