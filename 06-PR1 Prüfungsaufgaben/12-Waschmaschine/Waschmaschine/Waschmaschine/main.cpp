@@ -130,7 +130,7 @@ int main()
   */
 
   //Dekommentieren für Zusatz aussortieren
-  /*
+  
   WaschM w2{5000};
   WaschM w3{10000};
   cout<<'\n';
@@ -150,7 +150,7 @@ int main()
   w3.zuladen(w2.aussortieren(Programm::Koch));
   cout<<w3<<'\n';
   cout<<w2<<'\n';
-  */  
+  
   
   return 0;
 }
