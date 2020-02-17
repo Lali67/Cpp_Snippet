@@ -133,7 +133,7 @@ int main() {
   catch (runtime_error&) {
     cout << "Error14\n";
   }
-  for (int i{0}; i<4; ++i)
+  for (int i{ 0 }; i < 4; ++i)
     cout << (bestand.at(0).entleihen()?'+':'-');
   cout << (bestand.at(2).entleihen()?'+':'-');
   cout << '\n';

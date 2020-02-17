@@ -20,34 +20,24 @@ void Werk::erwerben(int nr, Zustand z)
 
 bool Werk::entleihen()
 {
-	int count{ 0 };
-
-		for (const Exemplar& e : this->exemplare)
+	for (int i = 0; i < this->exemplare.size(); i++)
+		if (this->exemplare.at(i).verfuegbar())
 		{
-			count++;
-			if (e.verfuegbar())
-			{
-				count--;
-				break;
-			}
+			this->exemplare.erase(this->exemplare.begin() + i);
+			return true;
 		}
-		if (count == this->exemplare.size() - 1 || this->exemplare.size() == 0)
-			return false;
-
-		this->exemplare.at(count).entleihen();
-		return true;
 	
+	return false;
 }
 
 void Werk::retournieren(int index, Zustand z)
 {
-	if(index < 0 || index >= this->exemplare.size())
-		throw runtime_error("runtime error"); 
-
-	if (!this->exemplare.at(0).entleihen() || z == Zustand::Unbrauchbar)
+	if(index >= exemplare.size())
 		throw runtime_error("runtime error");
-
-	this->exemplare.at(0).retournieren(z);
+	if(exemplare.at(index).verfuegbar()) 
+		throw runtime_error("runtime error");
+	
+	exemplare.at(index).retournieren(z);
 }
 
 ostream& operator << (ostream& out, const Werk& w) 

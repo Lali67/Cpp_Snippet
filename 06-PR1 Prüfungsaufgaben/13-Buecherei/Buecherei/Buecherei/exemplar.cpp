@@ -22,7 +22,9 @@ bool Exemplar::entleihen()
 	return false;
 }
 
-void Exemplar::retournieren(Zustand z)
+//Zustand Exemplar::getzus() const { return this->zus; }
+
+void Exemplar::retournieren(Zustand z) 
 {
 	bool besser{ true };
 
