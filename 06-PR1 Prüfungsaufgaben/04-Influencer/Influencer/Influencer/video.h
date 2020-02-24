@@ -29,11 +29,7 @@ public:
 	vector<Platform> upload(const vector<Platform>& v);
 	int get_class() const;
 	friend ostream& operator << (ostream& out, const Video& vv);
+
 };
 
-
-
-
-
 #endif
-

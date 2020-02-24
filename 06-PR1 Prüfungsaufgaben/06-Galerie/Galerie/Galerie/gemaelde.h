@@ -23,7 +23,6 @@ public:
 
 		if (name.size() == 0 || wert < 100 || wert > 10000)
 			throw runtime_error("runtime error");
-
 	}
 
 	int get_wert() const;
@@ -33,7 +32,5 @@ public:
 	friend ostream& operator << (ostream& out, const Gemaelde& gem);
 
 };
-
-
 
 #endif

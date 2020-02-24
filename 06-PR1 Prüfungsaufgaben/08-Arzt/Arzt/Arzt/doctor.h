@@ -24,27 +24,19 @@ public:
 
 		for (const Field& vec : expertise)
 		{
-			bool gleich{ false };
 			int count{ 0 };
 
-			for (int j = 0; j < expertise.size(); j++)
+			for (const Field& vec : expertise)
 			{
-				if (vec == expertise.at(j))
-				{
-					count = j;
-					break;
-				}
+				int count{ 0 };
+
+				for (int j = 0; j < expertise.size(); j++)
+					if (vec == expertise.at(j))
+						count++;
+
+				if (count > 1)
+					throw runtime_error("runtime error");
 			}
-
-			for (int k = count + 1; k < expertise.size(); k++)
-				if (vec == expertise.at(k))
-				{
-					gleich = true;
-					break;
-				}
-
-			if (gleich)
-				throw runtime_error("runtime error");
 		}
 	}
 	
@@ -61,26 +53,13 @@ public:
 
 		for (const Field& vec : expertise)
 		{
-			bool gleich{ false };
 			int count{ 0 };
 
 			for (int j = 0; j < expertise.size(); j++)
-			{
 				if (vec == expertise.at(j))
-				{
-					count = j;
-					break;
-				}
-			}
+					count++;
 
-			for (int k = count + 1; k < expertise.size(); k++)
-				if (vec == expertise.at(k))
-				{
-					gleich = true;
-					break;
-				}
-
-			if (gleich)
+			if (count > 1)
 				throw runtime_error("runtime error");
 		}
 	}

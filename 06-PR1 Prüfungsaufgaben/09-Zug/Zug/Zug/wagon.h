@@ -21,14 +21,12 @@ public:
 	{
 		einrichtung = teinrichtung;
 
-		if (masse < 5 || masse > 100)
-			throw runtime_error("runtime error");
+		if (masse < 5 || masse > 100) throw runtime_error("runtime error");
 	}
 
-	int get_mass()const;
-	bool has_feature(Feature) const;
+	int get_mass() const;
+	bool has_feature(Feature f) const;
 	friend ostream& operator << (ostream& out, const Wagon& wg);
-
 };
 
 #endif

@@ -31,26 +31,13 @@ public:
 
 		for (const Field& vec : symptoms)
 		{
-			bool gleich{ false };
 			int count{ 0 };
 
 			for (int j = 0; j < symptoms.size(); j++)
-			{
 				if (vec == symptoms.at(j))
-				{
-					count = j;
-					break;
-				}
-			}
+					count++;
 
-			for (int k = count + 1; k < symptoms.size(); k++)
-				if (vec == symptoms.at(k))
-				{
-					gleich = true;
-					break;
-				}
-
-			if (gleich)
+			if (count > 1)
 				throw runtime_error("runtime error");
 		}
 	}

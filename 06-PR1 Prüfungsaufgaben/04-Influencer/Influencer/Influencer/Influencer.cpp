@@ -34,8 +34,7 @@ ostream& operator << (ostream& out, const Influencer& ic)
 		out << ic.videos.at(ic.videos.size() - 1) << "}]";
 	}
 	else
-	{
 		out << "}]";
-	}
+	
 	return out;
 }

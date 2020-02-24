@@ -13,11 +13,7 @@ bool Exemplar::verfuegbar() const
 
 bool Exemplar::entleihen()
 {
-	if (this->verfuegbar())
-	{
-		this->verliehen = true;
-		return true;
-	}
+	if (this->verfuegbar()) { this->verliehen = true; return true; }
 
 	return false;
 }
@@ -40,14 +36,9 @@ void Exemplar::retournieren(Zustand z)
 	if (zus == Zustand::Unbrauchbar && z == Zustand::Unbrauchbar) 
 		besser = false;
 
-	if (verliehen && !besser)
-	{
-		verliehen = false;
-		zus = z;
-	}
+	if (verliehen && !besser) { verliehen = false; zus = z; }
 
-	else
-		throw runtime_error("runtime error");
+	else throw runtime_error("runtime error");
 }
 
 ostream& operator << (ostream& out, const Exemplar& e) 

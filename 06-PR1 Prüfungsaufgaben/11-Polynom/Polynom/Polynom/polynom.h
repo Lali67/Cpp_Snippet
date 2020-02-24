@@ -26,7 +26,6 @@ public:
 	friend ostream& operator << (ostream& out, const Polynom& p);
 	int wert(int n) const;
 	ostream& print_fmt(ostream& o) const;
-
 };
 
 #endif

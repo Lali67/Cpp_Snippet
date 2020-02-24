@@ -28,7 +28,6 @@ public:
 	void retournieren(Zustand z);
 	//Zustand getzus() const;
 	friend ostream& operator << (ostream& out, const Exemplar& e);
-
 };
 
 #endif

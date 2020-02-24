@@ -44,13 +44,10 @@ ostream& operator << (ostream& out, const Video& vv)
 {
 	out << "[" << vv.title << " (" << vv.get_class() << "): {";
 	
-	if (vv.platforms.size() > 0)
-	{
 		for (int i = 0; i < vv.platforms.size() - 1; i++)
 			out << platform_names.at(static_cast<size_t>(vv.platforms.at(i))) << ", ";
 
 		out << platform_names.at(static_cast<size_t>(vv.platforms.at(vv.platforms.size() - 1))) << "}, " << vv.length << "]";
-	}
-
+	
 	return out;
 }

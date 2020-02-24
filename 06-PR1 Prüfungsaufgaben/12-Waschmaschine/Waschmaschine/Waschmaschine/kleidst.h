@@ -27,7 +27,6 @@ public:
 	friend ostream& operator << (ostream& out, const KleidSt& k);
 	int getgewicht() const;
 	Programm getprogramm() const;
-
 };
 
 #endif

@@ -6,17 +6,11 @@
 
 using namespace std;
 
-int Zutat::brennwert() const 
-{
-	return tbrennwert;
-}
+int Zutat::brennwert() const { return tbrennwert; }
 
 bool operator == (const Zutat& z1, const Zutat& z2) 
-{
-	if (z1.name == z2.name && z1.brennwert() == z2.brennwert())
-		return true;
-	else
-		return false;
+{ 
+	return z1.name == z2.name && z1.brennwert() == z2.brennwert();
 }
 
 ostream& operator << (ostream& out, const Zutat& zt) 

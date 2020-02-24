@@ -16,7 +16,7 @@ private:
 	string bezeichnung;
 	int min_erlös;
 	Kategorie cat;
-	vector <Gebot> gebote;
+	vector<Gebot> gebote;
 public:
 	Lot(string tbezeichnung, int min_terlös, Kategorie tcat = Kategorie::Sonstiges) : 
 		bezeichnung(tbezeichnung), min_erlös(min_terlös), cat(tcat) 

@@ -10,50 +10,76 @@ using namespace std;
 
 class Pizza {
 private:
-	vector <Topping> toppings;
+	vector<Topping> toppings;
 public:
-	Pizza() {}
-	Pizza(vector <Topping> gewuenschte) {}
-	Pizza(vector <Topping> gewuenschte, vector <Topping> ungewuenschte)
+	Pizza () 
 	{
-		Topping cheese{ "Cheese", "G" }, tomato{ "Tomato sauce" };
-		bool gefunden_cheese{ false };
-		bool gefunden_tomato{false};
+		Topping Tomato_sauce{ "Tomato sauce" };
+		Topping Cheese{ "Cheese", "G" };
 
-		for (int i = 0; i < ungewuenschte.size(); i++) 
-		{
-			if (ungewuenschte.at(i) == cheese)
-				gefunden_cheese = true;
-			
-			if (ungewuenschte.at(i) == tomato)
-				gefunden_tomato = true;
-		}
-		if (!gefunden_cheese)
-			toppings.push_back(cheese);
+		toppings.push_back(Tomato_sauce);
+		toppings.push_back(Cheese);
+	}
+	Pizza (vector<Topping> gew) 
+	{
+		for (const Topping& t : gew)
+			toppings.push_back(t);
 
-		if (!gefunden_tomato)
-			toppings.push_back(tomato);
-		
-		for (int i = 0; i < gewuenschte.size(); i++) 
-		{
-			bool gefunden{false};
+		Topping Tomato_sauce{ "Tomato sauce" };
+		Topping Cheese{ "Cheese", "G" };
+		bool tomato_found{ false };
+		bool cheese_found{ false };
 
-			for (int j = 0; j < toppings.size(); j++) 
-			{
-				if (gewuenschte.at(i) == toppings.at(j))
-					gefunden = true;
-			}
-			if (!gefunden)
-				toppings.push_back(gewuenschte.at(i));
-		}
+		for (const Topping& t : toppings)
+			if (t == Tomato_sauce) { tomato_found = true; break; }
+
+		for (const Topping& t : toppings)
+			if (t == Cheese) { cheese_found = true; break; }
+
+		if (!tomato_found)  toppings.push_back(Tomato_sauce);
+		if (!cheese_found)	toppings.push_back(Cheese);
+
 		if (toppings.size() == 0)
-			throw runtime_error("runtime error");
-		
-	};
+			throw runtime_error("runtime");
+	}
+	Pizza (vector<Topping> gew, vector<Topping> ungew)
+	{
+		Topping Tomato_sauce{ "Tomato sauce" };
+		Topping Cheese{ "Cheese", "G" };
+		bool tomato_found{ false };
+		bool cheese_found{ false };
+
+		for(const Topping& t : ungew)
+			if (t == Tomato_sauce) { tomato_found = true; break; }
+
+		for (const Topping& t : ungew)
+			if (t == Cheese) { cheese_found = true; break; }
+
+		if (!tomato_found)  toppings.push_back(Tomato_sauce); 
+		if (!cheese_found)	toppings.push_back(Cheese);
+
+		vector<bool> in{};
+
+		for (int i = 0; i < gew.size(); i++)
+		{
+			bool gefunden{ false };
+
+			for (int j = 0; j < toppings.size(); j++)
+				if (gew.at(i) == toppings.at(j)) { gefunden = true; }
+
+			in.push_back(gefunden);
+		}
+
+		for (int i = 0; i < in.size(); i++)
+			if (in.at(i) == false) toppings.push_back(gew.at(i));
+
+		if (toppings.size() == 0)
+			throw runtime_error("runtime");
+	}
 
 	double price() const;
-	friend ostream& operator << (ostream& out, const Pizza& pz);
+	friend ostream& operator << (ostream& out, const Pizza& p);
 
 };
 
-#endif 
+#endif

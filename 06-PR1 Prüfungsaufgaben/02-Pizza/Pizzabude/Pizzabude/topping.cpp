@@ -6,19 +6,9 @@
 
 using namespace std;
 
-bool Topping::is_specialty()const{
-	
-	return specialty;
-}
+bool Topping::is_specialty() const { return specialty;}
 
-bool operator == (const Topping& t1, const Topping& t2) {
-	
-	if (t1.name == t2.name)
-		return true;
-
-	else
-		return false;
-}
+bool operator == (const Topping& t1, const Topping& t2) {return t1.name == t2.name;}
 
 ostream& operator << (ostream& out, const Topping& ts) {
 
@@ -29,9 +19,7 @@ ostream& operator << (ostream& out, const Topping& ts) {
 	out << ts.name << " (";
 
 	for (int i = 0; i < ts.allergenes.size() - 1; i++) 
-		{
-			out << ts.allergenes.at(i) << ", ";
-		}
+			out << ts.allergenes.at(i) << ", ";	
 	out << ts.allergenes.at(ts.allergenes.size() - 1) << ")";
 	}
 	

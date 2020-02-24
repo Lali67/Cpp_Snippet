@@ -34,7 +34,6 @@ public:
 	void couple(vector<Wagon> wag);
 	vector<Wagon> uncouple(size_t from);
 	friend ostream& operator << (ostream& out, const Train& zug);
-
 };
 
 #endif

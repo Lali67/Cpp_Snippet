@@ -23,7 +23,6 @@ public:
 	void waschen(Programm pr);
 	friend ostream& operator << (ostream& out, const WaschM& w);
 	vector<KleidSt> aussortieren(Programm p);
-
 };
 
 #endif

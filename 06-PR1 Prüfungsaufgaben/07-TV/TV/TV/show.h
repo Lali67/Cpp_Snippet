@@ -20,10 +20,8 @@ public:
 	Show(string tname, Genre tgenre, int anzahl_tstaffeln = 1) : name(tname), genre(tgenre), anzahl_staffeln(anzahl_tstaffeln)
 	{
 		status = true;
-
 		if (name.size() == 0 || anzahl_staffeln < 1 || anzahl_staffeln > 10)
 			throw runtime_error("runtime error");
-
 	}
 
 	bool produce_season();
@@ -33,6 +31,5 @@ public:
 	friend ostream& operator << (ostream& out, const Show& s);
 
 };
-
 
 #endif

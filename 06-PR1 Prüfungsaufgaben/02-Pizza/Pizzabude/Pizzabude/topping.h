@@ -18,9 +18,11 @@ public:
 		if (name.size() == 0)
 			throw runtime_error("runtime error");
 	};
+
 	bool is_specialty() const;
 	friend bool operator == (const Topping& t1, const Topping& t2);
 	friend ostream& operator << (ostream& out, const Topping& ts);
+
 };
 
 #endif 

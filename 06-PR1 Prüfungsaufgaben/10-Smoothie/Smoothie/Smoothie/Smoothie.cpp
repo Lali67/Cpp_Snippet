@@ -7,10 +7,7 @@
 
 using namespace std;
 
-void Smoothie::hinzu(const Zutat& z) 
-{
-	zutaten.push_back(z);
-}
+void Smoothie::hinzu(const Zutat& z) { zutaten.push_back(z); }
 
 int Smoothie::brennwert() const 
 {
@@ -65,26 +62,19 @@ void Smoothie::liste(ostream& out) const
 		int count{ 0 };
 
 		for (const Zutat& z4 : zutaten) 
-		{
-			if (temp.at(i) == z4)
-				count++;
-		}
+			if (temp.at(i) == z4) count++;
 
 		if (count > 1)
-		{
 			do
 			{
 				for (int j = temp.size() - 1; j >= 0; j--)
-				{
 					if (temp.at(j) == temp.at(i))
 					{
 						temp.erase(temp.begin() + j);
 						count--;
 						break;
 					}
-				}
 			} while (count > 1);
-		}
 	}
 	
 	for (int i = 0; i < temp.size(); i++)
@@ -92,13 +82,10 @@ void Smoothie::liste(ostream& out) const
 		int count_2{ 0 };
 
 		for (const Zutat& z1 : zutaten)
-		{
-			if (temp.at(i) == z1)
-				count_2++;
-		}
+			if (temp.at(i) == z1) count_2++;
+
 		cout << temp.at(i) << "*" << count_2;
 
-		if (i < temp.size() - 1)
-			cout << ", ";
+		if (i < temp.size() - 1) cout << ", ";
 	}
 }

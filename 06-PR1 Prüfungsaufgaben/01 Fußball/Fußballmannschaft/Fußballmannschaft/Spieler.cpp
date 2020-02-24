@@ -3,6 +3,7 @@
 #include <string>
 #include <exception>
 #include "Spieler.h"
+
 using namespace std;
 
 bool operator==(const Spieler& sp, const Spieler& sk) {

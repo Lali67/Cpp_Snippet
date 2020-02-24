@@ -28,10 +28,7 @@ bool Patient::diagnose(const vector<Field>& v)
 		}
 	}
 
-	if (hinzugefuegt)
-		return true;
-
-	return false;
+	return hinzugefuegt;
 }
 
 size_t Patient::count_symptoms_of(const vector<Field>& v) const

@@ -14,8 +14,7 @@ void Werk::erwerben(int nr, Zustand z)
 	if (z == Zustand::Unbrauchbar)
 		throw runtime_error("runtime error");
 
-	else
-		this->exemplare.push_back(temp);
+	this->exemplare.push_back(temp);
 }
 
 bool Werk::entleihen()

@@ -26,7 +26,6 @@ public:
 	bool entleihen();
 	void retournieren(int index, Zustand z);
 	friend ostream& operator << (ostream& out, const Werk& w);
-
 };
 
 #endif

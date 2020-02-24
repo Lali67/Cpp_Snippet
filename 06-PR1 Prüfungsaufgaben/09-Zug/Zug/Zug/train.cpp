@@ -43,8 +43,7 @@ bool Train::ready() const
 		if (wg.has_feature(Feature::Toilet)) is_toilet = true;
 	}
 
-	if (is_bar && is_restaurant && is_couchette && is_standard && is_toilet)
-		ready_feature = true;
+	if (is_bar && is_restaurant && is_couchette && is_standard && is_toilet) ready_feature = true;
 
 	for (const Wagon& wg : wagons) 
 	{
@@ -52,11 +51,7 @@ bool Train::ready() const
 		else
 		{
 			count++;
-			if(count > 3)
-			{
-				ready_toilet = false;
-				break;
-			}
+			if(count > 3) { ready_toilet = false; break; }
 		}
 	}
 
@@ -73,8 +68,7 @@ vector<Wagon> Train::uncouple(size_t from)
 {
 	vector<Wagon> temp;
 
-	if (from < 0 || from >= wagons.size())
-		throw runtime_error("runtime error");
+	if (from < 0 || from >= wagons.size()) throw runtime_error("runtime error");
 
 	for (size_t i = from; i < wagons.size(); i++)
 	{

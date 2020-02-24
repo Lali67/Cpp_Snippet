@@ -22,7 +22,6 @@ public:
 	int brennwert() const;
 	friend bool operator == (const Zutat& z1, const Zutat& z2);
 	friend ostream& operator << (ostream& out, const Zutat& zt);
-
 };
 
 #endif

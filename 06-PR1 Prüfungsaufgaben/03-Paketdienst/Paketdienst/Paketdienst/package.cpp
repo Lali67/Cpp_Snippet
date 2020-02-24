@@ -13,12 +13,12 @@ bool Package::destination_in(const vector <Region>& v) const
 	bool gefunden{ false };
 	
 	for (int i = 0; i < v.size(); i++) 
-	//for(const Region& item: v )
-	{
 		if (destination == v.at(i))
+		{
 			gefunden = true;
-	}
-	
+			break;
+		}
+
 	return gefunden;
 }
 

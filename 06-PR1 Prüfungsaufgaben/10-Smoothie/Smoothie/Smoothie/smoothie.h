@@ -15,8 +15,7 @@ private:
 public:
 	Smoothie(string tbez) : bezeichnung(tbez)
 	{
-		if(bezeichnung.size() == 0)
-			throw runtime_error("runtime error");
+		if(bezeichnung.size() == 0) throw runtime_error("runtime error");
 	}
 
 	void hinzu(const Zutat& z);
@@ -24,7 +23,6 @@ public:
 	friend ostream& operator << (ostream& out, const Smoothie& sm);
 	void unterheben(const Zutat& z);
 	void liste(ostream& out) const;
-
 };
 
 #endif

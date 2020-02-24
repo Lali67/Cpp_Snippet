@@ -8,19 +8,9 @@ using namespace std;
 
 //vector<string> feature_names{ "bar", "restaurant", "couchette", "standard", "toilet" };
 
-int Wagon::get_mass() const 
-{
-	return masse;
-}
+int Wagon::get_mass() const { return masse; }
 
-bool Wagon::has_feature(Feature f) const 
-{
-	if (einrichtung == f)
-		return true;
-
-	else
-		return false;
-}
+bool Wagon::has_feature(Feature f) const { return einrichtung == f; }
 
 ostream& operator << (ostream& out, const Wagon& wg) 
 {

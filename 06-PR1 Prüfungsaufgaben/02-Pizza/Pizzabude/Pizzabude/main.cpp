@@ -36,7 +36,7 @@ int main() {
 			cout << '\n';
 		}
 		cout << (vt.at(13) == Topping{ "Sunflower seed","",true }) << '\n';
-
+		
 		cout << "\nClass Pizza:\n";
 		try {
 			Pizza p{ {vt.at(5),vt.at(2)}, {vt.at(11),vt.at(2),vt.at(5),vt.at(12)} };
@@ -66,7 +66,7 @@ int main() {
 			cout << p << '\n';
 		for (const auto& p : vp)
 			cerr << p << '\n';
-
+			
 		// Dekommentieren fuer Zusatz allergenes
 		/*
 		  cout << "\nAdditional task allergenes\n";

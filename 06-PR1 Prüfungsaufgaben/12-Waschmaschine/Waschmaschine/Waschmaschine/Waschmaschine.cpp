@@ -10,7 +10,7 @@ using namespace std;
 void WaschM::zuladen(const vector<KleidSt>& z) 
 {
 	for (const KleidSt& k : z)
-		(this->kleidungsstuecke).push_back(k);
+		this->kleidungsstuecke.push_back(k);
 }
 
 void WaschM::waschen(Programm pr) 

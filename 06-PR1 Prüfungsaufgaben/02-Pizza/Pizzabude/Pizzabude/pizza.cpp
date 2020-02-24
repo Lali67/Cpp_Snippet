@@ -6,46 +6,33 @@
 
 using namespace std;
 
-double Pizza::price() const {
-	Topping cheese{ "Cheese", "G" }, tomato{ "Tomato sauce" };
-	vector <Topping> list;
+double Pizza::price() const
+{
 	double preis{ 7 };
-	int count{ 0 };
+	Topping Tomato_sauce{ "Tomato sauce" };
+	Topping Cheese{ "Cheese", "G" };
+	int count{ 2 };
 
-	for (int i = 0; i < toppings.size(); i++)
+	for (const Topping& t : toppings)
 	{
-		if (toppings.at(i) == cheese)
-			count++;
-		else
-			if (toppings.at(i) == tomato)
-				count++;
-			else
-				list.push_back(toppings.at(i));
-	}
-	
-	for (int i = 0; i < list.size() - count; i++)
-	{
-		if (list.at(i).is_specialty())
-			preis += 1.5;
-		else
+		if (t == Tomato_sauce == false && t == Cheese == false && count <= 0)
+		{
 			preis += 1;
+		}
+		if (t.is_specialty()) preis += 0.5;
+		count--;
 	}
 
 	return preis;
 }
 
+ostream& operator << (ostream& out, const Pizza& p) 
+{
+	out << "[{";
 
-ostream& operator << (ostream& out, const Pizza& pz) {
-
-	
-	out << "[";
-	
-	for (int i = 0; i < pz.toppings.size() - 1; i++) 
-	{
-		out << pz.toppings.at(i) << ", ";
-	}
-	out << pz.toppings.at(pz.toppings.size() - 1);
-	out << pz.price() << " Euro]";
+	for(int i = 0; i < p.toppings.size() - 1; i++)
+		out << p.toppings.at(i) << ", ";
+	out << p.toppings.at(p.toppings.size() - 1) << "}, " << p.price() << " Euro]";
 
 	return out;
 }
