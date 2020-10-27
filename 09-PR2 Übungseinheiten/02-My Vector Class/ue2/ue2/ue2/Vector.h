@@ -10,6 +10,8 @@ using namespace std;
 class Vector {
 	
 	public:
+		class ConstIterator;
+		class Iterator;
 		using value_type = double;
 		using size_type = size_t;
 		using difference_type = ptrdiff_t;
@@ -17,8 +19,10 @@ class Vector {
 		using const_reference = const double&;
 		using pointer = double*;
 		using const_pointer = const double*;
-		using iterator = double*;
-		using const_iterator = const double*;
+		using iterator = Vector::Iterator;
+		using const_iterator = Vector::ConstIterator;
+		//using iterator = double*;
+		//using const_iterator = const double*;
 	
 	public:
 		class Iterator {
@@ -28,31 +32,27 @@ class Vector {
 					using pointer = Vector::pointer;
 					using difference_type = Vector::difference_type;
 					using iterator_category = std::forward_iterator_tag;
+
 				private:
 					pointer ptr;
+
 				public:
-					Iterator():ptr(nullptr) {};
-					Iterator(pointer optr) { 
-						ptr = optr;
-					}
-					reference operator * () const ;
-					pointer operator -> ()
-					{
-						return static_cast<pointer> (ptr);
-					}
-					bool operator == (const const_iterator&) const;
-					bool operator != (const const_iterator&) const;
-					Iterator& operator ++ ()				// (Prefix): no const because 'ptr' changes
-					{
-						++ptr;
-						return *this;
-					}
-					Iterator operator ++ (int)				// (Postfix)
-					{
-						++(*ptr); 
-						return *this;
-					}
-					operator const_iterator() const;		// (Typ - Konversion)
+					Iterator():ptr(nullptr) { }
+					Iterator(pointer optr):ptr(optr) { }
+					Iterator(const Iterator& obj) :ptr(obj.ptr) {}
+
+					reference operator * () 						{ return *ptr; }
+					pointer operator -> ()							{ return ptr; }
+					friend bool operator == (const iterator& lhs, const iterator& rhs) 	
+																	{ return *(lhs.ptr) == *(rhs.ptr);}
+					friend bool operator != (const iterator& lhs, const iterator& rhs)
+																	{ return *(lhs.ptr) != *(rhs.ptr); }
+					iterator& operator ++ ()						{ ++(ptr); return *this; }	// (Prefix)
+					iterator operator ++ (int val)					{ Iterator temp(ptr); ptr = ++(ptr); return temp; }	// (Postfix)
+					friend std::ostream& operator << (std::ostream& os, const Iterator& p)
+																	{ os << p.ptr <<"\n" ; return os;}
+
+					friend class ConstIterator;
 		};
 
 		class ConstIterator {
@@ -62,27 +62,50 @@ class Vector {
 					using pointer = Vector::const_pointer;
 					using difference_type = Vector::difference_type;
 					using iterator_category = std::forward_iterator_tag;
+
 				private:
 					pointer ptr;
+
 				public:
-					ConstIterator():ptr(nullptr) {};
-					ConstIterator(pointer optr) {
-						ptr = optr;
+					ConstIterator():ptr(nullptr) { }
+					ConstIterator(pointer optr) :ptr(optr) { }
+					ConstIterator(const ConstIterator& obj) :ptr(obj.ptr) {}
+					ConstIterator(const Iterator& obj) :ptr(obj.ptr) {}			//Iterator must be friend class
+
+					reference operator * ()								{ 
+						reference temp = *ptr;
+						return temp; }
+					
+					pointer operator -> () const						{ return ptr; }
+					
+					friend bool operator == (const const_iterator& lhs, const const_iterator& rhs)
+																		{ return *(lhs.ptr) == *(rhs.ptr); }
+					
+					friend bool operator != (const const_iterator& lhs, const const_iterator& rhs)
+																		{ return *(lhs.ptr) != *(rhs.ptr); }
+					
+					const_iterator& operator ++ () 				{ 
+						pointer temp_ptr = ptr;
+						const_iterator temp(++(temp_ptr));			// (Prefix)
+						return  temp;
+					}	
+					
+					const_iterator operator++(int) 				{ 
+						pointer temp_ptr = ptr;
+						const_iterator temp((temp_ptr)++);			// (Postfix)
+						return  temp;
+					};
+					
+					friend difference_type operator - (const Vector::ConstIterator& lop, const Vector::ConstIterator& rop) {
+						return lop.ptr - rop.ptr;
 					}
-					reference operator * () const;
-					pointer operator -> () const;
-					bool operator == (const const_iterator&) const;
-					bool operator != (const const_iterator&) const;
-					const_iterator& operator ++ () const;		// (Prefix)
-					const_iterator operator++(int) const;		// (Postfix)
 		};
 
 	private:	
 		static constexpr size_type min_sz{5};			//Mindestgroesse (5) fuer max_sz festlegt einfuehren
-		size_type	sz;									//Anzahl der Elemente im Vector
-		size_type	max_sz;								//maximale Anzahl an Elementen die	moeglich sind
-		pointer		values;								//Zeigt auf ein Feld, welches die Elemente des Vectors beinhaltet
-
+		size_type		sz;								//Anzahl der Elemente im Vector
+		size_type		max_sz;							//maximale Anzahl an Elementen die	moeglich sind
+		pointer			values;							//Zeigt auf ein Feld, welches die Elemente des Vectors beinhaltet
 	public:
 		Vector()										//Liefert einen leeren Vector
 		{
@@ -115,13 +138,14 @@ class Vector {
 		
 		//--------- Methoden für Iteratoren ---------
 		iterator begin()
-			{ return values; }
+			{ return iterator(values); }
 		iterator end()
-			{ return values + sz; }
+			{ return iterator(values + sz); }
 		const_iterator begin() const
-			{ return values; }
+			{ return const_iterator(values); }
 		const_iterator end() const
-			{ return values + sz; }
+			{ return const_iterator(values + sz); }
+
 		//--------- Methoden für Vector Klasse---------
 		size_type size() const							//liefert die Anzahl der gespeicherten Elemente
 		{
@@ -136,13 +160,13 @@ class Vector {
 		{
 			sz = 0;
 		}
-		void reserve(size_type n)							//Kapazitaet des Vectors wird auf n vergroessert, falls noetig
+		void reserve(size_type n)						//Kapazitaet des Vectors wird auf n vergroessert, falls noetig
 		{
 			size_type newCapacity = n;
 			if (newCapacity < max_sz)
 				return;
 
-			iterator newArray = new value_type[newCapacity];
+			pointer newArray = new value_type[newCapacity];
 				for (size_type k = 0; k < max_sz; ++k)
 					newArray[k] = std::move(values[k]);
 
@@ -183,6 +207,34 @@ class Vector {
 		{
 			return max_sz;
 		}
+		
+		iterator insert(const_iterator pos, const_reference val) {
+			auto diff = pos - begin();
+			if (diff < 0 || static_cast<size_type>(diff) > sz)
+				throw runtime_error("Iterator out of bounds");
+			size_type current{ static_cast<size_type>(diff) };
+			if (sz >= max_sz)
+				reserve(max_sz * 2); //max_sz*2+10, wenn Ihr Container max_sz==0 erlaubt
+			for (size_type i{ sz }; i-- > current;)
+				values[i + 1] = values[i];
+			values[current] = val;
+			++sz;
+			return Vector::iterator{ values + current };
+		}
+		
+		iterator erase(Vector::const_iterator pos) {
+			auto diff = pos - begin();
+			if (diff < 0 || static_cast<size_type>(diff) >= sz)
+				throw runtime_error("Iterator out of bounds");
+			size_type current{ static_cast<size_type>(diff) };
+			for (size_type i{ current }; i < sz - 1; ++i)
+				values[i] = values[i + 1];
+			--sz;
+			return Vector::iterator{ values + current };
+		}
+
+
+		//--------- Operators---------
 		void operator = (const Vector& other)			//Das this-Objekt uebernimmt die Werte vom Parameter
 		{
 			sz = 0;
@@ -202,7 +254,9 @@ class Vector {
 				throw std::out_of_range("operator [] : index is out of range");
 			return values[index];
 		}
-
+		pointer operator -> () const	{ return values; }
+		pointer operator -> ()			{ return values; }
+		
 		~Vector()
 		{
 			delete [] values;
