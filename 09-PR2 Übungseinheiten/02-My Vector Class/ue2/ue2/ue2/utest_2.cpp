@@ -69,10 +69,8 @@ TEST_CASE("IteratorTest, PostIncrement") {
   Vector v({1});
   Vector::iterator a{v.begin()};
   Vector::iterator b{v.end()};
-  cout << a; cout << b;
   CHECK_NE(a, b);
   CHECK_NE(a++, b);
-  cout << a; cout << b;
   CHECK_EQ(a, b);
 }
 

@@ -43,16 +43,15 @@ class Vector {
 
 					reference operator * () 						{ return *ptr; }
 					pointer operator -> ()							{ return ptr; }
-					friend bool operator == (const iterator& lhs, const iterator& rhs) 	
-																	{ return *(lhs.ptr) == *(rhs.ptr);}
-					friend bool operator != (const iterator& lhs, const iterator& rhs)
-																	{ return *(lhs.ptr) != *(rhs.ptr); }
-					iterator& operator ++ ()						{ ++(ptr); return *this; }	// (Prefix)
+					bool operator == (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) == *(p->operator->()); }
+					bool operator != (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
+					iterator& operator ++ ()						{ ++(ptr); return *this; }							// (Prefix)
 					iterator operator ++ (int val)					{ Iterator temp(ptr); ptr = ++(ptr); return temp; }	// (Postfix)
-					friend std::ostream& operator << (std::ostream& os, const Iterator& p)
-																	{ os << p.ptr <<"\n" ; return os;}
+					operator const_iterator()						{ return  ptr; };
 
-					friend class ConstIterator;
+					friend bool operator == (const iterator& lhs, const iterator& rhs)	 	{ return *(lhs.ptr) == *(rhs.ptr);}
+					friend bool operator != (const iterator& lhs, const iterator& rhs)		{ return *(lhs.ptr) != *(rhs.ptr); }
+					friend std::ostream& operator << (std::ostream& os, const Iterator& p)	{ os << "Iterator class: " << p.ptr <<"\n" ; return os;}
 		};
 
 		class ConstIterator {
@@ -67,38 +66,22 @@ class Vector {
 					pointer ptr;
 
 				public:
-					ConstIterator():ptr(nullptr) { }
-					ConstIterator(pointer optr) :ptr(optr) { }
-					ConstIterator(const ConstIterator& obj) :ptr(obj.ptr) {}
-					ConstIterator(const Iterator& obj) :ptr(obj.ptr) {}			//Iterator must be friend class
+					ConstIterator():ptr(nullptr)						{}
+					ConstIterator(pointer optr) :ptr(optr)				{}
+					ConstIterator(const ConstIterator& obj)				{ ptr = obj.ptr; }
+					ConstIterator(const Iterator& obj)					{ Iterator* p = const_cast<Iterator*>(&obj); ptr = (p->operator->()); }
 
-					reference operator * ()								{ 
-						reference temp = *ptr;
-						return temp; }
-					
+					reference operator * ()								{ reference temp = *ptr; return temp; }
 					pointer operator -> () const						{ return ptr; }
-					
-					friend bool operator == (const const_iterator& lhs, const const_iterator& rhs)
-																		{ return *(lhs.ptr) == *(rhs.ptr); }
-					
-					friend bool operator != (const const_iterator& lhs, const const_iterator& rhs)
-																		{ return *(lhs.ptr) != *(rhs.ptr); }
-					
-					const_iterator& operator ++ () 				{ 
-						pointer temp_ptr = ptr;
-						const_iterator temp(++(temp_ptr));			// (Prefix)
-						return  temp;
-					}	
-					
-					const_iterator operator++(int) 				{ 
-						pointer temp_ptr = ptr;
-						const_iterator temp((temp_ptr)++);			// (Postfix)
-						return  temp;
-					};
-					
-					friend difference_type operator - (const Vector::ConstIterator& lop, const Vector::ConstIterator& rop) {
-						return lop.ptr - rop.ptr;
-					}
+					bool operator == (const const_iterator& rhs)		{ const_iterator* p = const_cast<const_iterator*>(&rhs); return *(ptr) == *(p->operator->()); }
+					bool operator != (const const_iterator& rhs)		{ const_iterator* p = const_cast<const_iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
+					const_iterator& operator ++ () 						{ ++(ptr); return *this; }	
+					const_iterator operator ++ (int) 					{ ConstIterator temp(ptr); ptr = ++(ptr); return temp; };
+										
+					friend bool operator == (const const_iterator& lhs, const const_iterator& rhs)		{ return *(lhs.ptr) == *(rhs.ptr); }
+					friend bool operator != (const const_iterator& lhs, const const_iterator& rhs)		{ return *(lhs.ptr) != *(rhs.ptr); }
+					friend difference_type operator - (const Vector::ConstIterator& lop, const Vector::ConstIterator& rop) 	{ return lop.ptr - rop.ptr; }
+					friend std::ostream& operator << (std::ostream& os, const ConstIterator& p)			{os << "ConstIterator class: " << p.ptr << "\n"; return os;	}
 		};
 
 	private:	
