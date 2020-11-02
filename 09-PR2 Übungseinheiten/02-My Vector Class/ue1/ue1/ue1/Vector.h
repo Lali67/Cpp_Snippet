@@ -87,19 +87,19 @@ class Vector {
 			if (sz == max_sz)
 				return;
 
-			double* newArray = new double[sz];
+			pointer newArray = new value_type[sz];
 			for (int k = 0; k < sz; ++k)
 				newArray[k] = std::move(values[k]);
 			delete[] values;
 
-			values = new double[sz];
+			values = new value_type[sz];
 			for (int k = 0; k < sz; ++k)
 				values[k] = std::move(newArray[k]);
 			delete[] newArray;
 
 			max_sz = sz + min_sz;
 		}
-		void push_back(double x)						//Fuegt eine Kopie von x am Ende des Vectors hinzu
+		void push_back(value_type x)						//Fuegt eine Kopie von x am Ende des Vectors hinzu
 		{
 			if (sz == max_sz)
 				reserve(2 * max_sz+1);
