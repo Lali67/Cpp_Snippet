@@ -13,14 +13,14 @@ template <typename T> class Vector {
 		class ConstIterator;
 		class Iterator;
 		using value_type = T;
-		using size_type = size_t;
-		using difference_type = ptrdiff_t;
-		using reference = T&;
-		using const_reference = const T&;
-		using pointer = T*;
-		using const_pointer = const T*;
-		using iterator = Vector::Iterator;
-		using const_iterator = Vector::ConstIterator;
+		using size_type = std::size_t;
+		using difference_type = std::ptrdiff_t;
+		using reference = value_type&;
+		using const_reference = const value_type&;
+		using pointer = value_type*;
+		using const_pointer = const value_type*;
+		using iterator = Vector<value_type>::Iterator;
+		using const_iterator = Vector<value_type>::ConstIterator;
 	
 	public:
 		class Iterator {
@@ -41,7 +41,7 @@ template <typename T> class Vector {
 
 					reference operator * () 						{ return *ptr; }
 					pointer operator -> ()							{ return ptr; }
-					bool operator == (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
+					bool operator == (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) == *(p->operator->()); }
 					bool operator != (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
 					iterator& operator ++ ()						{ ++(ptr); return *this; }							// (Prefix)
 					iterator operator ++ (int val)					{ Iterator temp(ptr); ptr = ++(ptr); return temp; }	// (Postfix)
