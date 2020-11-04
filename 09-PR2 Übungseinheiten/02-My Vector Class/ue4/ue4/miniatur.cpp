@@ -9,14 +9,9 @@
 
 using namespace std;
 
-Miniatur::Miniatur(std::string aName, Fraktion aFraktion, int aPoints, std::vector<int> aStats)
-{
-	name = aName; points = aPoints; stats = aStats;
-}
-
 std::ostream& Miniatur::to_s(Fraktion type, std::ostream& out) const{
 	switch (type) {
-		case Fraktion::Tyraniden:			out<< "Tyraniden"; break;
+		case Fraktion::Tyraniden:			out << "Tyraniden"; break;
 		case Fraktion::SM:					out << "SM"; break;
 		case Fraktion::CSM:					out << "CSM"; break;
 		case Fraktion::Orks:				out << "Orks"; break;
@@ -28,6 +23,8 @@ std::ostream& Miniatur::to_s(Fraktion type, std::ostream& out) const{
 		case Fraktion::AdeptusMechanicus:	out << "AdeptusMechanicus"; break;
 		case Fraktion::Craftworlds:			out << "Craftworlds"; break;
 		case Fraktion::Drukhari:			out << "Drukhari"; break;
+		default:
+			out << "Tyraniden"; break;
 	}
 
 	return out;
@@ -52,10 +49,6 @@ std::istream& Miniatur::read(std::istream& in)
 {
 	in >> name; return in;
 };
-
-std::ostream& Spezial_Miniatur::print(std::ostream& out) const{
-	return out;
-}
 
 std::istream& operator>>(std::istream& o, Miniatur& s) 
 	{ return o; };

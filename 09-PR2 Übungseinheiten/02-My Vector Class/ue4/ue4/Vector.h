@@ -96,7 +96,7 @@ template <typename T> class Vector {
 		}
 		Vector(size_type n)								//Liefert einen Vector mit Platz fuer n Elemente
 		{	
-			sz = n;
+			sz = 0;
 			max_sz = n + min_sz;
 			values = new value_type[max_sz];
 		}						
@@ -241,10 +241,10 @@ template <typename T> class Vector {
 		friend std::ostream& operator << (std::ostream& os, const Vector<T>& v) { 
 			os << '[';
 			bool first{ true };
-			for (auto it = v.begin(); it != v.end(); it++) {
+			for (int i = 0; i < v.size(); i++) {
 				if (first) first = false;
 				else os << ", ";
-				os << *it;
+				os << v.values[i];
 			}
 			os << ']';
 

@@ -87,6 +87,7 @@ template <typename T> class Vector {
 		size_type		sz;								//Anzahl der Elemente im Vector
 		size_type		max_sz;							//maximale Anzahl an Elementen die	moeglich sind
 		pointer			values;							//Zeigt auf ein Feld, welches die Elemente des Vectors beinhaltet
+
 	public:
 		Vector()											//Liefert einen leeren Vector
 		{
