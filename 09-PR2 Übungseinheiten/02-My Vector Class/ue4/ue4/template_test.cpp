@@ -39,7 +39,7 @@ int main() {
   cout<<'\n';
 
   // Interesting Stuff starts here
-  using Spezial_Miniatur = Miniatur;
+  
   Vector<Spezial_Miniatur> vsm {Spezial_Miniatur{"Genestealer",Fraktion::Tyraniden,395}, 
                                 Spezial_Miniatur{"Burna Boy",Fraktion::Orks,240}, 
                                 Spezial_Miniatur{"Tankbusta",Fraktion::Orks,252}, 
@@ -51,14 +51,14 @@ int main() {
   auto v_in_it = v_in.begin();
   copy(vsm.begin(), vsm.end(), std::inserter(v_in,v_in_it));
   
-  cout << vsm << '\n';
+  //cout << vsm << '\n';
   cout << v_back << '\n';
   cout << v_in << '\n';
   
   // What is the difference between v_in and v_back?
-  //  --- There is no difference
 
-/*  auto pos = vs.begin();
+  /*
+  auto pos = vs.begin();
   transform(vsm.begin(), vsm.end(), std::inserter(vs,++pos), [] (const Spezial_Miniatur& a) {return a.get_name();});
   for_each(vs.begin(), vs.end(), [] (const string& s) {cout<<s<<'\n';});
   cout<<'\n';
