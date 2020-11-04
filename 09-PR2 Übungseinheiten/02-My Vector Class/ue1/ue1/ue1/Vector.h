@@ -34,7 +34,7 @@ class Vector {
 		}
 		Vector(size_type n)								//Liefert einen Vector mit Platz fuer n Elemente
 		{	
-			sz = n;
+			sz = 0;
 			max_sz = n + min_sz;
 			values = new value_type[max_sz];
 		}						
@@ -134,7 +134,7 @@ class Vector {
 				throw std::out_of_range("operator [] : index is out of range");
 			return values[index];
 		}
-
+		
 		~Vector()
 		{
 			delete [] values;

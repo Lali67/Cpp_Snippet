@@ -98,7 +98,7 @@ class Vector {
 		}
 		Vector(size_type n)								//Liefert einen Vector mit Platz fuer n Elemente
 		{	
-			sz = n;
+			sz = 0;
 			max_sz = n + min_sz;
 			values = new value_type[max_sz];
 		}						
@@ -240,6 +240,18 @@ class Vector {
 		pointer operator -> () const	{ return values; }
 		pointer operator -> ()			{ return values; }
 		
+		friend std::ostream& operator << (std::ostream& os, const Vector& p) {
+			bool first{ true };
+			os << "[";
+			for (auto it = p.begin(); it != p.end(); it++) {
+				if (!first) os << ", ";
+				os << *it;
+				first = false;
+			}
+			os << "]";
+			return os;
+		}
+
 		~Vector()
 		{
 			delete [] values;
