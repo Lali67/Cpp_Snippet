@@ -12,6 +12,10 @@ TEST_CASE("VectorTest, Empty Vector") {
   }
   CHECK_EQ(x.size(),y.size());
   CHECK_EQ(x.size(),100);
+
+  const Vector<double> tmp{ x };
+  Vector<double> v;
+  v = tmp;
 }
 
 TEST_CASE("IteratorTest, DefaultConstructible") {

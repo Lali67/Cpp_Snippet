@@ -35,21 +35,24 @@ template <typename T> class Vector {
 					pointer ptr;
 
 				public:
-					Iterator():ptr(nullptr) { }
-					Iterator(pointer optr):ptr(optr) { }
-					Iterator(const Iterator& obj) { ptr = obj.ptr; }
+					Iterator():ptr(nullptr)							{ }
+					Iterator(pointer optr):ptr(optr)				{ }
+					Iterator(const Iterator& obj)					{ ptr = obj.ptr; }
 
-					reference operator * () 						{ return *ptr; }
+					reference operator * ()							{ return *ptr; }
 					pointer operator -> ()							{ return ptr; }
-					bool operator == (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) == *(p->operator->()); }
-					bool operator != (const iterator& rhs)			{ iterator* p = const_cast<iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
+					bool operator == (const iterator& rhs)			{ return *(rhs.ptr) == *ptr; }
+					bool operator != (const iterator& rhs)			{ return *(rhs.ptr) != *ptr; }
 					iterator& operator ++ ()						{ ++(ptr); return *this; }							// (Prefix)
-					iterator operator ++ (int val)					{ Iterator temp(ptr); ptr = ++(ptr); return temp; }	// (Postfix)
-					operator const_iterator()						{ return  ptr; };
+					iterator operator ++ (int val)					{ iterator temp(ptr); ptr = ++(ptr); return temp; }	// (Postfix)
+					operator const_iterator() { return  ptr; };
 
-					friend bool operator == (const iterator& lhs, const iterator& rhs)	 	{ return *(lhs.ptr) == *(rhs.ptr);}
-					friend bool operator != (const iterator& lhs, const iterator& rhs)		{ return *(lhs.ptr) != *(rhs.ptr); }
-					friend std::ostream& operator << (std::ostream& os, const Iterator& p)	{ os << "Iterator class: " << p.ptr <<"\n" ; return os;}
+					friend bool operator == (const iterator& lhs, const iterator& rhs) 
+						{ return *(lhs.ptr) == *(rhs.ptr); }
+					friend bool operator != (const iterator& lhs, const iterator& rhs) 
+						{ return *(lhs.ptr) != *(rhs.ptr); }
+					friend std::ostream& operator << (std::ostream& os, const Iterator& p) 
+						{ os << "Iterator class: " << p.ptr << "\n"; return os; }
 		};
 
 		class ConstIterator {
@@ -64,41 +67,40 @@ template <typename T> class Vector {
 					pointer ptr;
 
 				public:
-					ConstIterator():ptr(nullptr)						{}
-					ConstIterator(pointer optr) :ptr(optr)				{}
-					ConstIterator(const ConstIterator& obj)				{ ptr = obj.ptr; }
-					ConstIterator(const Iterator& obj)					{ Iterator* p = const_cast<Iterator*>(&obj); ptr = (p->operator->()); }
+					ConstIterator():ptr(nullptr)							{}
+					ConstIterator(pointer optr): ptr(optr)					{}
+					ConstIterator(const ConstIterator& obj): ptr(obj.ptr)	{}
+					ConstIterator(const Iterator& obj)						{ Iterator* p = const_cast<Iterator*>(&obj); ptr = (p->operator->()); }
 
-					reference operator * () const						{ reference temp = *ptr; return temp; }
+					reference operator * ()								{ reference temp = *ptr; return temp; }
 					pointer operator -> () const						{ return ptr; }
-					bool operator == (const const_iterator& rhs)		{ const_iterator* p = const_cast<const_iterator*>(&rhs); return *(ptr) == *(p->operator->()); }
-					bool operator != (const const_iterator& rhs)		{ const_iterator* p = const_cast<const_iterator*>(&rhs); return *(ptr) != *(p->operator->()); }
-					const_iterator& operator ++ () 						{ ++(ptr); return *this; }	
-					const_iterator operator ++ (int) 					{ ConstIterator temp(ptr); ptr = ++(ptr); return temp; };
-										
-					friend bool operator == (const const_iterator& lhs, const const_iterator& rhs)		{ return *(lhs.ptr) == *(rhs.ptr); }
-					friend bool operator != (const const_iterator& lhs, const const_iterator& rhs)		{ return *(lhs.ptr) != *(rhs.ptr); }
-					friend difference_type operator - (const Vector::ConstIterator& lop, const Vector::ConstIterator& rop) 	{ return lop.ptr - rop.ptr; }
-					friend std::ostream& operator << (std::ostream& os, const ConstIterator& p)			{os << "ConstIterator class: " << p.ptr << "\n"; return os;	}
+					bool operator == (const const_iterator& rhs)		{ return *(rhs.ptr) == *ptr; }
+					bool operator != (const const_iterator& rhs)		{ return *(rhs.ptr) != *ptr; }
+					const_iterator& operator ++ ()						{ ++(ptr); return *this; }
+					const_iterator operator ++ (int)					{ ConstIterator temp(ptr); ptr = ++(ptr); return temp; };
+
+					friend bool operator == (const const_iterator& lhs, const const_iterator& rhs) 
+						{ return *(lhs.ptr) == *(rhs.ptr); }
+					friend bool operator != (const const_iterator& lhs, const const_iterator& rhs) 
+						{ return *(lhs.ptr) != *(rhs.ptr); }
+					friend difference_type operator - (const Vector::ConstIterator& lop, const Vector::ConstIterator& rop) 
+						{ return lop.ptr - rop.ptr; }
+					friend std::ostream& operator << (std::ostream& os, const ConstIterator& p) 
+						{ os << "ConstIterator class: " << p.ptr << "\n"; return os; }
 		};
 
 	private:	
-		static constexpr size_type min_sz{5};			//Mindestgroesse (5) fuer max_sz festlegt einfuehren
-		size_type		sz;								//Anzahl der Elemente im Vector
-		size_type		max_sz;							//maximale Anzahl an Elementen die	moeglich sind
-		pointer			values;							//Zeigt auf ein Feld, welches die Elemente des Vectors beinhaltet
+		static constexpr size_type min_sz{5};				//Mindestgroesse (5) fuer max_sz festlegt einfuehren
+		size_type		sz;									//Anzahl der Elemente im Vector
+		size_type		max_sz;								//maximale Anzahl an Elementen die	moeglich sind
+		pointer			values;								//Zeigt auf ein Feld, welches die Elemente des Vectors beinhaltet
 
 	public:
-		Vector()											//Liefert einen leeren Vector
-		{
-			sz = 0;
-			max_sz = min_sz;
-			values = new value_type[max_sz];
-		}
+		Vector():Vector(min_sz) {}							//Liefert einen leeren Vector
 		Vector(size_type n)									//Liefert einen Vector mit Platz fuer n Elemente
 		{	
-			sz = n;
-			max_sz = n + min_sz;
+			sz = 0;
+			max_sz = n < min_sz ? min_sz : n;
 			values = new value_type[max_sz];
 		}						
 		Vector(std::initializer_list<value_type> arr_list)	//Liefert einen Vector mit spezifiziertem Inhalt
@@ -111,11 +113,13 @@ template <typename T> class Vector {
 		} 
 		Vector(const Vector& obj)							//Kopierkonstruktor: Liefert einen Vector mit demselben Inhalt
 		{
-			sz = obj.sz;
+			sz = 0;
 			max_sz = obj.max_sz + min_sz;
 			values	= new value_type[max_sz];
-			for (size_type i{0}; i++ < obj.sz;)
-				values[i] = obj.values[i];
+			//for (size_type i{0}; i++ < obj.sz;)
+			//	values[i] = obj.values[i];
+			for (auto it = obj.begin(); it != obj.end(); it++)
+				push_back(*it);
 		}
 		
 		//--------- Methoden für Iteratoren ---------
@@ -239,9 +243,23 @@ template <typename T> class Vector {
 		pointer operator -> () const	{ return values; }
 		pointer operator -> ()			{ return values; }
 		
+		friend std::ostream& operator << (std::ostream& os, const Vector<T>& v) {
+			os << '[';
+			bool first{ true };
+			for (size_type i{ 0 }; i < v.size(); ++i) {
+				if (first) first = false;
+				else os << ", ";
+				os << v->values[i];
+			}
+			os << ']';
+
+			return os;
+		}
+
 		~Vector()
 		{
-			delete [] values;
+			delete [] this->values;
+			this->values = nullptr;
 		}
 };
 

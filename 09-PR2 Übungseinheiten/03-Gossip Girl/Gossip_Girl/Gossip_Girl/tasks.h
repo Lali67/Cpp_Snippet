@@ -23,7 +23,6 @@ Vector<string> get_names(const Vector<Gossip_Girl>& v) {
     return temp;
 }
 
-
 /*
 Gossip_Girl longest_name(const Vector<Gossip_Girl>& v){
 }
