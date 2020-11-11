@@ -49,10 +49,12 @@ int main() {
         x.insert(x.end(),o2);
         const Vector<Gossip_Girl> tmp{x};
         v = tmp;
-      }
-      for(const auto& x : v)
-        cout << x << endl;
-      /*
+        cout << v << endl;
+     }
+    /*
+     for (const auto& x : v)
+         cout << x << endl;
+     
       auto it = ++v.begin();
       const Gossip_Girl oo{*it};
       v.erase(++v.begin());
