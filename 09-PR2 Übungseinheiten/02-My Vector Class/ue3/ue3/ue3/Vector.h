@@ -60,7 +60,7 @@ template <typename T> class Vector {
 					os << "Iterator class: " << p.ptr << "\n"; return os;
 				}
 		}; //end of class Iterator
-
+		/*
 		class ConstIterator {
 			public:
 				using value_type = Vector::value_type;
@@ -102,7 +102,7 @@ template <typename T> class Vector {
 					os << "ConstIterator class: " << p.ptr << "\n"; return os;
 				}
 		}; //end of class ConstIterator
-
+		*/
 	private:
 		static constexpr size_type min_sz{ 5 };				//Mindestgroesse (5) fuer max_sz festlegt einfuehren
 		size_type		sz;									//Anzahl der Elemente im Vector
@@ -140,7 +140,7 @@ template <typename T> class Vector {
 		iterator end()
 		{
 			return iterator(values + sz);
-		}
+		} /*
 		const_iterator begin() const
 		{
 			return const_iterator(values);
@@ -149,7 +149,7 @@ template <typename T> class Vector {
 		{
 			return const_iterator(values + sz);
 		}
-
+		*/
 		//--------- Methoden für Vector Klasse---------
 		size_type size() const							//liefert die Anzahl der gespeicherten Elemente
 		{
