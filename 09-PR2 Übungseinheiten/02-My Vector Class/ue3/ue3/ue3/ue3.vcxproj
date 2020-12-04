@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="utest_3.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
