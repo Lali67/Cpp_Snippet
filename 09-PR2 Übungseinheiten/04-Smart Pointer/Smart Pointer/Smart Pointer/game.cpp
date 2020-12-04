@@ -10,7 +10,10 @@
 #include<map>
 
 Game::Game(std::string name, std::shared_ptr<Player> host) :name(name), host(host)
-{}
+{
+    if (name == "" || !host)
+        throw std::runtime_error("Game Konstruktor");
+}
 
 std::string Game::get_name() const { return name; }
 
@@ -41,7 +44,7 @@ bool Game::add_player(const GameKey& gk, std::shared_ptr<Player> p)
         if (it->first == p->get_name()) ret = false;
 
     if (ret && this->is_allowed(p->get_mmr()))
-        players.insert(p->get_name(), p);
+        players.insert({ p->get_name(), p });
     else
         ret = false;
 
@@ -50,11 +53,20 @@ bool Game::add_player(const GameKey& gk, std::shared_ptr<Player> p)
 
 std::shared_ptr<Player> Game::best_player()
 {
-    std::shared_ptr<Player> p;
-    return p;
+    if (!this->players.size())
+        throw std::runtime_error("Game::best_player() error");
+
+    auto best = players.begin();
+    for (auto it = players.begin(); it != players.end(); it++)
+        if (it->second->get_mmr() > best->second->get_mmr()) best = it;
+
+    return best->second;
 }
 
-std::size_t Game::number_of_players() const;
+std::size_t Game::number_of_players() const
+{
+    return this->players.size();
+}
 
 std::shared_ptr<Player> Game::play(std::size_t i)
 {
@@ -66,12 +78,15 @@ std::ostream& Game::print(std::ostream& o) const
 {
     o << "[" << this->name << ", " << host->get_name() << ", " << host->get_mmr() << ", player: {";
 
-    for (auto it = players.begin(); it != players.end();)
-    {
-        o << "[" << it->first << ", " << it->second->get_mmr();
-        if (++it == players.end()) o << "]";
-        else o << "], ";
-    }
+    if (players.begin() != players.end()) // players not empty
+        for (auto it = players.begin(); it != players.end();)
+        {
+            o << "[" << it->first << ", " << it->second->get_mmr();
+            if (++it == players.end()) o << "]}]";
+            else o << "], ";
+        }
+    else
+        o << "}]";
 
     return o;
 }

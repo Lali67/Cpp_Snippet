@@ -7,12 +7,15 @@
 #include<vector>
 #include<map>
 
-class Game :public
+class Player;
+class GameKey;
+
+class Game :public std::enable_shared_from_this<Game>
 {
 private:
-    std::string name; 											//Name des Spiels.
-    std::shared_ptr<Player> host;		 						//Leiter des Spiels.
-    std::map<std::string, std::shared_ptr<Player>> players;	    //Map von teilnehmenden Player-Objekten
+    std::string name; 																				//Name des Spiels.
+    std::shared_ptr<Player> host;		 													//Leiter des Spiels.
+    std::map<std::string, std::shared_ptr<Player>> players;	  //Map von teilnehmenden Player-Objekten
 
 public:
     Game(std::string name, std::shared_ptr<Player> host);
@@ -34,8 +37,8 @@ class RGame : public Game
 {
 public:
     RGame(std::string s, std::shared_ptr<Player> p) :Game(s, p) {};
-    int change(bool x) const { if (x) return 5; else - 5; };
-    std::ostream& print(std::ostream& o) { Game::print(o); return o; } const
+    int change(bool x) const { if (x) return 5; else return -5; };
+    std::ostream& print(std::ostream& o) const { o << "Ranked Game: "; Game::print(o); return o; }
 };
 
 class UGame : public Game
@@ -43,6 +46,7 @@ class UGame : public Game
 public:
     UGame(std::string s, std::shared_ptr<Player> p) :Game(s, p) {};
     int change(bool) const { return 0; };
-    std::ostream& print(std::ostream& o) { Game::print(o); return o; } const
+    std::ostream& print(std::ostream& o) const { o << "Unranked Game: "; Game::print(o); return o; }
 };
+
 #endif
