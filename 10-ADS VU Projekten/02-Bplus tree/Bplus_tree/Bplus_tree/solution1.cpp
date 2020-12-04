@@ -1,24 +1,21 @@
 /*
-
- * C++ Program to Implement B+ Tree
-
+ *  C++ Program to Implement B+ Tree
+ *   https://www.sanfoundry.com/cpp-program-to-implement-b-tree/
  */
 
 #include<stdio.h>
-
 #include<conio.h>
-
 #include<iostream>
 
 using namespace std;
 
-struct BpTreeNode
+struct BTreeNode
 
 {
 
     int* data;
 
-    B + TreeNode * *child_ptr;
+    BpTreeNode **child_ptr;
 
     bool leaf;
 

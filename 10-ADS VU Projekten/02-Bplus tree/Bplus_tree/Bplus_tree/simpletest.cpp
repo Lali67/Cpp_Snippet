@@ -47,24 +47,41 @@
  #include <algorithm>
  #include <random>
  #include "ADS_set.h"
- 
- #ifndef ETYPE
- #error ETYPE not defined - compile with option -DETYPE=type
- #endif
+ #include <numeric>     //accumulate
 
- #if !defined PH1 && !defined PH2
- #define PH2
- #endif
 
- class Person;
- using Key = ETYPE;
- using reference_set = std::set<Key>; 
 
- #ifdef SIZE
+
+
+
+/*
+#ifndef ETYPE
+    #error ETYPE not defined - compile with option -DETYPE=type
+#endif
+
+
+#if !defined PH1 && !defined PH2
+    #define PH2
+#endif
+
+#ifdef SIZE
    using ads_set = ADS_set<Key,SIZE>;
  #else
    using ads_set = ADS_set<Key>;
  #endif
+*/
+
+#define PH1
+class Person;
+using ETYPE = unsigned;
+using Key = ETYPE;
+using ads_set = ADS_set<Key>;
+using reference_set = std::set<Key>;
+
+
+
+using namespace std;
+
 
  enum class Code {quit = 0, new_set, delete_set, insert, erase, find, count, size, empty, dump, trace, finsert, ferase, rinsert, rerase, help, clear, iterator, list, iinsert, fiinsert, riinsert};  
 
@@ -116,7 +133,7 @@
    friend std::istream &operator>>(std::istream &i, Person &p) { return i >> p.vn >> p.nn; }
  };
  
- namespace std {
+ //namespace std {
    template <> struct hash<Person> {
      size_t operator()(const Person &p) const {
        return std::hash<std::string>{}(p.vn) ^ std::hash<std::string>{}(p.nn) << 1;
@@ -132,7 +149,7 @@
        return lhs.nn < rhs.nn || (lhs.nn == rhs.nn && lhs.vn < rhs.vn); 
      }
    };
- }
+ //}
 
  struct Rand {
    std::default_random_engine re;
@@ -283,6 +300,7 @@
          case Code::riinsert: {
            unsigned seed, count{1};
            line_stream >> count;
+       std:cout << count<<"\n";
            if (line_stream >> seed) random.seed(seed);
            std::vector<Key> v;
            while (count-- > 0) v.push_back(random.next<Key>());
