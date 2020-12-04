@@ -1,9 +1,13 @@
+#ifndef GAME_H
+#define GAME_H
 #include<iostream>
 #include<memory>
 #include<vector>
 #include<map>
+#include<exception>
+#include <experimental/generator>
 
-class Game :public
+class Game : std::enable_shared_from_this<Player>
 {
 private:
     std::string name; 											//Name des Spiels.
@@ -22,7 +26,7 @@ public:
     virtual ~Game() = default;
 
     virtual std::ostream& print(std::ostream& o) const;
-    friend std::ostream& operator<< (std::ostream& o, const Game& g);
-}
+    friend std::ostream& operator<< (std::ostream& out, const Game& g);
+};
 
 #endif
