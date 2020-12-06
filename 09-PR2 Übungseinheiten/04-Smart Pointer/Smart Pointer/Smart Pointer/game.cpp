@@ -25,7 +25,7 @@ bool Game::is_allowed(int n) const
         return false;
 }
 
-bool Game::remove_player(const GameKey& gk, std::shared_ptr<Player> p)
+bool Game::remove_player(const GameKey&, std::shared_ptr<Player> p)
 {
     for (auto it = players.begin(); it != players.end(); it++)
         if (it->first == p->get_name())
@@ -37,7 +37,7 @@ bool Game::remove_player(const GameKey& gk, std::shared_ptr<Player> p)
     return false;
 }
 
-bool Game::add_player(const GameKey& gk, std::shared_ptr<Player> p)
+bool Game::add_player(const GameKey&, std::shared_ptr<Player> p)
 {
     bool ret{ true };
     for (auto it = players.begin(); it != players.end(); it++)
@@ -70,8 +70,25 @@ std::size_t Game::number_of_players() const
 
 std::shared_ptr<Player> Game::play(std::size_t i)
 {
-    std::shared_ptr<Player> p;
-    return p;
+    auto winner = players.begin();
+    //find Winner
+    for (auto it = players.begin(); it != players.end(); it++) {
+        if (i == 0) winner = it;
+        i--;
+    }
+
+    //change mmr of Losers from players list
+    for (auto it = players.begin(); it != players.end(); it++)
+        if (it != winner) {
+            if (it->second->get_mmr() > winner->second->get_mmr())
+                it->second->change_mmr(2 * change(false));
+            else
+                it->second->change_mmr(1 * change(false));
+        }
+
+    winner->second->change_mmr(change(true));
+
+    return winner->second;
 }
 
 std::ostream& Game::print(std::ostream& o) const

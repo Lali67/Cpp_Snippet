@@ -35,7 +35,7 @@ public:
     bool join_game(std::shared_ptr<Game> g);
     bool leave_game(std::shared_ptr<Game> g);
     std::vector<std::weak_ptr<Player>> invite_players(const std::vector<std::weak_ptr<Player>>& v);
-    //bool close_game();
+    bool close_game();
 
     std::ostream& print(std::ostream& o) const;
     friend std::ostream& operator << (std::ostream& out, const Player& p);

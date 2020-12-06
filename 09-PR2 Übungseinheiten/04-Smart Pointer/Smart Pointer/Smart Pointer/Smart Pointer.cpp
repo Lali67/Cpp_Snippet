@@ -1,7 +1,7 @@
 #include<iostream>
 #include<memory>
 #include<vector>
-#include<experimental/vector>
+#include<experimental/iterator>
 #include<iterator>
 #include<algorithm>
 #include<cstdlib>
@@ -56,180 +56,181 @@ int main() {
     catch (std::runtime_error& e) {
         std::cout << "Error Best\n";
     }
-    /*
+
     // Join games
 
-      {
-        auto g{v.at(5)->get_hosted_game()};
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(0)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(1)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(8)->join_game(g)) << "\n";
-          std::cout << "Game: " << *g << "\n";
+    {
+        auto g{ v.at(5)->get_hosted_game() };
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(0)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(1)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(8)->join_game(g)) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
         g = v.at(0)->get_hosted_game();
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(0)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(1)->join_game(g)) << "\n";
-          std::cout << "Join: " << (v.at(8)->join_game(g)) << "\n";
-          std::cout << "Game: " << *g << "\n";
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(5)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(0)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(1)->join_game(g)) << "\n";
+            std::cout << "Join: " << (v.at(8)->join_game(g)) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
         g = v.at(1)->get_hosted_game();
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          for(auto x : v)
-            std::cout << "Join: " << (x->join_game(g)) << "\n";
-          std::cout << "Game: " << *g << "\n";
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            for (auto x : v)
+                std::cout << "Join: " << (x->join_game(g)) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
-      }
+    }
 
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
 
 
     // Invite Players
 
-      auto invite_test{v[5]->invite_players(vw)};
+    auto invite_test{ v[5]->invite_players(vw) };
 
-      std::cout << "Rejected Players: {";
-      std::transform(invite_test.begin(),invite_test.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x.lock();});
-      std::cout << "}\n";
+    std::cout << "Rejected Players: {";
+    std::transform(invite_test.begin(), invite_test.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x.lock(); });
+    std::cout << "}\n";
 
-      invite_test = v[5]->invite_players(vw);
-      std::cout << "Rejected Players: {";
-      std::transform(invite_test.begin(),invite_test.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x.lock();});
-      std::cout << "}\n";
+    invite_test = v[5]->invite_players(vw);
+    std::cout << "Rejected Players: {";
+    std::transform(invite_test.begin(), invite_test.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x.lock(); });
+    std::cout << "}\n";
 
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
 
     // Play the Game
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Play the Game\n";
-      {
-        auto g{v.at(5)->get_hosted_game()};
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Game: " << *g << "\n";
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Play the Game\n";
+    {
+        auto g{ v.at(5)->get_hosted_game() };
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
         g = v.at(0)->get_hosted_game();
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Game: " << *g << "\n";
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
         g = v.at(1)->get_hosted_game();
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Winner: " << *g->play(std::rand()%g->number_of_players()) << "\n";
-          std::cout << "Game: " << *g << "\n";
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Winner: " << *g->play(std::rand() % g->number_of_players()) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
-      }
-      std::cout << "-------------------------------------------------------------\n";
+    }
+    std::cout << "-------------------------------------------------------------\n";
 
     // Leave Game
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Leave Game\n";
-      {
-        auto g{v.at(5)->get_hosted_game()};
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(0)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(1)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(8)->leave_game(g)) << "\n";
-          std::cout << "Game: " << *g << "\n";
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Leave Game\n";
+    {
+        auto g{ v.at(5)->get_hosted_game() };
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(0)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(1)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(8)->leave_game(g)) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
         g = v.at(0)->get_hosted_game();
-        if(g){
-          std::cout << "Game: " << *g << "\n";
-          std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(0)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(1)->leave_game(g)) << "\n";
-          std::cout << "Leave: " << (v.at(8)->leave_game(g)) << "\n";
-          std::cout << "Game: " << *g << "\n";
+        if (g) {
+            std::cout << "Game: " << *g << "\n";
+            std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(5)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(0)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(1)->leave_game(g)) << "\n";
+            std::cout << "Leave: " << (v.at(8)->leave_game(g)) << "\n";
+            std::cout << "Game: " << *g << "\n";
         }
-      }
+    }
 
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
 
 
     // Close all Games
 
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Close Game\n";
-      for(auto x : v)
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Close Game\n";
+    for (auto x : v)
         std::cout << "Close: " << (x->close_game()) << "\n";
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
 
     // Host games again
 
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Host Game Part II\n";
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Host Game Part II\n";
 
-      for(size_t i{0};i<game_names.size() && i<v.size();++i)
-        std::cout<< "Host: " << (v.at(i)->host_game(game_names.at(i),Mode::Ranked)) << "\n";
+    for (size_t i{ 0 }; i < game_names.size() && i < v.size(); ++i)
+        std::cout << "Host: " << (v.at(i)->host_game(game_names.at(i), Mode::Ranked)) << "\n";
 
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Invite all to everyhing \n";
-      for(auto x : v)
-        if(x->get_hosted_game())
-          x->invite_players(vw);
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Invite all to everyhing \n";
+    for (auto x : v)
+        if (x->get_hosted_game())
+            x->invite_players(vw);
 
     // Best Player II
 
-      for(auto x : v)
-        if(x->get_hosted_game())
-          try{
-            std::cout<< "Best: " << *(x->get_hosted_game()->best_player()) << "\n";
-          }catch (std::runtime_error& e){
-            std::cout << "Error BestX\n";
-          }
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
+    for (auto x : v)
+        if (x->get_hosted_game())
+            try {
+            std::cout << "Best: " << *(x->get_hosted_game()->best_player()) << "\n";
+        }
+    catch (std::runtime_error& e) {
+        std::cout << "Error BestX\n";
+    }
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
 
-      std::cout << "-------------------------------------------------------------\n";
-      std::cout << "Play 100 games and close again\n";
+    std::cout << "-------------------------------------------------------------\n";
+    std::cout << "Play 100 games and close again\n";
 
-      for(size_t i{0};i < 100; ++i){
-        auto g{v.at(std::rand()%v.size())->get_hosted_game()};
-        if(g)
-          g->play(std::rand()%g->number_of_players());
-      }
-      for(auto x : v)
+    for (size_t i{ 0 }; i < 100; ++i) {
+        auto g{ v.at(std::rand() % v.size())->get_hosted_game() };
+        if (g)
+            g->play(std::rand() % g->number_of_players());
+    }
+    for (auto x : v)
         x->close_game();
 
-      std::cout << "{";
-      std::transform(v.begin(),v.end(),std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x){return *x;});
-      std::cout << "}\n";
-    */
+    std::cout << "{";
+    std::transform(v.begin(), v.end(), std::experimental::make_ostream_joiner(std::cout, ", "), [](const auto& x) {return *x; });
+    std::cout << "}\n";
+
     return 0;
 }

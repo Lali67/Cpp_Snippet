@@ -34,9 +34,9 @@ bool Player::host_game(std::string s, Mode m)
     if (!this->hosted_game)
     {
         if (m == Mode::Ranked)
-            this->hosted_game = std::make_shared<RGame>(s, std::make_shared<Player>(name, mmr));
+            this->hosted_game = std::make_shared<RGame>(s, shared_from_this());
         else
-            this->hosted_game = std::make_shared<UGame>(s, std::make_shared<Player>(name, mmr));
+            this->hosted_game = std::make_shared<UGame>(s, shared_from_this());
         return true;
     }
     return false;
@@ -59,10 +59,25 @@ bool Player::join_game(std::shared_ptr<Game> g)
     return ret;
 }
 
+bool Player::leave_game(std::shared_ptr<Game> g)
+{
+    for (auto it = games.begin(); it != games.end(); it++)
+        if (it->first == g->get_name())
+        {
+            GameKey gk{};
+            if (g->remove_player(gk, shared_from_this())) {
+                games.erase(it);
+                return true;
+            }
+        }
+    return false;
+}
+
 std::vector<std::weak_ptr<Player>> Player::invite_players(const std::vector<std::weak_ptr<Player>>& v)
 {
     std::vector<std::weak_ptr<Player>> noJoined;
 
+    //Join into each game from games list
     for (auto it_g = games.begin(); it_g != games.end(); it_g++) {
         std::shared_ptr<Game> g = it_g->second.lock();
         for (auto it_p = v.begin(); it_p != v.end(); it_p++)
@@ -70,7 +85,23 @@ std::vector<std::weak_ptr<Player>> Player::invite_players(const std::vector<std:
                 noJoined.push_back(*it_p);
     }
 
+    //Join into hosted_game
+    for (auto it_p = v.begin(); it_p != v.end(); it_p++)
+        if (!it_p->expired())
+            it_p->lock()->join_game(hosted_game); //noJoined.push_back(*it_p);
+
     return noJoined;
+}
+
+bool Player::close_game()
+{
+    games.clear();
+    if (get_hosted_game())
+    {
+        hosted_game.reset();
+        return true;
+    }
+    return false;
 }
 
 std::ostream& Player::print(std::ostream& o) const
