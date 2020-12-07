@@ -13,8 +13,8 @@ class GameKey;
 class Game :public std::enable_shared_from_this<Game>
 {
 private:
-    std::string name; 																				//Name des Spiels.
-    std::shared_ptr<Player> host;		 													//Leiter des Spiels.
+    std::string name; 												//Name des Spiels.
+    std::shared_ptr<Player> host;		 						//Leiter des Spiels.
     std::map<std::string, std::shared_ptr<Player>> players;	  //Map von teilnehmenden Player-Objekten
 
 public:
