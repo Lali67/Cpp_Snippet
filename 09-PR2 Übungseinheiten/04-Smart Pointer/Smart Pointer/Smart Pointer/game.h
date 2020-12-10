@@ -20,6 +20,7 @@ private:
 public:
     Game(std::string name, std::shared_ptr<Player> host);
     std::string get_name() const;
+    std::shared_ptr<Player> get_host() const { return this->host; };
     bool is_allowed(int n) const;
     bool remove_player(const GameKey& gk, std::shared_ptr<Player> p);
     bool add_player(const GameKey& gk, std::shared_ptr<Player> p);
@@ -27,6 +28,7 @@ public:
     std::size_t number_of_players() const;
     std::shared_ptr<Player> play(std::size_t i);
     virtual int change(bool) const = 0;
+    virtual bool testi_test() const { return false; };
     virtual ~Game() = default;
 
     virtual std::ostream& print(std::ostream& o) const;
@@ -38,6 +40,7 @@ class RGame : public Game
 public:
     RGame(std::string s, std::shared_ptr<Player> p) :Game(s, p) {};
     int change(bool x) const { if (x) return 5; else return -5; };
+    bool testi_test() const;
     std::ostream& print(std::ostream& o) const { o << "Ranked Game: "; Game::print(o); return o; }
 };
 
@@ -46,6 +49,7 @@ class UGame : public Game
 public:
     UGame(std::string s, std::shared_ptr<Player> p) :Game(s, p) {};
     int change(bool) const { return 0; };
+    bool testi_test() const;
     std::ostream& print(std::ostream& o) const { o << "Unranked Game: "; Game::print(o); return o; }
 };
 

@@ -114,3 +114,17 @@ std::ostream& operator<< (std::ostream& out, const Game& g)
 
     return out;
 }
+
+bool RGame::testi_test() const
+{
+    if (get_host()->get_mmr() % 2 == 0)  return true;
+    else
+        return false;
+};
+
+bool UGame::testi_test() const
+{
+    if (get_host()->get_mmr() % 2 == 0)  return true;
+    else
+        return false;
+};
