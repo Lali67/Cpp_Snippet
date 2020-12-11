@@ -36,7 +36,10 @@ bool Player::host_game(std::string s, Mode m)
         if (m == Mode::Ranked)
             this->hosted_game = std::make_shared<RGame>(s, shared_from_this());
         else
-            this->hosted_game = std::make_shared<UGame>(s, shared_from_this());
+            if (m == Mode::Mixed)
+                this->hosted_game = std::make_shared<MGame>(s, shared_from_this());
+            else
+                this->hosted_game = std::make_shared<UGame>(s, shared_from_this());
         return true;
     }
     return false;

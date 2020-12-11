@@ -30,9 +30,4 @@ std::string get_longest_name(const std::vector<std::weak_ptr<Player>>& v) {
 }
 
 
-
-
-
-
-
 #endif

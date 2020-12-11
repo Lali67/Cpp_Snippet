@@ -9,7 +9,7 @@
 
 
 class Game;
-enum class Mode { Ranked, Unranked };
+enum class Mode { Ranked, Unranked, Mixed };
 
 class Player : public std::enable_shared_from_this<Player>
 {

@@ -53,4 +53,22 @@ public:
     std::ostream& print(std::ostream& o) const { o << "Unranked Game: "; Game::print(o); return o; }
 };
 
+class MGame : public Game
+{
+private:
+    static int i;
+
+public:
+    MGame(std::string s, std::shared_ptr<Player> p);
+    static void increase_counter()
+    {
+        ++i;
+        if (i > 10) i = 0;
+    }
+
+    int change(bool) const { return i; }
+
+    std::ostream& print(std::ostream& o) const { o << "Mixed Game: "; Game::print(o); return o; }
+};
+
 #endif

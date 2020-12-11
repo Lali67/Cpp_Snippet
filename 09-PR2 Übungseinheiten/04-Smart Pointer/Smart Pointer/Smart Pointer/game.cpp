@@ -68,6 +68,8 @@ std::size_t Game::number_of_players() const
     return this->players.size();
 }
 
+MGame::MGame(std::string s, std::shared_ptr<Player> p) :Game(s, p) { i = 0; }
+
 std::shared_ptr<Player> Game::play(std::size_t i)
 {
     auto winner = players.begin();
@@ -128,3 +130,5 @@ bool UGame::testi_test() const
     else
         return false;
 };
+
+int MGame::i = 0;
