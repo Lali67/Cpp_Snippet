@@ -1,14 +1,13 @@
 #include<iostream>
 #include<memory>
 #include<vector>
-#include<experimental/iterator>
 #include<iterator>
 #include<algorithm>
 #include<cstdlib>
 #include "game.h"
 #include "player.h"
 #include "gamekey.h"
-
+#include<experimental/iterator>
 
 constexpr int RANDO_SEED{ 78 };
 
