@@ -14,6 +14,5 @@ jobs:
         MIDDLE_NAME: "CBAnalytics "
         LAST_NAME: "Repository"
       run: |
-        write-host $env:MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-        echo ---
-        Get-Variable c*
+        write-host $env:MY_VAR $env:FIRST_NAME $env:MIDDLE_NAME $env:LAST_NAME.
+        echo -----------------------------------------------------
