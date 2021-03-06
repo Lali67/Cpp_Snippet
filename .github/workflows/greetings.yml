@@ -1,18 +1,18 @@
-name: Greeting from Prinzhorn CBAnalytics Repository
+name: "Greeting from Prinzhorn CBAnalytics Repository"
 
 on: push
 
 jobs:
   greeting-job:
-    name: Greeting Automated Job
+    name: "Greeting Automated Job"
     runs-on: windows-latest
     steps:
-    - name: Print a greeting
+    - name: "Print a greeting"
       env:
-        MY_VAR: Hi there! This is a GitHub Action Workflow from
-        FIRST_NAME: Prinzhorn Holding
-        MIDDLE_NAME: CBAnalytics
-        LAST_NAME: Repository
+        MY_VAR: "Hi there! This is a GitHub Action Workflow from "
+        FIRST_NAME: "Prinzhorn Holding "
+        MIDDLE_NAME: "CBAnalytics "
+        LAST_NAME: "Repository"
       run: |
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
         echo ---
