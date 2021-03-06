@@ -16,3 +16,4 @@ jobs:
       run: |
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
         echo ---
+        Get-Variable c*
